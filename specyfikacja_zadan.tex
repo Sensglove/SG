@@ -1,0 +1,142 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{geometry}
+\newgeometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
+
+\makeatletter
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{1cm}
+    \begin{center}
+    Politechnika Wrocławska\\
+    AiR ARR\\
+ Projekt zespołowy
+    \end{center}
+      \vspace{3cm}
+    \begin{center}
+
+     \LARGE \textsc {\@title}
+         \end{center}
+     \vspace{1cm}
+
+    \begin{center}
+    \textit{ Autorzy:}\\
+   \textit{\@author}
+     \end{center}
+      \vspace{1cm}
+
+     \begin{center}
+
+    Prowadzący:
+  dr inż. Krzysztof Arent %dorobić inż mgr itd
+    \end{center}
+
+    \vspace*{\stretch{6}}
+    \begin{center}
+    \@date
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+\author{Beata Berajter\\
+Dawid Brząkała\\
+Dorota Gidel\\
+Katarzyna Wądrzyk\\
+Ada Weiss\\
+Małgorzata Witka-Jeżewska\\
+ }%wpisać indeks
+\title{SensGlove}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+
+
+\section{Wymagania użytkownika}
+Użytkownik powinien mieć możliwość założenia sprzętu, to znaczy rękawiczki sensorycznej oraz czujników miopotencjałów, oraz uruchomienia programu służącego do odbioru ich. Wtedy, po poprawnym podłączeniu się, użytkownik powinien mieć możliwość podglądu w czasie rzeczywistym wykonywanych ruchów. W przypadku poprawnego działania każdego z czujników użytkownik powinien mieć możliwość utworzenia odpowiedniego folderu i zapisania do niego wyników odczytów z czujników od momentu wciśnięcia przycisku START do zdefiniowanej wcześniej długości czasu. Użytkownik powinien mieć możliwość wykonania i zapisu dowolnej ilości pomiarów oraz stworzenie dowolnej ilości folderów oznaczających kolejne gesty.
+
+\section{Kryteria ewaluacji}
+Komponenty powinny działać każde z osobna oraz współdziałać jako kompletne stanowisko do pobierania sygnałów i biosygnałów. 
+
+
+\section{Specyfikacja funkcjonalności}
+\section{Rozpoznanie możliwości wykonania bazy sprzętowo-programowej}
+
+\subsection{Projekt oparty na płytce deweloperskiej STM32F3Discovery}
+ZALETY:\\
+\begin{enumerate}
+    \item 
+    \item 
+\end{enumerate}
+WADY:\\
+\begin{enumerate}
+    \item 
+    \item 
+\end{enumerate}
+\subsection{Projekt oparty na dostępnej już karcie }
+ZALETY:\\
+\begin{enumerate}
+    \item 
+    \item 
+\end{enumerate}
+WADY:\\
+\begin{enumerate}
+    \item 
+    \item 
+\end{enumerate}
+\subsection{Projekt oparty na karcie }
+ZALETY:\\
+\begin{enumerate}
+    \item 
+    \item 
+\end{enumerate}
+WADY:\\
+\begin{enumerate}
+    \item 
+    \item 
+\end{enumerate}
+\section{Podział na komponenty, architektura i kryteria ewaluacji komponentów}
+\subsection{Rękawiczka sensoryczna}
+% potrzebny sprzęt i elementy, konkretne  czujniki, ich liczba, ich dokumentacja, cena (pamiętajcie o wyborze rękawiczki!), czas na uzyskanie ich
+% wstępna koncepcja rozmieszczenia elementów, opis słowno-muzyczny
+% schematy ideowe, sposób podłączania, ilość wejść i wyjść, zakresy działania z dołączonej dokumentacji
+% poszczególne zadania, jakie trzeba wykonać i kto je zrobi, najlepiej przypisane do jednej osoby
+% sposób testowania, czy działa, rozpisanie na poszczególne kryteria
+% napisanie co będzie oznaczać wykonania zadania poprawnie
+\subsection{Interfejs sprzętowy}
+% potrzebny sprzęt i elementy, ich liczba, ich dokumentacja, cena, czas na otrzymanie ich
+% wstępna koncepcja rozmieszczenia elementów, opis słowno-muzyczny
+% schematy ideowe, sposób podłączania, ilość wejść i wyjść, zakresy działania z dołączonej dokumentacji
+% potrzebne biblioteki
+% BARDZO WAŻNE, kryterium sprawdzające, czy odczyty są zsynchronizowane!
+% suma kontrolna
+% poszczególne zadania, jakie trzeba wykonać i kto je zrobi, najlepiej przypisane do jednej osoby
+% propozycja wysyłania danych
+% sposób testowania, czy działa, rozpisanie na poszczególne kryteria
+% napisanie co będzie oznaczać wykonania zadania poprawnie
+\subsection{Program do akwizycji danych}
+% potrzebne biblioteki
+% schematy ideowe
+% klasy
+% podział pracy
+% protokół zbierania danych
+% testy i kryteria ewaluacji
+% tworzenie bazy danych
+\subsection{Baza danych}
+% kryteria ewaluacji
+%
+%
+%
+\subsection{Wizualizacja danych}
+
+
+
+\end{document}

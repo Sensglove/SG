@@ -1,0 +1,71 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage[polish]{babel}
+\usepackage{polski}
+\usepackage{enumerate}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{geometry}
+\newgeometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
+%wersja wyslana na eportal, mmm
+\makeatletter
+\newcommand{\linia}{\rule{\linewidth}{0.4mm}}
+\renewcommand{\maketitle}{\begin{titlepage}
+    \vspace*{1cm}
+    \begin{center}
+    Politechnika Wrocławska\\
+    AiR ARR\\
+ Projekt zespołowy
+    \end{center}
+      \vspace{3cm}
+    \begin{center}
+
+     \LARGE \textsc {\@title}
+         \end{center}
+     \vspace{1cm}
+
+    \begin{center}
+    \textit{ Autorzy:}\\
+   \textit{\@author}
+     \end{center}
+      \vspace{1cm}
+
+     \begin{center}
+
+    Prowadzący:
+  dr inż. Krzysztof Arent %dorobić inż mgr itd
+    \end{center}
+
+    \vspace*{\stretch{6}}
+    \begin{center}
+    \@date
+    \end{center}
+  \end{titlepage}
+}
+\makeatother
+\author{Beata Berajter\\
+Dawid Brząkała\\
+Dorota Gidel\\
+Katarzyna Wądrzyk\\
+Ada Weiss\\
+Małgorzata Witka-Jeżewska\\
+ }%wpisać indeks
+\title{SensGlove}
+
+\begin{document}
+
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\section{Opis projektu}
+\subsection{Wstęp}
+Celem projektu jest zbudowanie stanowiska do zbierania Bazy Danych biosygnałów oraz sygnałów z rękawiczki sensorycznej wchodzącej w interakcję z przedmiotami. Podjęcie tej tematyki umożliwi dalsze prace nad protezami kończyn górnych, w szczególności dłoni. Wyniki projektu wspomogą prace prowadzone nad protezami rąk, które ułatwiają wykonywanie codziennych czynności osobom niepełnosprawnym. Ważnym jest, aby proteza przy poruszaniu się przypominała prawdziwą kończynę w jak największym stopniu. Osiągnąć to można poprzez tworzenie bazy danych gdzie umieszczane będą interakcje palców ręki z różnymi przedmiotami codziennego użytku.
+Badania te mogą zostać użyte nie tylko przy nowoczesnych protezach, lecz również przy budowie nowych, sprawniejszych robotów humanoidalnych.\\
+Pierwszym krokiem przy realizacji projektu jest zapoznanie się z istniejącym już stanowiskiem do pomiarów, które umiejscowione jest na Politechnice Wrocławskiej, budynek C-3, sala 06. Po dogłębnym zaznajomieniu się z istniejącym już oprogramowaniem wykonamy nasze własne stanowisko badawcze, które składać się będzie z rękawiczki sensorycznej podłączonej poprzez mikrokontroler do karty, do której trafiają równocześnie pobierane biosygnały.\\
+Efektem końcowym będzie stanowisko do poszerzania bazy danych zawierającej biosygnały oraz sygnały charakteryzujące interakcje palców protezy z przedmiotem.\\
+Wyniki projektu będą upowszechniane przy pomocy strony internetowej (http://sensglove.happyrobotics.com/).\\
+
+
+
+\end{document}

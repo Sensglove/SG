@@ -127,10 +127,10 @@ Osoby przydzielone do zadania: Ada Weiss, Małgorzata Witka-Jeżewska\\
 Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwoć rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez okreslony czas (prawdopodobnie 2s jak w dotychczasowych badaniach niosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu dane będą dodawane do bazy pomiarów. Oprogramowanie będzie tworzone systemie Linux z użyciem Qt kreatora.
 \subsubsection{Format danych}
 \subsubsection{Kryteria ewaluacji}
-Symulacja danych wejciowych: 
-Zaprogramujemy płytkę STM32L476G Discovery tak aby nadawała przykładowe dane w ustalonym przez nas formacie i podłączymy ją do USB komputera.  
-Poprawnosc danych wyjsciowych:
-Wykorzystamy również przykładowy program klient odbierający dane wysyłane z napisanego programu (serwera). Należy również sprawdzić poprawnoć danych zapisywanych do plików tekstowych będących podstawą do stworzenia bazy ruchów.
+Symulacja danych wejciowych: \\
+Zaprogramujemy płytkę STM32L476G Discovery tak aby nadawała przykładowe dane w ustalonym przez nas formacie i podłączymy ją do USB komputera.  \\
+Poprawnosc danych wyjsciowych:\\
+Wykorzystamy również przykładowy program klient odbierający dane wysyłane z napisanego programu (serwera) w celu ocenienia poprawnosci przesyłania danych. Należy również sprawdzić poprawnoć danych zapisywanych do plików tekstowych będących podstawą do stworzenia bazy ruchów.
 \subsubsection{Schemat ideowy}
 %diagram UML, klasy to ja nie wiem czy już się da cos okreslic
 

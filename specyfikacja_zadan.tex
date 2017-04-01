@@ -122,6 +122,23 @@ WADY:\\
 % propozycja wysyłania danych
 % sposób testowania, czy działa, rozpisanie na poszczególne kryteria
 % napisanie co będzie oznaczać wykonania zadania poprawnie
+Osaba przydzielona do zadania: Dawid Brząkała \\
+Interfejs będzie miał za zadanie odczyt wartości z czujników zgięcia i nacisku z rękawiczki oraz czujników biopotencjałów i przesyłał je w odpowiednim formacie do komputera poprzez kabel USB i wirtualny port COM. Sygnały z czujników zostaną wzmocnione przez układ ze wzmacniaczami operacyjnymi, który również zadba o to, aby wartości sygnałów wyjściowych mieściły się w zakresie pracy przetwornika ADC mikrokontrolera (0 - 3.3V). Zasilanie układu pochodzić będzie ze złącza USB.
+\subsubsection{Schemat ideowy}
+% plik "schemat ideowy interfejsu.png" nie wiem jak się wstawia obrazki
+\subsubsection{Potrzebne elementy}
+\begin{tabular}{111}
+rezystory 10kOhm & 20 & 0.60zł/10szt \\ % 10kOhm jest do czujników nacisku, do zgięcia i biopotencjałów mogą być potrzebne inne
+listwa kołkowa 1x40 pin & 1 & 0.69zł/szt \\
+listwa kołkowa 2x40 pin & 1 & 1.00zł/szt \\
+wzmacniacz operacyjny TL084 & 6 & 8,34zł/szt \\
+dioda zenera 3V3 & 24 & 0.12zł/szt \\
+STM32F3 - DISCOVERY - Cortex-M4F & 1 & 102.90zł/szt \\
+laminat światłoczuły 100x160x1.5mm dwustronny + & 1 & 15.00zł/szt \\ % jeśli wytrawiamy sami, jak będziemy zamawiać będzie trzeba zmienić
+razem & & 131.41zł
+\end{tabular}
+\subsubsection{Kryteria ewaluacji}
+Aby sprawdzić poprawność odczytu sygnałów przez przetworniki ADC czujniki będą symulowane poprzez potencjometry, a uzyskane wyniki przesłane do komputera. Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitownia portów COM.
 \subsection{Program do akwizycji danych}
 Osoby przydzielone do zadania: Ada Weiss, Małgorzata Witka-Jeżewska\\
 Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwoć rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez okreslony czas (prawdopodobnie 2s jak w dotychczasowych badaniach niosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu dane będą dodawane do bazy pomiarów. Oprogramowanie będzie tworzone systemie Linux z użyciem Qt kreatora.

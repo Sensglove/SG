@@ -220,16 +220,28 @@ razem & & 131.41zł \\\hline
 \subsubsection{Kryteria ewaluacji}
 Aby sprawdzić poprawność odczytu sygnałów przez przetworniki ADC czujniki będą symulowane poprzez potencjometry, a uzyskane wyniki przesłane do komputera. Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitowania portów COM.
 
+\subsubsection{Podział zadań}
+Berajter Beata:
+\begin{itemize}
+    \item montaż układu
+    \item opracowanie protokołu przesyłu danych
+\end{itemize}
+Brząkała Dawid:
+\begin{itemize}
+    \item zaprojektowanie układu wzmacniaczy
+    \item zamówienie płytki ze wzmacniaczami
+\end{itemize}
+
 \subsection{Program do akwizycji danych}
-Osoby przydzielone do zadania: Ada Weiss, Małgorzata Witka-Jeżewska\\
+Osoby przydzielone do zadania: Ada Weiss, Małgorzata Witka-Jeżewska.\\
 Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwość rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez określony czas (prawdopodobnie 2s jak w dotychczasowych badaniach miosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu uruchomiony będzie skrypt. Oprogramowanie będzie tworzone w systemie Linux z użyciem Qt kreatora.
 \subsubsection{Format danych}
 Dane odbierane będą w postaci stringa z zakodowanymi heksadecymalnie wartościami odczytu z kolejnych czujników. Do sprawdzenia poprawności przesyłu wykorzystana będzie suma kontrolna.
 \subsubsection{Kryteria ewaluacji}
 Symulacja danych wejściowych: \\
-Zaprogramujemy płytkę STM32L476G Discovery tak aby nadawała przykładowe dane w ustalonym przez nas formacie i podłączymy ją do USB komputera.  \\
+zaprogramujemy płytkę STM32L476G Discovery tak aby nadawała przykładowe dane w ustalonym przez nas formacie i podłączymy ją do USB komputera.  \\
 Poprawność danych wyjściowych:\\
-Wykorzystamy również przykładowy program klient odbierający dane wysyłane z napisanego programu (serwera) w celu ocenienia poprawności przesyłania danych.\\
+wykorzystamy również przykładowy program (klient) odbierający dane wysyłane z napisanego programu (serwera) w celu ocenienia poprawności przesyłania danych.\\
 
 \subsubsection{Schemat ideowy}
 \begin{figure}[h!]
@@ -240,12 +252,12 @@ Wykorzystamy również przykładowy program klient odbierający dane wysyłane z
 \end{figure}
 \subsubsection{Podział zadań}
 
-Ada Weiss:
+Weiss Ada:
 \begin{itemize}
 \item odczytywanie danych z portu COM
 \item przesyłanie danych za pomocą gniazda
 \end{itemize}
-Małgorzata Witka-Jeżewska:
+Witka-Jeżewska Małgorzata:
 \begin{itemize}
     \item stworzenie odpowiednich okien i odpowiednich metod z nimi stowarzyszonych
 \end{itemize}
@@ -259,11 +271,11 @@ Małgorzata Witka-Jeżewska:
 % testy i kryteria ewaluacji
 % tworzenie bazy danych
 \subsection{Baza danych}
-Osoby przydzielone do zadania: Beata Berajter, Dorota Gidel
+Osoby przydzielone do zadania: Beata Berajter, Dorota Gidel.
 \subsubsection{Wymagania użytkownika}
 Stworzenie bazy danych ma na celu zebranie oraz odpowiednie uporządkowanie zebranych danych pomiarowych. Baza powinna być utworzona w sposób przemyślany i logiczny.
 \subsubsection{Funkcjonalność}
-Dane zawierające odczyty z czujników i wartości miopotencjałow zapisywane będą w formie plików tekstowych. Zdecydowano się na tekstowy format bazy danych, ponieważ istnieje prawdopodobieństwo, że będą one przekazane innym jednostkom, które preferują taką formę i w ten sposób najlepiej się będzie można zsynchronizować. Baza danych zawierać będzie katalogi odpowiadające osobom badanym (wykonującym eksperymenty w rękawiczce). W każdym z tych katalogów znajdować będą się podkatalogi z wykonywanymi typami badanych ruchów/chwytów. Z kolei w tych podkatalogach tworzone będą kolejne trzy podkatalogi, jeden zawierający dane z elektrod, drugi z czujników nacisku, trzeci z czujników zgięcia na rękawiczce sensorycznej. W tych folderach znajdować się będą pliki tekstowe z pomiarami. Każdy plik tekstowy zorganizowany będzie w formie macierzy. Zakładając że pomiar będzie trwał 2 sekundy, a odczyt z czujników i elektrod będzie następował z częstotliwością 1kHz, plik taki będzie zawierał 2000 lini (1000*2). Ilość kolumn w danym pliku to liczba dostępnych czujników/elektrod z których pobieramy dane. Planowane jest 8 elektrod, 10 czujników nacisku i 5 czujników zgięcia, więc pliki te odpowiednio zawierać będą macierze 2000 wierszy i 8 kolumn, 2000 wierszy i 10 kolumn, 2000 wierszy i 5 kolumn. Każdy kolejny zapisany pomiar (2 sekundowy) zapisywany będzie w pliku którego nazwa będzie informować o tym który jest to pomiar z kolei (dla danej osoby i typu ruchu) i dokłądnej dacie zapisania pomiaru do bazy\\
+Dane zawierające odczyty z czujników i wartości miopotencjałow zapisywane będą w formie plików tekstowych. Zdecydowano się na tekstowy format bazy danych, ponieważ istnieje prawdopodobieństwo, że będą one przekazane innym jednostkom, które preferują taką formę i w ten sposób najlepiej się będzie można zsynchronizować. Baza danych zawierać będzie katalogi odpowiadające osobom badanym (wykonującym eksperymenty w rękawiczce). W każdym z tych katalogów znajdować będą się podkatalogi z wykonywanymi typami badanych ruchów/chwytów. Z kolei w tych podkatalogach tworzone będą kolejne trzy podkatalogi, jeden zawierający dane z elektrod, drugi z czujników nacisku, trzeci z czujników zgięcia na rękawiczce sensorycznej. W tych folderach znajdować się będą pliki tekstowe z pomiarami. Każdy plik tekstowy zorganizowany będzie w formie macierzy. Zakładając, że pomiar będzie trwał 2 sekundy, a odczyt z czujników i elektrod będzie następował z częstotliwością 1kHz, plik taki będzie zawierał 2000 lini (1000*2). Ilość kolumn w danym pliku to liczba dostępnych czujników/elektrod, z których pobieramy dane. Planowane jest 8 elektrod, 10 czujników nacisku i 5 czujników zgięcia, więc pliki te odpowiednio zawierać będą macierze 2000 wierszy i 8 kolumn, 2000 wierszy i 10 kolumn, 2000 wierszy i 5 kolumn. Każdy kolejny zapisany pomiar (2 sekundowy) zapisywany będzie w pliku, którego nazwa będzie informować o tym, który jest to pomiar z kolei (dla danej osoby i typu ruchu) i dokładnej dacie zapisania pomiaru do bazy.\\
 Baza danych będzie współpracować z programem do akwizycji danych. Napisana zostanie funkcja, która wywoływana będzie przez ten program. Jej celem będzie, przy podanych odpowiednich argumentach, utworzenie folderów i pliku tekstowego z pomiarami w odpowiednim miejscu w bazie danych. Powstanie również funkcja pozwalająca na odnalezienie pożądanego pomiaru, wykonanego na danej osobie i podanej dacie.
 
 \begin{figure}[ht!]
@@ -273,30 +285,30 @@ Baza danych będzie współpracować z programem do akwizycji danych. Napisana z
 \caption {Schemat struktury bazy dancyh}
 \end{figure}
 \subsubsection{Kryteria ewaluacji}
-Do sprawdzenie poprawności działania bazy danych, zostanie wywołana funkcja obsługi bazy z przykłądowymi argumentami i danymi z czujników. Zarówno wejściowym, jak i wyjściowym efektem są pliki tekstowe. Zostaną utworzone przykładowe, testowe pliki, dzięki którym, będzie można porównać oraz sprawdzić poprawność przetworzonych danych.
+Do sprawdzenie poprawności działania bazy danych zostanie wywołana funkcja obsługi bazy z przykładowymi argumentami i danymi z czujników. Zarówno wejściowym jak i wyjściowym efektem są pliki tekstowe. Zostaną utworzone przykładowe testowe pliki, dzięki którym będzie można porównać oraz sprawdzić poprawność przetworzonych danych.
 \subsubsection{Podział zadań}
-Beata Berajter:
+Berajter Beata:
 \begin{itemize}
     \item funkcja/skrypt wyszukujący pomiar z bazy danych
 \end{itemize}
-Dorota Gidel:
+Gidel Dorota:
 \begin{itemize}
     \item funkcja/skrypt zapisujący pomiar do bazy danych
 \end{itemize}
 
 \subsection{Wizualizacja danych}
-Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk
+Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk.
 \subsubsection{Wymagania użytkownika}
-Od aplikacji wymagane jest aby w przejrzysty sposób wyświetlała zbierane dane z rękawiczki sensorycznej na modelu dłoni w 3D. Oczekiwane jest aby tworzony był wykres danych w czasie rzeczywistym (z możliwością rozróżnienia na poszczególne czujniki). Wymagane jest także aby po najechaniu myszką na konkretny obszar na modelu dłoni, wyświetlone zostały dokładne dane o tym punkcie (wartość siły, zgięcia).
+Od aplikacji wymagane jest, aby w przejrzysty sposób wyświetlała zbierane dane z rękawiczki sensorycznej na modelu dłoni w 3D. Oczekiwane jest, aby tworzony był wykres danych w czasie rzeczywistym (z możliwością rozróżnienia na poszczególne czujniki). Wymagane jest także, aby po najechaniu myszką na konkretny obszar na modelu dłoni wyświetlone zostały dokładne dane o tym punkcie (wartość siły, zgięcia).
 \subsubsection{Funkcjonalność}
-Odczyt informacji przez aplikację odbywa się poprzez użycie socketów, dane będą przesyłąne z programu do akwizycji danych. Ciągły strumień danych będzie obierany i przetwarzany z częstotliwością około 25Hz.\\
-Aplikacja obrazować będzie dane pobierane z rękawiczki sensorycznej na modelu ręki 3D, zmieniając ułożenie palców w zależności od dostarczonych pomiarów. Dodatkowo odczyty z czujników nacisku prezentowane będą poprzez zmianę koloru opuszków palców w zależności od siły. Przy maksymalnej sile nacisku na wizualizacji będzie odpowiadał kolor czerwony a minimalnej sile odpowiadać będzie kolor zielony. Zamodelowana zostanie prawa ręka.\\
+Odczyt informacji przez aplikację odbywa się poprzez użycie socketów, dane będą przesyłane z programu do akwizycji danych. Ciągły strumień danych będzie obierany i przetwarzany z częstotliwością około 25Hz.\\
+Aplikacja obrazować będzie dane pobierane z rękawiczki sensorycznej na modelu ręki 3D, zmieniając ułożenie palców w zależności od dostarczonych pomiarów. Dodatkowo odczyty z czujników nacisku prezentowane będą poprzez zmianę koloru opuszków palców w zależności od siły. Przy maksymalnej sile nacisku na wizualizacji będzie odpowiadał kolor czerwony, a minimalnej sile odpowiadać będzie kolor zielony. Zamodelowana zostanie prawa ręka.\\
 Program umożliwiać będzie prezentację zmiany odczytów danych na wykresie. Planowany podstawowy zakres informacji obejmuje 30s. \\
-W celu uzyskania przejrzystego interfejsu, zastosowane zostanie grupowanie względem typu czujnika. Zrealizowane to zostanie poprzez zakładki, które umożliwiaią szybki dostęp do pożądanych informacji. \\
+W celu uzyskania przejrzystego interfejsu zastosowane zostanie grupowanie względem typu czujnika. Zrealizowane to zostanie poprzez zakładki, które umożliwią szybki dostęp do pożądanych informacji. \\
 Program będzie tworzony w Qt5 na Linuxie.
 \subsubsection{Kryteria ewaluacji}
 Działanie programu sprawdzone będzie pod kątem odbierania sygnału z rękawiczki oraz poprawnego wyświetlania danych na modelu 3D. \\
-Gdy wysłany zostanie sygnał maksymalnego nacisku z czujnika na palcu wskazującym program go odczyta oraz wyświetli kolor czerwony na wizualizacji. Gdy zgięty zostanie dany palec u ręki, palec na modelu w programie również zostanie zgięty. Gdy kąty zgięcia oraz kolory nacisku będą się zgadzać, znaczyć to będzie, że aplikacja działa poprawnie. Dane te mogą być sztucznie symulowane i wysyłane do programu by istniała możliwość testowania bez istnienia poprawnie działających komponentów systemu.
+Gdy wysłany zostanie sygnał maksymalnego nacisku z czujnika na palcu wskazującym program go odczyta oraz wyświetli kolor czerwony na wizualizacji. Gdy zgięty zostanie dany palec u ręki, palec na modelu w programie również zostanie zgięty. Gdy kąty zgięcia oraz kolory nacisku będą się zgadzać, znaczyć to będzie, że aplikacja działa poprawnie. Dane te mogą być sztucznie symulowane i wysyłane do programu, by istniała możliwość testowania bez istnienia poprawnie działających komponentów systemu.
 \subsubsection{Podział zadań}
 Gidel Dorota:
 \begin{itemize}

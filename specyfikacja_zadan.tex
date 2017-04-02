@@ -111,8 +111,8 @@ Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk
 \subsubsection{Wymagania użytkownika}
 Na rękawiczce powinno znajdować się tyle sensorów aby pomiary były jak najdokładniejsze, lecz nie za dużo aby nie przyćmić potrzebnych danych. Zaproponowane zostało zamontowanie sensorów nacisku (co najmniej 5 - jeden na jeden palec) oraz sensorów ugięcia (co najmniej 5 - jeden na jeden palec). Montaż czujników powinien być na tyle sprawny, aby nie utrudniał ani ograniczał on ruchu palców. Sama rękawiczka powinna być dopasowana do dłoni użytkownika, tutaj proponowane zostało wykonanie rękawiczki w dwóch rozmiarach.
 \subsubsection{Funkcjonalność}
-Do projektu zostanie użyta rękawiczka do biegania, na dłoń prawą. Zapewni ona dobrą zdolność manualną oraz idealne dopasowanie się do dłoni. Rękawiczka będzie tylko w jednym rozmiarze ze względu na dodatkowe nakłądy czasu i pieniędzy potrzebne do jej wykonania. Przez wzgląd na skład grupy wykonawczej, rękawiczka będzie w rozmiarze małym, tj S (7).\\
-Planowane jest użycie 10 czujników nacisku (na każdym palcu po dwa, od strony wewnętrznej dłoni), których rezystancja maleje wraz ze wzrostem siły nacisku oraz 5 czujników ugięć (po jednym na każdy palec, od strony zewnętrznej dłoni), których reystancja rośnie wraz z powiększeniem kąta ugięcia. Czujniki będę przyszyte do rękawiczki a w miejscach najbardziej narażonych na zahaczenia, takie jak koniec palca, przyklejone klejem. \\
+Do projektu zostanie użyta rękawiczka do biegania, na dłoń prawą. Zapewni ona dobrą zdolność manualną oraz skuteczne dopasowanie do dłoni. Rękawiczka będzie tylko w jednym rozmiarze ze względu na dodatkowe nakłądy czasu i pieniędzy potrzebne do jej wykonania. Przez wzgląd na skład grupy wykonawczej, rękawiczka będzie w rozmiarze małym, tj S (7).\\
+Planowane jest użycie 10 czujników nacisku (na każdym palcu po dwa, od strony wewnętrznej dłoni), których rezystancja maleje wraz ze wzrostem siły nacisku oraz 5 czujników ugięć (po jednym na każdy palec, od strony zewnętrznej dłoni), których reystancja rośnie wraz z powiększeniem kąta ugięcia. Czujniki będą przyszyte do rękawiczki a w miejscach najbardziej narażonych na zahaczenia, takie jak koniec palca, przyklejone klejem. \\
 
 \begin{figure}[h!]
 \centering
@@ -137,7 +137,7 @@ Wądrzyk Katarzyna:
     \item montaż czujników do przewodów
 \end{itemize}
 \subsubsection{Potrzebne elementy i kosztorys}
-Do rękawiczki (eękawiczki do biegania czarnej KALENJI) przymocowane będą następujące czujniki:
+Do rękawiczki (rękawiczki do biegania czarnej KALENJI) przymocowane będą następujące czujniki:
 \begin{itemize}
     \item Czujnik nacisku 5mm FSR400, short tail
     \item Czujnik zgięcia FS7954 55mm
@@ -269,8 +269,8 @@ Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk
 Od aplikacji wymagane jest aby w przejrzysty sposób wyświetlała zbierane dane z rękawiczki sensorycznej na modelu dłoni w 3D. Oczekiwane jest aby tworzony był wykres danych w czasie rzeczywistym (z możliwością rozróżnienia na poszczególne czujniki). Wymagane jest także aby po najechaniu myszką na konkretny obszar na modelu dłoni, wyświetlone zostały dokładne dane o tym punkcie (wartość siły, zgięcia).
 \subsubsection{Funkcjinalność}
 Odczyt informacji przez aplikację odbywa się poprzez użycie socketów, dane będą przesyłąne z programu do akwizycji danych. Ciągły strumień danych będzie obierany i przetwarzany z częstotliwością około 25Hz.\\
-Aplikacja obrazuje dane pobierane z rękawiczki sensorycznej na modelu ręki 3D, zmieniając ułożenie palców w zależności od dostarczonych pomiarów. Dodatkowo odczyty z czujników nacisku prezentowane są poprzez zmianę koloru opuszków palców w zależności od siły. Przy maksymalnej sile nacisku na wizualizacji będzie odpowiadał kolor czerwony a minimalnej sile odpowiadać będzie kolor zielony. Zamodelowana zostanie prawa ręka.\\
-Program umożliwia prezentację zmiany odczytów danych na wykresie. Planowany podstawowy zakres informacji obejmuje 30s. \\
+Aplikacja obrazować będzie dane pobierane z rękawiczki sensorycznej na modelu ręki 3D, zmieniając ułożenie palców w zależności od dostarczonych pomiarów. Dodatkowo odczyty z czujników nacisku prezentowane będą poprzez zmianę koloru opuszków palców w zależności od siły. Przy maksymalnej sile nacisku na wizualizacji będzie odpowiadał kolor czerwony a minimalnej sile odpowiadać będzie kolor zielony. Zamodelowana zostanie prawa ręka.\\
+Program umożliwiać będzie prezentację zmiany odczytów danych na wykresie. Planowany podstawowy zakres informacji obejmuje 30s. \\
 W celu uzyskania przejrzystego interfejsu, zastosowane zostanie grupowanie względem typu czujnika. Zrealizowane to zostanie poprzez zakładki, które umożliwiaią szybki dostęp do pożądanych informacji. \\
 Program będzie tworzony w Qt5 na Linuxie.
 \subsubsection{Kryteria ewaluacji}

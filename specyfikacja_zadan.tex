@@ -35,7 +35,7 @@
      \begin{center}
 
     Prowadzący:
-  dr inż. Krzysztof Arent %dorobić inż mgr itd
+  dr inż. Krzysztof Arent
     \end{center}
 
     \vspace*{\stretch{6}}
@@ -51,7 +51,7 @@ Dorota Gidel\\
 Katarzyna Wądrzyk\\
 Ada Weiss\\
 Małgorzata Witka-Jeżewska\\
- }%wpisać indeks
+ }
 \title{SensGlove}
 
 \begin{document}
@@ -189,7 +189,7 @@ Osaba przydzielona do zadania: Dawid Brząkała \\
 Interfejs będzie miał za zadanie odczyt wartości z czujników zgięcia i nacisku z rękawiczki oraz czujników biopotencjałów i przesyłał je w odpowiednim formacie do komputera poprzez kabel USB i wirtualny port COM. Sygnały z czujników zostaną wzmocnione przez układ ze wzmacniaczami operacyjnymi, który również zadba o to, aby wartości sygnałów wyjściowych mieściły się w zakresie pracy przetwornika ADC mikrokontrolera (0 - 3.3V). Zasilanie układu pochodzić będzie ze złącza USB.
 \subsubsection{Schemat ideowy}
 % plik "schemat ideowy interfejsu.png" nie wiem jak się wstawia obrazki
-\begin{figure}[ht!]
+\begin{figure}[h!]
 \centering
 \includegraphics[width=6cm]{schemat_ideowy_interfejsu.png}
 \label{fig:interfejs}
@@ -201,7 +201,7 @@ Interfejs będzie miał za zadanie odczyt wartości z czujników zgięcia i naci
 \subsubsection{Potrzebne elementy}
 
 Lista elementów wraz z przewidywanymi kosztami została przedstawiona w tabeli \ref{tab:interfejs}.
-\begin{table}[ht!]
+\begin{table}[h!]
 \centering
 \caption{ Lista potrzebnych elementów}
 
@@ -223,19 +223,37 @@ razem & & 131.41zł \\\hline
 
 \subsubsection{Kryteria ewaluacji}
 Aby sprawdzić poprawność odczytu sygnałów przez przetworniki ADC czujniki będą symulowane poprzez potencjometry, a uzyskane wyniki przesłane do komputera. Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitownia portów COM.
+
 \subsection{Program do akwizycji danych}
 Osoby przydzielone do zadania: Ada Weiss, Małgorzata Witka-Jeżewska\\
-Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwoć rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez określony czas (prawdopodobnie 2s jak w dotychczasowych badaniach miosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu dane będą dodawane do bazy pomiarów. Oprogramowanie będzie tworzone w systemie Linux z użyciem Qt kreatora.
+Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwoć rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez określony czas (prawdopodobnie 2s jak w dotychczasowych badaniach miosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu uruchomiony będzie skrypt. Oprogramowanie będzie tworzone w systemie Linux z użyciem Qt kreatora.
 \subsubsection{Format danych}
-Dane zapisywane będą w katalogach oznaczających nazwę ruchu, wewnątrz tworzone będą foldery dla osoby, która wykonała ruch oraz pliki tekstowe, których nazwy będą wskazywały na nr próby, która została zapisana.
+Dane odbierane będą w postaci stringa z zakodowanymi heksadecymalnie wartosciami odczytu z kolejnych czuników. Do sprawdzenia poprawnosci przesyłu wykorzystana będzie suma kontrolna.
 \subsubsection{Kryteria ewaluacji}
 Symulacja danych wejciowych: \\
 Zaprogramujemy płytkę STM32L476G Discovery tak aby nadawała przykładowe dane w ustalonym przez nas formacie i podłączymy ją do USB komputera.  \\
 Poprawnosc danych wyjsciowych:\\
 Wykorzystamy również przykładowy program klient odbierający dane wysyłane z napisanego programu (serwera) w celu ocenienia poprawnosci przesyłania danych.\\
-Należy również sprawdzić poprawnoć danych zapisywanych do plików tekstowych będących podstawą do stworzenia bazy ruchów.
+
 \subsubsection{Schemat ideowy}
-%diagram UML, klasy to ja nie wiem czy już się da cos okreslic
+\begin{figure}[h!]
+\label{fig:program}
+\centering
+\includegraphics[width=10cm]{programdia.png}
+\caption{Schemat ideowy działania programu}
+\end{figure}
+\subsubsection{Podział zadań}
+
+Ada Weiss:
+\begin{itemize}
+\item odczytywanie danych z portu COM
+\item przesyłanie danych za pomocą socketu
+\end{itemize}
+Małgorzata Witka-Jeżewska:
+\begin{itemize}
+    \item stworzenie odpowiednich okien i odpowiednich metod z nimi stowarzyszonych
+\end{itemize}
+
 
 % potrzebne biblioteki
 % schematy ideowe

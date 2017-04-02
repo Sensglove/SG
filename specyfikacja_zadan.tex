@@ -159,10 +159,10 @@ Dokumentacje czujników:
  \hline
     1 & czujnik ugięcia & 5 & 40,99 & 204,95 \\
     2 & dotykowy czujnik nacisku & 10 & 25,26 & 252,60 \\
-    3 & rękawiczka & 1 & 20 & 20 \\
+    3 & rękawiczka & 1 & 10,99 & 19,99 \\
     4 & przewody & 3 & 0,50 & 1,50 \\
     \hline
-    5 & suma & & & 479,05\\
+    5 & suma & & & 479,04\\
     \hline
 \end{tabular}
 \label{tab:rekawiczka}
@@ -249,7 +249,7 @@ Osoby przydzielone do zadania: Beata Berajter, Dorota Gidel
 \subsubsection{Wymagania użytkownika}
 Stworzenie bazy danych ma na celu zebranie oraz odpowiednie uporządkowanie zebranych danych pomiarowych. Baza powinna być utworzona w sposób przemyślany i logiczny.
 \subsubsection{Funkcjonalność}
-Dane zawierające odczyty z czujników i wartości miopotencjałow zapisywane będę w formie plików tekstowych. Zdecydowano się na tekstowy format bazy danych, ponieważ istnieje prawdopodobieństwo, że będą one przekazane innym jednostkom, które preferują taką formę i w ten sposób najlepiej się będzie można zsynchronizować. Baza danych zawierać będzie katalogi odpowiadające osobom badanym (wykonującym eksperymenty w rękawiczce). W każdym z tych katalogów znajdować będą się podkatalogi z wykonywanymi typami badanych ruchów/chwytów. Z kolei w tych podkatalogach tworzone będą kolejne trzy podkatalogi, jeden zawierający dane z elektrod, drugi z czujników nacisku, trzeci z czujników zgięcia na rękawiczce sensorycznej. W tych folderach znajdować się będą pliki tekstowe z pomiarami. Każdy plik tekstowy zorganizowany będzie w formie macierzy. Zakładając że pomiar będzie trwał 2 sekundy, a odczyt z czujników i elektrod będzie następował z częstotliwością 1kHz, plik taki będzie zawierał 2000 lini (1000*2). Ilość kolumn w danym pliku to liczba dostępnych czujników/elektrod z których pobieramy dane. Planowane jest 8 elektrod, 10 czujników nacisku i 5 czujników zgięcia, więc pliki te odpowiednio zawierać będą macierze 2000 wierszy i 8 kolumn, 2000 wierszy i 10 kolumn, 2000 wierszy i 5 kolumn. Każdy kolejny zapisany pomiar (2 sekundowy) zapisywany będzie w pliku którego nazwa będzie informować o tym który jest to pomiar z kolei (dla danej osoby i typu ruchu) i dokłądnej dacie zapisania pomiaru do bazy\\
+Dane zawierające odczyty z czujników i wartości miopotencjałow zapisywane będą w formie plików tekstowych. Zdecydowano się na tekstowy format bazy danych, ponieważ istnieje prawdopodobieństwo, że będą one przekazane innym jednostkom, które preferują taką formę i w ten sposób najlepiej się będzie można zsynchronizować. Baza danych zawierać będzie katalogi odpowiadające osobom badanym (wykonującym eksperymenty w rękawiczce). W każdym z tych katalogów znajdować będą się podkatalogi z wykonywanymi typami badanych ruchów/chwytów. Z kolei w tych podkatalogach tworzone będą kolejne trzy podkatalogi, jeden zawierający dane z elektrod, drugi z czujników nacisku, trzeci z czujników zgięcia na rękawiczce sensorycznej. W tych folderach znajdować się będą pliki tekstowe z pomiarami. Każdy plik tekstowy zorganizowany będzie w formie macierzy. Zakładając że pomiar będzie trwał 2 sekundy, a odczyt z czujników i elektrod będzie następował z częstotliwością 1kHz, plik taki będzie zawierał 2000 lini (1000*2). Ilość kolumn w danym pliku to liczba dostępnych czujników/elektrod z których pobieramy dane. Planowane jest 8 elektrod, 10 czujników nacisku i 5 czujników zgięcia, więc pliki te odpowiednio zawierać będą macierze 2000 wierszy i 8 kolumn, 2000 wierszy i 10 kolumn, 2000 wierszy i 5 kolumn. Każdy kolejny zapisany pomiar (2 sekundowy) zapisywany będzie w pliku którego nazwa będzie informować o tym który jest to pomiar z kolei (dla danej osoby i typu ruchu) i dokłądnej dacie zapisania pomiaru do bazy\\
 Baza danych będzie współpracować z programem do akwizycji danych. Napisana zostanie funkcja, która wywoływana będzie przez ten program. Jej celem będzie, przy podanych odpowiednich argumentach, utworzenie folderów i pliku tekstowego z pomiarami w odpowiednim miejscu w bazie danych. Powstanie również funkcja pozwalająca na odnalezienie pożądanego pomiaru, wykonanego na danej osobie i podanej dacie.
 
 \begin{figure}[ht!]
@@ -274,7 +274,7 @@ Dorota Gidel:
 Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk
 \subsubsection{Wymagania użytkownika}
 Od aplikacji wymagane jest aby w przejrzysty sposób wyświetlała zbierane dane z rękawiczki sensorycznej na modelu dłoni w 3D. Oczekiwane jest aby tworzony był wykres danych w czasie rzeczywistym (z możliwością rozróżnienia na poszczególne czujniki). Wymagane jest także aby po najechaniu myszką na konkretny obszar na modelu dłoni, wyświetlone zostały dokładne dane o tym punkcie (wartość siły, zgięcia).
-\subsubsection{Funkcjinalność}
+\subsubsection{Funkcjonalność}
 Odczyt informacji przez aplikację odbywa się poprzez użycie socketów, dane będą przesyłąne z programu do akwizycji danych. Ciągły strumień danych będzie obierany i przetwarzany z częstotliwością około 25Hz.\\
 Aplikacja obrazować będzie dane pobierane z rękawiczki sensorycznej na modelu ręki 3D, zmieniając ułożenie palców w zależności od dostarczonych pomiarów. Dodatkowo odczyty z czujników nacisku prezentowane będą poprzez zmianę koloru opuszków palców w zależności od siły. Przy maksymalnej sile nacisku na wizualizacji będzie odpowiadał kolor czerwony a minimalnej sile odpowiadać będzie kolor zielony. Zamodelowana zostanie prawa ręka.\\
 Program umożliwiać będzie prezentację zmiany odczytów danych na wykresie. Planowany podstawowy zakres informacji obejmuje 30s. \\

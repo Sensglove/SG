@@ -125,8 +125,6 @@ Planowane jest użycie 10 czujników nacisku (na każdym palcu po dwa, od strony
 Skończona rękawiczka, pozwalać będzie na wykonywanie ruchów ograniczonych jedynie rozmiarem dłoni użytkownika (dostępny będzie tylko jeden rozmiar rękawiczki) oraz przewodów łączących czujniki z płytką. Będzie ona odporna na upadki z wysokości oraz na wielokrotne ściąganie i zakładanie jej. Czujniki będę przymocowane tak aby podczas energicznego machania pozostały one na swoim miejscu.\\
 Sprawność czujników sprawdzona będzie poprzez zmierzenie miernikiem rezystancji. Przy zgięciu palca rezystancja czujnika ugięcia będzie wzrastać a podczas nacisku rezystancja na czujnikach będzie maleć. Po podłączeniu wszystkiego do płytki sprawdzone będzie czy wysyłany jest sygnał z czujników, celem tego testu będzie sprawdzenie czy połączenie z płytką jest poprawne.
 \subsubsection{Podział zadań}
-Podział zadań w obrębie grupy Gidel Dorota, Katarzyna Wądrzyk, wygląda następująco:\\
-Gidel Dorota:
 \begin{itemize}
     \item przyszycie czujników do rękawiczki
     \item przyszycie okablowania do rękawiczki
@@ -251,8 +249,8 @@ Osoby przydzielone do zadania: Beata Berajter, Dorota Gidel
 \subsubsection{Wymagania użytkownika}
 Stworzenie bazy danych ma na celu zebranie oraz odpowiednie uporządkowanie zebranych danych pomiarowych. Baza powinna być utworzona w sposób przemyślany i logiczny.
 \subsubsection{Funkcjonalność}
-Dane zawierające odczyty z czujników i wartości miopotencjałow zapisywane będę w formie plików tekstowych. Zdecydowano się na tekstowy format bazy danych, ponieważ istnieje prawdopodobieństwo, że będą one przekazane innym jednostkom, które preferują taką formę i w ten sposób najlepiej się będzie można zsynchronizować. Baza danych zawierać będzie katalogi odpowiadające osobom badanym (wykonującym eksperymenty w rękawiczce). W każdym z tych katalogów znajdować będą się podkatalogi z wykonywanymi typami badanych ruchów/chwytów. Z kolei w tych podkatalogach tworzone będą kolejne trzy podkatalogi, jeden zawierający dane z elektrod, drugi z czujników nacisku, trzeci z czujników zgięcia na rękawiczce sensorycznej. W tych folderach znajdować się będą pliki tekstowe z pomiarami. Każdy plik tekstowy zorganizowany będzie w formie macierzy. Zakładając że pomiar będzie trwał 2 sekundy, a odczyt z czujników i elektrod będzie następował z częstotliwością 1kHz, plik taki będzie zawierał 2000 lini (1000*2). Ilość kolumn w danym pliku to liczba dostępnych czujników/elektrod z których pobieramy dane. Planowane jest 8 elektrod, 10 czujników nacisku i 5 czujników zgięcia, więc pliki te odpowiednio zawierać będą macierze 2000 wierszy i 8 kolumn, 2000 wierszy i 10 kolumn, 2000 wierszy i 5 kolumn. Każdy kolejny zapisany pomiar (2 sekundowy) zapisywany będzie w pliku którego nazwa będzie informować o tym który jest to pomiar z kolei (dla danej osoby i typu ruchu). \\
-Baza danych będzie współpracować z programem do akwizycji danych. Napisana zostanie funkcja, która wywoływana będzie przez ten program. Jej celem będzie, przy podanych odpowiednich argumentach, utworzenie folderów i pliku tekstowego z pomiarami w odpowiednim miejscu w bazie danych.
+Dane zawierające odczyty z czujników i wartości miopotencjałow zapisywane będę w formie plików tekstowych. Zdecydowano się na tekstowy format bazy danych, ponieważ istnieje prawdopodobieństwo, że będą one przekazane innym jednostkom, które preferują taką formę i w ten sposób najlepiej się będzie można zsynchronizować. Baza danych zawierać będzie katalogi odpowiadające osobom badanym (wykonującym eksperymenty w rękawiczce). W każdym z tych katalogów znajdować będą się podkatalogi z wykonywanymi typami badanych ruchów/chwytów. Z kolei w tych podkatalogach tworzone będą kolejne trzy podkatalogi, jeden zawierający dane z elektrod, drugi z czujników nacisku, trzeci z czujników zgięcia na rękawiczce sensorycznej. W tych folderach znajdować się będą pliki tekstowe z pomiarami. Każdy plik tekstowy zorganizowany będzie w formie macierzy. Zakładając że pomiar będzie trwał 2 sekundy, a odczyt z czujników i elektrod będzie następował z częstotliwością 1kHz, plik taki będzie zawierał 2000 lini (1000*2). Ilość kolumn w danym pliku to liczba dostępnych czujników/elektrod z których pobieramy dane. Planowane jest 8 elektrod, 10 czujników nacisku i 5 czujników zgięcia, więc pliki te odpowiednio zawierać będą macierze 2000 wierszy i 8 kolumn, 2000 wierszy i 10 kolumn, 2000 wierszy i 5 kolumn. Każdy kolejny zapisany pomiar (2 sekundowy) zapisywany będzie w pliku którego nazwa będzie informować o tym który jest to pomiar z kolei (dla danej osoby i typu ruchu) i dokłądnej dacie zapisania pomiaru do bazy\\
+Baza danych będzie współpracować z programem do akwizycji danych. Napisana zostanie funkcja, która wywoływana będzie przez ten program. Jej celem będzie, przy podanych odpowiednich argumentach, utworzenie folderów i pliku tekstowego z pomiarami w odpowiednim miejscu w bazie danych. Powstanie również funkcja pozwalająca na odnalezienie pożądanego pomiaru, wykonanego na danej osobie i podanej dacie.
 
 \begin{figure}[ht!]
 \label{fig:baza_danych}
@@ -262,6 +260,15 @@ Baza danych będzie współpracować z programem do akwizycji danych. Napisana z
 \end{figure}
 \subsubsection{Kryteria ewaluacji}
 Do sprawdzenie poprawności działania bazy danych, zostanie wywołana funkcja obsługi bazy z przykłądowymi argumentami i danymi z czujników. Zarówno wejściowym, jak i wyjściowym efektem są pliki tekstowe. Zostaną utworzone przykładowe, testowe pliki, dzięki którym, będzie można porównać oraz sprawdzić poprawność przetworzonych danych.
+\subsubsection{Podział zadań}
+Beata Berajter:
+\begin{itemize}
+    \item funkcja/skrypt wyszukujący pomiar z bazy danych
+\end{itemize}
+Dorota Gidel:
+\begin{itemize}
+    \item funkcja/skrypt zapisujący pomiar do bazy danych
+\end{itemize}
 
 \subsection{Wizualizacja danych}
 Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk

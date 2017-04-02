@@ -6,6 +6,8 @@
 \usepackage{natbib}
 \usepackage{graphicx}
 \usepackage{geometry}
+\usepackage{float}
+
 \newgeometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
 
 \makeatletter
@@ -126,17 +128,38 @@ Osaba przydzielona do zadania: Dawid Brząkała \\
 Interfejs będzie miał za zadanie odczyt wartości z czujników zgięcia i nacisku z rękawiczki oraz czujników biopotencjałów i przesyłał je w odpowiednim formacie do komputera poprzez kabel USB i wirtualny port COM. Sygnały z czujników zostaną wzmocnione przez układ ze wzmacniaczami operacyjnymi, który również zadba o to, aby wartości sygnałów wyjściowych mieściły się w zakresie pracy przetwornika ADC mikrokontrolera (0 - 3.3V). Zasilanie układu pochodzić będzie ze złącza USB.
 \subsubsection{Schemat ideowy}
 % plik "schemat ideowy interfejsu.png" nie wiem jak się wstawia obrazki
+\begin{figure}[ht!]
+\centering
+\includegraphics[width=6cm]{schemat_ideowy_interfejsu.png}
+\label{fig:interfejs}
+\caption {Schemat ideowy interfejsu sprzętowego}
+
+\end{figure}
+
+
 \subsubsection{Potrzebne elementy}
-\begin{tabular}{111}
-rezystory 10kOhm & 20 & 0.60zł/10szt \\ % 10kOhm jest do czujników nacisku, do zgięcia i biopotencjałów mogą być potrzebne inne
+
+Lista elementów wraz z przewidywanymi kosztami została przedstawiona w tabeli \ref{tab:interfejs}.
+\begin{table}[ht!]
+\centering
+\caption{ Lista potrzebnych elementów}
+
+\begin{tabular}{|r|l|l|} \hline
+
+element & ilosc & cena\\ \hline
+rezystory 10kOhm & 20 & 0.60zł/10szt \\ 
 listwa kołkowa 1x40 pin & 1 & 0.69zł/szt \\
 listwa kołkowa 2x40 pin & 1 & 1.00zł/szt \\
 wzmacniacz operacyjny TL084 & 6 & 8,34zł/szt \\
 dioda zenera 3V3 & 24 & 0.12zł/szt \\
 STM32F3 - DISCOVERY - Cortex-M4F & 1 & 102.90zł/szt \\
-laminat światłoczuły 100x160x1.5mm dwustronny + & 1 & 15.00zł/szt \\ % jeśli wytrawiamy sami, jak będziemy zamawiać będzie trzeba zmienić
-razem & & 131.41zł
+laminat światłoczuły 100x160x1.5mm dwustronny + & 1 & 15.00zł/szt \\\hline % jeśli wytrawiamy sami, jak będziemy zamawiać będzie trzeba zmienić
+razem & & 131.41zł \\\hline
 \end{tabular}
+\label{tab:interfejs}
+\end{table}
+
+
 \subsubsection{Kryteria ewaluacji}
 Aby sprawdzić poprawność odczytu sygnałów przez przetworniki ADC czujniki będą symulowane poprzez potencjometry, a uzyskane wyniki przesłane do komputera. Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitownia portów COM.
 \subsection{Program do akwizycji danych}

@@ -222,18 +222,18 @@ razem & & 131.41zł \\\hline
 
 
 \subsubsection{Kryteria ewaluacji}
-Aby sprawdzić poprawność odczytu sygnałów przez przetworniki ADC czujniki będą symulowane poprzez potencjometry, a uzyskane wyniki przesłane do komputera. Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitownia portów COM.
+Aby sprawdzić poprawność odczytu sygnałów przez przetworniki ADC czujniki będą symulowane poprzez potencjometry, a uzyskane wyniki przesłane do komputera. Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitowania portów COM.
 
 \subsection{Program do akwizycji danych}
 Osoby przydzielone do zadania: Ada Weiss, Małgorzata Witka-Jeżewska\\
-Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwoć rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez określony czas (prawdopodobnie 2s jak w dotychczasowych badaniach miosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu uruchomiony będzie skrypt. Oprogramowanie będzie tworzone w systemie Linux z użyciem Qt kreatora.
+Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwość rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez określony czas (prawdopodobnie 2s jak w dotychczasowych badaniach miosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu uruchomiony będzie skrypt. Oprogramowanie będzie tworzone w systemie Linux z użyciem Qt kreatora.
 \subsubsection{Format danych}
-Dane odbierane będą w postaci stringa z zakodowanymi heksadecymalnie wartosciami odczytu z kolejnych czuników. Do sprawdzenia poprawnosci przesyłu wykorzystana będzie suma kontrolna.
+Dane odbierane będą w postaci stringa z zakodowanymi heksadecymalnie wartościami odczytu z kolejnych czujników. Do sprawdzenia poprawności przesyłu wykorzystana będzie suma kontrolna.
 \subsubsection{Kryteria ewaluacji}
-Symulacja danych wejciowych: \\
+Symulacja danych wejściowych: \\
 Zaprogramujemy płytkę STM32L476G Discovery tak aby nadawała przykładowe dane w ustalonym przez nas formacie i podłączymy ją do USB komputera.  \\
-Poprawnosc danych wyjsciowych:\\
-Wykorzystamy również przykładowy program klient odbierający dane wysyłane z napisanego programu (serwera) w celu ocenienia poprawnosci przesyłania danych.\\
+Poprawność danych wyjściowych:\\
+Wykorzystamy również przykładowy program klient odbierający dane wysyłane z napisanego programu (serwera) w celu ocenienia poprawności przesyłania danych.\\
 
 \subsubsection{Schemat ideowy}
 \begin{figure}[h!]
@@ -247,7 +247,7 @@ Wykorzystamy również przykładowy program klient odbierający dane wysyłane z
 Ada Weiss:
 \begin{itemize}
 \item odczytywanie danych z portu COM
-\item przesyłanie danych za pomocą socketu
+\item przesyłanie danych za pomocą gniazda
 \end{itemize}
 Małgorzata Witka-Jeżewska:
 \begin{itemize}

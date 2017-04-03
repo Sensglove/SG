@@ -8,7 +8,7 @@
 \usepackage{geometry}
 \usepackage{float}
 
-\newgeometry{tmargin=2.5cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
+\newgeometry{tmargin=2.3cm, bmargin=2.5cm, lmargin=2.5cm, rmargin=2.5cm}
 
 \makeatletter
 \newcommand{\linia}{\rule{\linewidth}{0.4mm}}
@@ -67,7 +67,7 @@ Użytkownik powinien mieć możliwość założenia sprzętu, to znaczy rękawic
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Kryteria ewaluacji}
-Komponenty powinny działać każde z osobna oraz współdziałać jako kompletne stanowisko do pobierania sygnałów i biosygnałów. Użytkownik powinien mieć możliwość wykonywania ruchów w obrębie przynajmnie jednego metra od stanowiska. Rękawiczka pomiarowa powinna mieć umieszczone czujniki w taki sposób, aby nie ograniczała ruchów ani tym bardziej nie krępowała ich. Pomiary przesyłane mają być w czasie rzeczywistym, a ich podgląd zapewnić ma program wizualizujący je.
+Komponenty powinny działać każde z osobna oraz współdziałać jako kompletne stanowisko do pobierania sygnałów i biosygnałów. Użytkownik powinien mieć możliwość wykonywania ruchów w obrębie przynajmniej jednego metra od stanowiska. Rękawiczka pomiarowa powinna mieć umieszczone czujniki w taki sposób, aby nie ograniczała ruchów ani tym bardziej nie krępowała ich. Pomiary przesyłane mają być w czasie rzeczywistym, a ich podgląd zapewnić ma program wizualizujący je.
 \begin{enumerate}
 	\item Założenie rękawiczki.
 	\item Poruszanie palcami.
@@ -97,7 +97,7 @@ ZALETY:
     \item Możliwość przesyłania równolegle 16 sygnałów jednocześnie.
     \item Gotowy program korzysający ze sterownika NiDAQ Mx oraz zawierający bibliotekę obsługującą kartę.
 \item Gotowe stanowisko pomiarowe do EMG i MMG.
-\item Możliwość współpracowania z programem Matlab. 
+\item Możliwość współpracowania z programem Matlab.
 \item Wsparcie techniczne.
 \end{enumerate}
 WADY:
@@ -113,7 +113,7 @@ Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk.
 Na rękawiczce powinno znajdować się tyle sensorów, aby pomiary były jak najdokładniejsze, lecz nie za dużo, aby nie przyćmić potrzebnych danych. Zaproponowane zostało zamontowanie sensorów nacisku (co najmniej 5 - jeden na jeden palec) oraz sensorów ugięcia (co najmniej 5 - jeden na jeden palec). Umiejscowienie czujników powinno być na tyle odpowiednie, aby nie utrudniały ani ograniczały one ruchów palców. Sama rękawiczka powinna być dopasowana do dłoni użytkownika, tutaj proponowane zostało wykonanie rękawiczki w dwóch rozmiarach.
 \subsubsection{Funkcjonalność}
 Do projektu zostanie użyta rękawiczka do biegania, na dłoń prawą. Zapewni ona dobrą zdolność manualną oraz skuteczne dopasowanie do dłoni. Rękawiczka będzie tylko w jednym rozmiarze ze względu na dodatkowe nakłady czasu i pieniędzy potrzebne do jej wykonania. Przez wzgląd na skład grupy wykonawczej, rękawiczka będzie w rozmiarze małym, tj. S (7).\\
-Planowane jest użycie 10 czujników nacisku (na każdym palcu po dwa, od strony wewnętrznej dłoni), których rezystancja maleje wraz ze wzrostem siły nacisku oraz 5 czujników ugięć (po jednym na każdy palec, od strony zewnętrznej dłoni), których rezystancja rośnie wraz ze zwiększeniem kąta ugięcia. Czujniki będą przyszyte do rękawiczki, a w miejscach najbardziej narażonych na zahaczenia, takie jak koniec palca, przyklejone klejem. \\
+Planowane jest użycie 10 czujników nacisku (na każdym palcu po dwa, od strony wewnętrznej dłoni), których rezystancja maleje wraz ze wzrostem siły nacisku oraz 5 czujników ugięć (po jednym na każdy palec, od strony zewnętrznej dłoni), których rezystancja rośnie wraz ze zwiększeniem kąta ugięcia. Czujniki będą przyszyte do rękawiczki, a w miejscach najbardziej narażonych na zahaczenia, takie jak koniec palca, przyklejone klejem.
 
 \begin{figure}[h!]
 \centering
@@ -156,10 +156,9 @@ Dokumentacje czujników:
 \begin{itemize}
   \item czujnik ugięcia: electropark.pl/attachment.php?id\textit{\_}attachment=850
   \item czujnik nacisku: electropark.pl/attachment.php?id\textit{\_}attachment=1834
-
 \end{itemize}
 
-\begin{table}[ht!]
+\begin{table}[h!]
 \centering
 \caption{Kosztorys elementów do rękawiczki sensorycznej}
 \begin{tabular}{|c|l|c|c|c|}
@@ -202,7 +201,7 @@ Interfejs będzie miał za zadanie odczyt wartości z czujników zgięcia i naci
 \subsubsection{Schemat ideowy}
 \begin{figure}[h!]
 \centering
-\includegraphics[width=6cm]{schemat_ideowy_interfejsu.png}
+\includegraphics[width=5.5cm]{schemat_ideowy_interfejsu.png}
 \label{fig:interfejs}
 \caption {Schemat ideowy interfejsu sprzętowego}
 \end{figure}
@@ -254,7 +253,7 @@ Brząkała Dawid:
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Program do akwizycji danych}
 Osoby przydzielone do zadania: Ada Weiss, Małgorzata Witka-Jeżewska.\\
-Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwość rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez określony czas (prawdopodobnie 2s jak w dotychczasowych badaniach miosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu uruchomiony będzie skrypt. Oprogramowanie będzie tworzone w systemie Linux z użyciem Qt kreatora.
+Zadaniem programu będzie odczyt danych przesyłanych z mikrokontrolera z portu USB komputera. Użytkownik po uruchomieniu programu będzie miał możliwość rozpoczęcia procesu akwizycji danych. Dane będą wczytywane przez określony czas (prawdopodobnie 2s jak w dotychczasowych badaniach miosygnałów z przedramienia, co pozwoliłoby na synchronizację tych pomiarów) odszyfrowywane i przesyłane do programu do tworzenia wizualizacji rękawiczki i danych z sensorów z wykorzystaniem socketów. Dodatkowo program będzie umożliwiał użytkownikowi wybór typu ruchu który jest obecnie wykonywany. Każdorazowo po wykonanym pomiarze użytkownik będzie musiał zdecydować czy dany pomiar zapisać czy go odrzucić. W przypadku zapisu uruchomiony będzie skrypt. Oprogramowanie będzie tworzone w systemie Linux z użyciem Qt Creatora.
 \subsubsection{Format danych}
 Dane odbierane będą w postaci stringa z zakodowanymi heksadecymalnie wartościami odczytu z kolejnych czujników. Do sprawdzenia poprawności przesyłu wykorzystana będzie suma kontrolna.
 \subsubsection{Kryteria ewaluacji}

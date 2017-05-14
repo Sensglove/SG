@@ -1,0 +1,27 @@
+var searchData=
+[
+  ['b',['b',['../jquery_8js.html#aa4026ad5544b958e54ce5e106fa1c805',1,'b():&#160;jquery.js'],['../jquery_8js.html#a2fa551895933fae935a0a6b87282241d',1,'b(function(){if(!b.support.reliableMarginRight){b.cssHooks.marginRight={get:function(bw, bv){var e;b.swap(bw,{display:&quot;inline-block&quot;}, function(){if(bv){e=Z(bw,&quot;margin-right&quot;,&quot;marginRight&quot;)}else{e=bw.style.marginRight}});return e}}}}):&#160;jquery.js']]],
+  ['b_5f0',['B_0',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa47289a31fc82b611270f1f065dd29374',1,'transparam.hh']]],
+  ['b_5f110',['B_110',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fad6c9bbc6b9d05dfce96cc12c70190b53',1,'transparam.hh']]],
+  ['b_5f115200',['B_115200',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fae5aff27725ed62df17a9d52c9435d0d5',1,'transparam.hh']]],
+  ['b_5f1200',['B_1200',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fae3f5102fc8661e8b758980d442c11b8e',1,'transparam.hh']]],
+  ['b_5f134',['B_134',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa6741f347183b1cc2b8e40eb83a2555c2',1,'transparam.hh']]],
+  ['b_5f150',['B_150',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa0005d784524361a5cdebe194bc9a7e95',1,'transparam.hh']]],
+  ['b_5f1800',['B_1800',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa3a49add2b8f9e87593226dc34583f5d0',1,'transparam.hh']]],
+  ['b_5f19200',['B_19200',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa4ecf44e3017ea2b99239d127250289d1',1,'transparam.hh']]],
+  ['b_5f200',['B_200',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa510049aa4782215852025c13fd141efc',1,'transparam.hh']]],
+  ['b_5f230400',['B_230400',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa9ec9266a076b069458fcabcac21f748f',1,'transparam.hh']]],
+  ['b_5f2400',['B_2400',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa2898cf1c1e6cdb0b7fc6fff5c142c4ba',1,'transparam.hh']]],
+  ['b_5f300',['B_300',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fabd0f221fb68bcb918831d4eb9d5e2e53',1,'transparam.hh']]],
+  ['b_5f38400',['B_38400',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288faba0b508458bf2a54509bb8a20478ca93',1,'transparam.hh']]],
+  ['b_5f4800',['B_4800',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa27a92d1ac239b3d44e3a8fc27b6b039f',1,'transparam.hh']]],
+  ['b_5f50',['B_50',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa9401cafe870d964773dd29c41dd9725e',1,'transparam.hh']]],
+  ['b_5f57600',['B_57600',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa499f4f816c2ffec705d374891bc6eb51',1,'transparam.hh']]],
+  ['b_5f600',['B_600',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288faad53e0d4baaafd1d93514a739f25d89e',1,'transparam.hh']]],
+  ['b_5f75',['B_75',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fa677772bcffc885d68682ea2e57a96369',1,'transparam.hh']]],
+  ['b_5f9600',['B_9600',['../transparam_8hh.html#aaaf70130106e45f329823bb7383b288fae7bf4de131e0edb182e39d87d3027018',1,'transparam.hh']]],
+  ['bartim',['bartim',['../class_okno.html#a0c69b007d741152d74b5d3d498289a48',1,'Okno']]],
+  ['bb',['bb',['../jquery_8js.html#a1d6558865876e1c8cca029fce41a4bdb',1,'jquery.js']]],
+  ['bq',['bq',['../jquery_8js.html#af6ee77c71b2c89bdb365145ac5ad1219',1,'jquery.js']]],
+  ['bs',['bs',['../jquery_8js.html#ae77642f8ef73fb9c20c2a737d956acda',1,'jquery.js']]]
+];

@@ -142,7 +142,7 @@ else return false;
 Okno::Okno(QWidget *parent) : QWidget(parent), start_flag(false), desk_portu(0), read_thread(this,this)//, write_thread(this,this)
 {
 
-    this->setGeometry(200, 200, 300, 200);
+    this->setGeometry(300, 300, 300, 200);
     timer=new QTimer;
     save_flag=false;
     measure_flag=false;
@@ -180,32 +180,32 @@ QVBoxLayout *vlayout=new QVBoxLayout(this);
 
 name=new QLineEdit(this);
 name_label=new QLabel("Name:");
-QVBoxLayout *names_layout=new QVBoxLayout(this);
+QVBoxLayout *names_layout=new QVBoxLayout();
 names_layout->addWidget(name_label);
 names_layout->addWidget(name);
 //name_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 name->setDisabled(true);
 
 
-QHBoxLayout *acceptance_layout=new QHBoxLayout(this);
+QHBoxLayout *acceptance_layout=new QHBoxLayout();
 acceptance_layout->addWidget(accept);
 acceptance_layout->addWidget(reject);
 accept->setDisabled(true);
 reject->setDisabled(true);
 
-QHBoxLayout *usb_layout= new QHBoxLayout(this);
+QHBoxLayout *usb_layout= new QHBoxLayout();
 usb_layout->addWidget(usb_label);
 usb_layout->addWidget(usb_choice);
 
 //move_name->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 
 move_name=new QLabel("Choose type:");
-QVBoxLayout *move_type = new QVBoxLayout(this);
+QVBoxLayout *move_type = new QVBoxLayout();
 move_type->addWidget(move_name);
 move_type->addWidget(type_of_movement);
 
 
-QHBoxLayout *choice_layout=new QHBoxLayout(this);
+QHBoxLayout *choice_layout=new QHBoxLayout();
 
 
 choice_layout->addLayout(move_type);
@@ -220,7 +220,7 @@ vlayout->addLayout(acceptance_layout);
 
     vlayout->addWidget(progress_bar);
 
-    this->setLayout(vlayout);
+this->setLayout(vlayout);
 
     connect(timer, SIGNAL(timeout()),this, SLOT(setMeasureIcons()));
     connect(bartim, SIGNAL(timeout()),this, SLOT(SetProgressBar()));
@@ -354,12 +354,11 @@ void Okno::on_reject_clicked()
  * zamknięcie watku read_thread
  */
 
-void Okno::closeEvent(){
+void Okno::closeEvent(QCloseEvent *clevent){
 
-    cout << "Zamykanie ...." << endl;
     endReadThread();
     waitReadThread();
 
-
 }
+
 

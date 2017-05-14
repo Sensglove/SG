@@ -1,30 +1,20 @@
-NAZWA_APLIKACJI=d_a
+NAZWA_APLIKACJI=SensGlove-data_acquisition
 URUCHOMIENIE_APLIKACJI=./${NAZWA_APLIKACJI}
-ZRODLA_PROJEKTU=`/bin/pwd`/src/*.cpp `/bin/pwd`/inc/*.cpp
-PODSTAWIENIA=OBJECTS_DIR=${KATALOG_OBJ}\
-             INCLUDEPATH=inc\
-             MOC_DIR=${KATALOG_MOC}\
-             RCC_DIR=./rcc\
-             QT+=widgets\
-             QMAKE_CXXFLAGS+=-std=c++11
+ZRODLA_PROJEKTU=src/*.cpp inc/*.hh
+PODSTAWIENIA=OBJECTS_DIR=${KATALOG_OBJ} QMAKE_CXXFLAGS+=-std=c++11 QT+=widgets
 
-KATALOG_OBJ=./obj
-KATALOG_MOC=./moc
 
-CPPFLAGS=-Wall -pedantic -Iinc -Iinc/rs232
-LFLAGS=-Wall
+
+KATALOG_OBJ=./out/obj
+KATALOG_MOC=./out/moc
 
 __start__: __sprawdz_Qt__ ${NAZWA_APLIKACJI}
-	#rm -f core*; ${URUCHOMIENIE_APLIKACJI}
-	@echo
-	@echo " Utworzono aplikacje:  odbiornik-qt (nasluchuje na porcie /dev/ttyUSB1)"
-	@echo "                       nadawanie    (transmituje do portu /dev/ttyUSB0)"
-	@echo
+	rm -f core*; ${URUCHOMIENIE_APLIKACJI}
 
 __sprawdz_Qt__: __sprawdz_qmake__
 	@if qmake -v | grep 'ver.*4\.[0-9]*\.[0-9]*' > /dev/null;\
          then exit 0;\
-         else echo; echo " Brak biblioteki Qt w wersji 5.x.x";\
+         else echo; echo " Brak biblioteki Qt w wersji 4.x.x";\
               echo;  exit 1;\
         fi
 
@@ -37,7 +27,7 @@ __sprawdz_qmake__:
         fi
 
 
-${NAZWA_APLIKACJI}: Makefile.app  __sprawdz__ 
+${NAZWA_APLIKACJI}: Makefile.app __sprawdz__
 
 __sprawdz__:
 	make -f Makefile.app
@@ -56,9 +46,7 @@ __usun_pro__:
 	rm -f pro/${NAZWA_APLIKACJI}.pro
 
 clean:
-	rm -f nadawanie
 	make -f Makefile.app clean
-
 
 cleanall: clean
 	rm -f ${NAZWA_APLIKACJI}
@@ -71,6 +59,7 @@ cleantotally: __clean_auxiliary_files__ cleanall
 	rm -f  Makefile.app
 	rm -fr ${KATALOG_MOC} ${KATALOG_OBJ}
 	rm -rf pro/
+	rm -rf out
 
 help:
 	@echo "Podcele:"

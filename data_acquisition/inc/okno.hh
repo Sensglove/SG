@@ -95,7 +95,7 @@ private:
 
 public:
 
-    explicit Okno(QWidget *parent = 0);
+    Okno(QWidget *parent );
     /*!
      * \brief setDeskPort
      * \param DeskPortu
@@ -117,6 +117,10 @@ public:
      */
     void waitReadThread(){read_thread.wait();}
     bool SaveToFile();
+    ~Okno(){
+
+        delete usb_label;
+    }
 
 signals:
 
@@ -131,7 +135,8 @@ public slots:
     void setMeasureIcons();
     void on_accept_clicked();
     void on_reject_clicked();
-    void closeEvent();
+protected:
+    void closeEvent(QCloseEvent *clevent);
 };
 
 

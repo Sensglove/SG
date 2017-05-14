@@ -95,31 +95,6 @@ bool RS232_Odbierz( int            DeskPortu,
 
 
 
-void TestOdbioru( )
-{
-  int    DeskPortu;
-  
-  if ((DeskPortu = open("/dev/ttyUSB1",O_RDWR | O_NONBLOCK)) < 0) {
-    cerr << ":( Blad otwarcia portu USB1" << endl;  
-    exit(1);
-  }
-  SetTransParam(DeskPortu);
-
-
-  char Znak;
-  int  Rezultat = 0;
-
-  while ((Rezultat = RS232_Odbierz(DeskPortu,Znak)) >= 0) {
-    if (Rezultat > 0) {
-      cout << Znak << flush;
-      continue;
-    }
-    cout << endl << endl
-	 << ":( Przekroczony czas oczekiwania" << endl
-	 << endl;
-  }
-  cout << "Koniec" << endl;
-}
 
 
 

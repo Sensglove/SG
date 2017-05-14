@@ -50,12 +50,14 @@ void Read_Thread::run()
 
     while(start_flag){
     if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 50)){
+        Socket *mySocket=new Socket(0,bufor);
 
       // cout<<bufor<<endl;
        // if(CheckData(bufor){
 if(window->measure_flag==true){
 window->data.push_back(bufor);
 ++sample_nr;
+
 //cout<<sample_nr<<endl;
 /*}
  else
@@ -311,7 +313,7 @@ void Okno::setMeasureIcons()
 void Okno::on_accept_clicked()
 {
 
-
+//mySocket->newConnection();
    if(save_flag) {
        if(!SaveToFile()){
            QMessageBox::StandardButton reply;

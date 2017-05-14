@@ -23,6 +23,7 @@
 #include<QValidator>
 #include"odbieranie.hh"
 #include"transparam.hh"
+#include"socket.hh"
 
 #define LENGTH 97
 #define SAMPLE_AMOUNT 2000
@@ -92,6 +93,7 @@ private:
     QLabel *name_label;
     QLineEdit *name;
     QLabel *move_name;
+   // Socket *mySocket;
 
 public:
 

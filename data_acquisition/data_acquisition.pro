@@ -6,6 +6,7 @@ TEMPLATE = app
 TARGET = 
 DEPENDPATH += .
 INCLUDEPATH += inc/ .
+QT+= network
 
 # Input
 HEADERS +=  inc/transparam.hh  inc/okno.hh inc/odbieranie.hh \

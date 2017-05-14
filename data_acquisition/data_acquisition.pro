@@ -8,5 +8,7 @@ DEPENDPATH += .
 INCLUDEPATH += inc/ .
 
 # Input
-HEADERS +=  inc/transparam.hh  inc/okno.hh inc/odbieranie.hh
-SOURCES +=  src/transparam.cpp  src/okno.cpp  src/odbieranie.cpp  src/main.cpp
+HEADERS +=  inc/transparam.hh  inc/okno.hh inc/odbieranie.hh \
+    inc/socket.hh
+SOURCES +=  src/transparam.cpp  src/okno.cpp  src/odbieranie.cpp  src/main.cpp \
+    src/socket.cpp

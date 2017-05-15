@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include<ustat.h>
-#include <QWidget>
+#include<QWidget>
 #include<QProgressBar>
 #include<QGridLayout>
 #include<QComboBox>
@@ -77,6 +77,7 @@ public:
     Read_Thread read_thread;
     //Write_Thread write_thread;
     QVector<string> data;
+    Socket *mySocket;
 
 private:
     QTimer *timer;
@@ -93,6 +94,7 @@ private:
     QLabel *name_label;
     QLineEdit *name;
     QLabel *move_name;
+
    // Socket *mySocket;
 
 public:

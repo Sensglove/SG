@@ -50,7 +50,7 @@ void Read_Thread::run()
 
     while(start_flag){
     if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 50)){
-        Socket *mySocket=new Socket(0,bufor);
+window->mySocket->write(bufor);
 
       // cout<<bufor<<endl;
        // if(CheckData(bufor){
@@ -227,6 +227,8 @@ this->setLayout(vlayout);
     connect(timer, SIGNAL(timeout()),this, SLOT(setMeasureIcons()));
     connect(bartim, SIGNAL(timeout()),this, SLOT(SetProgressBar()));
 
+    mySocket=new Socket(nullptr);
+
     QMetaObject::connectSlotsByName(this);
 
 }
@@ -244,6 +246,7 @@ void Okno::on_start_clicked()
 
 
 int    DeskPortu;
+
 string USB;
 USB="/dev/ttyACM"+usb_choice->currentText().mid(3,1).toStdString();
 if ((DeskPortu = open(USB.c_str(),O_RDWR | O_NONBLOCK)) < 0) {
@@ -280,6 +283,7 @@ else{
 
 void Okno::on_start_m_clicked()
 {
+
     measure_flag=true;
     timer->setSingleShot(true);
     bartim->start(19);

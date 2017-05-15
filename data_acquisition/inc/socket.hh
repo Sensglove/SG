@@ -18,16 +18,20 @@ class Socket : public QObject
 {
     Q_OBJECT
 public:
-    explicit Socket(QObject *parent = 0);
-     Socket(QObject *parent, string data);
-string  data1;
+    Socket(QObject *parent = 0);
+   //  Socket(QObject *parent, string data);
+
+    void write(string tmp);
+    void close();
 
 signals:
 
 public slots:
-    void newConnection();
+ //   void newConnection();
+
 private:
     QTcpServer *server;
+  //  QTcpSocket *socket;
 };
 
 #endif // SOCKET_HH

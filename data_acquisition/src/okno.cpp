@@ -114,11 +114,15 @@ bool Okno::SaveToFile(){
 if(save_flag){
 
     cout<<"SAVEFLAG";
-string name_file;
-name_file=type_of_movement->currentText().toStdString()+"_"+name->text().toStdString()+".txt";
+string file_name="tmp.txt";
+string move_name=type_of_movement->currentText().toStdString();
+string name_name=name->text().toStdString();
+string skrypt="sh przeniesPlik ";
+        skrypt=skrypt+file_name+" "+name_name+" "+move_name;
+
 fstream file;
 // cout<<data.size();
-file.open(name_file.c_str(), std::ios::out);
+file.open(file_name.c_str(), std::ios::out);
 if(file.good()){
 
 
@@ -140,6 +144,7 @@ if(file.good()){
     }
    data.clear();
     file.close();
+    system(skrypt.c_str());
     return true;
 
 }

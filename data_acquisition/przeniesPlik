@@ -1,0 +1,42 @@
+#!/bin/bash
+
+#przykladowe wywolanie programu:
+#bash przeniesPlik tymczasowy_plik Dorota 1_RuchB  
+
+if [ -z "$1" ]
+  then
+    echo "Brak argumentu 1, sciezki do pliku"; exit 1
+  else
+    path="$1"
+fi
+
+if [ -z "$2" ]
+  then
+    echo "Brak argumentu drugiego, nazwy osoby badanej"; exit 1
+  else
+    imie="$2"
+fi
+
+if [ -z "$3" ]
+  then
+    echo "Brak argumentu trzeciego, nazwy ruchu"; exit 1
+  else
+    ruch="$3"
+fi
+
+dir="$HOME/baza_danych"
+touch info
+
+if grep -q $dir/$imie/$ruch/ info
+    then
+
+        dane=$(grep $dir/$imie/$ruch/ info | cut -d' ' -f2)
+	dane=$((dane+=1))
+        sed -i -e "s,.*$dir/$imie/$ruch/.*,$dir/$imie/$ruch/ $dane," info
+
+    else
+        dane=1
+        echo "$dir/$imie/$ruch/ $dane" >> info
+fi
+
+mkdir -p $dir/$imie/$ruch/ && cp $path $dir/$imie/$ruch/$dane

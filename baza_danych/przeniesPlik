@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #przykladowe wywolanie programu:
-#bash przeniesPlik tymczasowy_plik Dorota 1_RuchB  
+#bash przeniesPlik tymczasowy_plik Dorota 1_RuchB
 
 if [ -z "$1" ]
   then
@@ -29,12 +29,11 @@ touch info
 
 if grep -q $dir/$imie/$ruch/ info
     then
-        echo found
         dane=$(grep $dir/$imie/$ruch/ info | cut -d' ' -f2)
-        sed -i -e "s,.*$dir/$imie/$ruch/.*,$dir/$imie/$ruch/ $((++dane))," info
+        dane=$((dane=+1))
+        sed -i -e "s,.*$dir/$imie/$ruch/.*,$dir/$imie/$ruch/ $dane," info
 
     else
-        echo not found
         dane=1
         echo "$dir/$imie/$ruch/ $dane" >> info
 fi

@@ -27,11 +27,11 @@ public:
 signals:
 
 public slots:
- //   void newConnection();
+  void newConnection();
 
 private:
     QTcpServer *server;
-  //  QTcpSocket *socket;
+    QTcpSocket *socket;
 };
 
 #endif // SOCKET_HH

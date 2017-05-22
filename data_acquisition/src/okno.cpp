@@ -13,7 +13,9 @@ using namespace std;
  */
 bool Read_Thread::CheckData(QString *wiadomosc){
         bool ok;
-        if(wiadomosc->mid(0,1)!="x"||wiadomosc->length()!=LENGTH) {
+        if(wiadomosc->mid(0,1)!="X"||wiadomosc->length()!=LENGTH) {
+            cout<<"zła dlugosc"<<wiadomosc->length()<<endl;
+            //cout<<wiadomosc->toStdString();
             return false;
         }
         else{
@@ -28,10 +30,12 @@ bool Read_Thread::CheckData(QString *wiadomosc){
         int sum=subString.toInt(&ok,16);
         if (sum==control_sum%(2^16)) return true;
         else {
-            return false;
+            return true;
 
         }
         }
+
+        return false;
 
 }
 
@@ -46,35 +50,45 @@ void Read_Thread::run()
 {
     start_flag=true;
     string bufor;
+
     int sample_nr=0;
 
     while(start_flag){
-    if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 50)){
-window->mySocket->write(bufor);
+  if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 150)){
+    window->mySocket->write(bufor);
 
-      // cout<<bufor<<endl;
-       // if(CheckData(bufor){
+     QString *buf= new QString(bufor.c_str());
+  if(CheckData(buf)){
+          window->mySocket->write(bufor);
+
+          // cout<<bufor.length()<<endl;
+
 if(window->measure_flag==true){
 window->data.push_back(bufor);
 ++sample_nr;
 
 //cout<<sample_nr<<endl;
-/*}
- else
-  QMessageBox::StandardButton reply;
-    reply=QMessageBox::question(this, "Error", "Data was incorrect. Would you like to try again?",
-                                          QMessageBox::Yes|QMessageBox::No,  QMessageBox::Yes);
-    if(reply==QMessageBox::No)
-    {
-        this->close();
-         // exit(1);
-    }
+/*},
+
  */
 if(sample_nr==SAMPLE_AMOUNT) {sample_nr=0; window->measure_flag==false; window->save_flag=true;}
 
 }
 }
-  }}
+
+}
+/*{
+   QMessageBox::StandardButton reply;
+     reply=QMessageBox::question(this, "Error", "Data was incorrect. Would you like to try again?",
+                                           QMessageBox::Yes|QMessageBox::No,  QMessageBox::Yes);
+     if(reply==QMessageBox::No)
+     {
+         window->close();
+          // exit(1);
+     }
+    }
+
+    */}}
 
 //zapis do socketu
 

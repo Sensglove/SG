@@ -25,7 +25,7 @@
 #include"transparam.hh"
 #include"socket.hh"
 
-#define LENGTH 97
+#define LENGTH 102
 #define SAMPLE_AMOUNT 2000
 
 using namespace std;
@@ -147,3 +147,4 @@ protected:
 
 
 #endif // OKNO_HH
+

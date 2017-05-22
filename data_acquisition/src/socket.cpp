@@ -26,28 +26,30 @@ if(!server->listen(QHostAddress::Any,2666)){
 
 void Socket::write(string tmp)
 {
-
+   // if(server->hasPendingConnections()){
+    tmp=tmp+"\n";
+   // if(server->isListening())
     const char * data=tmp.c_str();
-    QTcpSocket *socket=server->nextPendingConnection();
-  cout<<data<<endl;
+
     socket->write(data);
-
-     socket->flush();
+    socket->flush();
     socket->waitForBytesWritten(300);
-    socket->close();
 
+//}
+    //else cout<<"nikt nie odbiera."<<endl;
 }
 
 void Socket::close()
 {
-   // socket->close();
+   socket->close();
 
 }
-/*
+
 void Socket::newConnection(){
 
     socket=server->nextPendingConnection();
+    cout<<"POŁączony"<<endl;
 
 
 }
-*/
+

@@ -106,9 +106,26 @@ Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
 
 
 %odniesc sie trzeba jakos do tych kryteriów, co juz jest zrobione, moze zdjecie pcb, 
+\subsection{Schemat płytki pcb i wyprowadzenie pinów układu}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{pcb.png}
+    \caption{Schemat płytki pcb}
+    \label{rys:pcb}
+\end{figure}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale=0.6]{pinout.png}
+    \caption{Wyprowadzenie pinów płytki pcb}
+    \label{rys:pinout}
+\end{figure}
 
 \subsubsection{Kryteria ewaluacji}
-Aby sprawdzić poprawność odczytu sygnałów przez przetworniki ADC czujniki będą symulowane poprzez potencjometry, a uzyskane wyniki przesłane do komputera. Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitowania portów COM.
+Poprawność odczytu sygnałów przez układ wzmacniaczy sygnałów sprawdzono poprzez podłączenie potencjometrów w miejsce czujników i pomiar napięć na wyjściu. Sprawdzono również współpracę z rękawiczką. 
+Następnym etapem będzie podłączenie układu do płytki Discovery i przesył uzyskanych wyników do komputera. 
+Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitowania portów COM.
 
 \begin{enumerate}
 	\item Wgranie na płytkę Discovery programu przesyłającego symulowanych danych z płytki do komputera użytkownika.

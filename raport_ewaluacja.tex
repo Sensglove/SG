@@ -90,27 +90,45 @@ Komponenty powinny działać każde z osobna oraz współdziałać jako kompletn
 \section{Przebieg prac dla poszczególnych komponentów}
 \subsection{Rękawiczka sensoryczna}
 Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk.
-\subsubsection{Spełnione wymagania użytkownika}
-%np. na rękawiczce zostało przymocowanych tyle a tyle sensorów poprzez rpzyklejenie ich do rękawiczki i przyszycie + kapturki
+\subsubsection{Wykonanie rękawiczki}
 
-\subsubsection{Spełnione funkcjonalności}
-%została zakupiona rękawiczka itd., dlaczego inny rozmiar
+Na rękawiczce wykonanej z poliestru przymocowano 10 czujników nasicku oraz 5 czujników ugięcia. Umiejscowienie czujników zotsało przedstawione na rysunku \ref{rys:czujniki_numeracja}.\\
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=14cm]{czujniki_numeracja.png}
+    \caption{Umiejscowienie i numeracja czujników na rękawiczce}
+    \label{rys:czujniki_numeracja}
+\end{figure}
+Proces wykonania rękawiczki polegał na przylutowaniu przewodów do czujników, następnie przyklejeniu punktowo klejem czujników w odpowiednich miejscach na rękawiczce oraz przyszycie przewodów do rękawiczki, w przypadku czujników zgięcia przyszyto również część czujnika by mógł się poruszać. \\
+Przyszycie przewodów pozwala na zachowanie porządku i sprzyja ruchom osoby używającej rękawiczkę a przytwierdzenie klejem zapewnia trwałość. W celu zapobiegania uszkodzenia czujników (przede wszystkim haczeniu) uszyte zostały ''kapturki'' na palce. Dzięki nim sensory nacisku jak i także ugięcia są zabezpieczone przed uszkodzeniami.\\
+Na końcach przewodów odprowadzających sygnały z czujników zamontowane zostały żeńskie końce, które umożliwiają proste podłączenie ich do płytki wzmacniającej. Przymocowane czujniki numerowane są w kolejności przedstawioej na rysunku \ref{rys:czujniki_numeracja}.
+
+\subsubsection{Wprwadzone zmiany}
+Planowowane było kupienie rękawiczki w rozmiarze S, ze względu na skład grupy, jednakże ostatecznie wybrano rozmiar M. Rękawiczka nadal dobrze dopasowuje się na dłoniach małych ale dodatkowo może z niej korzystać większe grono osób. Dzięki czemu do tworzenia bazy danych nie będzie potrzeby specjalnie wybierania i szukania osób o danym rozmiarze dłoni.\\
+Zaletą większego rozmiaru jest też większa powierzchnia do mocowania czujników. Dużo łatwiej jest rozmieścić wszystkie sensory, po ich przymocowaniu nie ograniczają one ruchów w tak dużym stopniu jakby miało to miejsce przy rękawiczce o rozmiarze S.
 
 \subsubsection{Kryteria ewaluacji}
-% np. w tym momencie rękawiczka spełnai następujace kryteria:
-
+Na obecnym etapie projektu rękawiczka jest już po wstępnej ewaluacji i wprowadzane zostają poprawki. Jeden czujnik z wewnętrznej części dłoni został uszkodzony. Kilka czujników nacisku zostało odczepionych, ponieważ zostały przyklejone za nisko na placu, co powodowało złe odczyty przy chwytaniu przedmiotów. \\
+W tej chwili rękawiczka spełnia następujące kryteria:\\
+\begin{enumerate}
+  \item Rękawiczka założona na rękę pozwala na możliwie swobodne poruszanie palcami.
+  \item Rezystancja czujników nacisku wraz ze wzrostem siły maleje, a wraz ze stopniem zgięcia rezystancja czujników zgięcia rośnie.
+	\item Przy chwytaniu przedmiotów czujniki ugięcia działają sprawnie.
+	\item Podczas wykonywania ruchów czujniki oraz przewody nie haczą się o nic dzięki dołączonym kapturkom.
+	\item Po nałożeniu kapturków sensory na wewnętrznej części dłoni sprawnie odczytują siłę nacisku.
+	\item Sygnały z czujników prowadzone przez przewody mogą być bezpośrednio podłączone do styków na wzmacniaczu dzięki ich żeńskim końcówkom.
+\end{enumerate}
+Pomyślnie przeprowadzono próbę integracji rękawiczki z prototypem płytki wzmacniającej. Miernikiem mierzono napięcie, które jak oczekiwano zmieniało odpowiednio swoją wartość. Sprawdzone zostały zarówno czujniki zgięcia jak i nacisku.
 
 \subsection{Interfejs sprzętowy}
 
 Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
-
-
 %odniesc sie trzeba jakos do tych kryteriów, co juz jest zrobione, moze zdjecie pcb, 
-\subsection{Schemat płytki pcb i wyprowadzenie pinów układu}
+\subsubsection{Schemat płytki pcb i wyprowadzenie pinów układu}
 
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale=0.6]{pcb.png}
+    \includegraphics[width=\textwidth]{pcb.png}
     \caption{Schemat płytki pcb}
     \label{rys:pcb}
 \end{figure}
@@ -155,7 +173,7 @@ Dokładny opis klas i poszczególnych parametrów tworzony jest za pomocą progr
     \label{rys:programdia}
 \end{figure}
 
-\subsection{Opis działania programu}
+\subsubsection{Opis działania programu}
 
 Interfejs graficzny programu został napisany z wykorzystaniem klas biblioteki Qt5 i został zaprezentowany na rys. \ref{rys:okno}. 
 \begin{figure}[h!]
@@ -176,7 +194,7 @@ Pierwszym krokiem jest wybór portu USB i wciśnięcie przycisku start, co uruch
 \end{figure}
 Dane są odczytywane z poru USB w oddzielnym wątku Read\_thread, dziedziczącego po QThread. Zapewnia to odpowiednio szybką pracę programu. W tym samym wątku sprawdzana jest poprawność otrzymanej wiadomości (obliczanie sumy kontrolnej, sprawdzanie dlugości ciągu znaków) oraz wysyłanie danych do Socketu, który również został zaprogramowany z wykorzystaniem bibliotek Qt5 (klasa Socket).
 
-W przypadku aktywowania przycisku "Measurment" aktywowany jest timer (na 2s) i dane te są zapisywane w wektorze 2000x23, z którego to jest możliwość zapisu danych do pliku w przypadku akceptacji pomiaru po jego ukończeniu. Widok okna w trakcie pomiaru przedstawia \rys{rys:oknopomiar}.
+W przypadku aktywowania przycisku "Measurment" aktywowany jest timer (na 2s) i dane te są zapisywane w wektorze 2000x23, z którego to jest możliwość zapisu danych do pliku w przypadku akceptacji pomiaru po jego ukończeniu. Widok okna w trakcie pomiaru przedstawia \ref{rys:oknopomiar}.
 \begin{figure}[h!]
     \centering
     \includegraphics[scale=0.6]{oknopomiar.png}
@@ -194,7 +212,7 @@ Ramka danych:
     \item znak X,
     \item 23 sygnały z czujników w postaci 4 znaków w systemie szesnastkowym,
     \item suma kontrolna w postaci dwóch znaków w systemie szesnastkowym,
-    \item znak końca linii \backslash r \backslash n;
+    \item znak końca linii \textbackslash r \textbackslash n;
 \end{itemize}
 
 \subsubsection{Raport z ewaluacji}
@@ -205,34 +223,69 @@ Dane były również wysyłane do programu do wizualizacji rękawiczki poprzez w
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Baza danych}
 Osoby przydzielone do zadania: Beata Berajter, Dorota Gidel.
-\subsubsection{Wymagania użytkownika}
 
-\subsubsection{Funkcjonalność}
+\subsubsection{Wprowadzone zmiany}
+Zdecydowano się na zmianę struktury bazy danych. Zamiast umieszczania trzech osobnych plików zawierających dane odpowiednio z czujników nacisku, zgięcia i elektrod, tworzony będzie tylko jeden plik zawierający wszystkie te dane w takiej kolejności. Plik taki zawierać będzie 2000 linii i 23 kolumny odczytów. Dodatkowo, nazwa pliku nie będzie zawierać daty gdyż można ją uzyskać z daty tworzenia pliku. Nowy schemat struktury bazy danych przedstawiono na rysunku \ref{rys:baza_danych}.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{baza_danych.png}
+    \caption{Schemat struktury bazy danych}
+    \label{rys:baza_danych}
+\end{figure}
 
-%trzeba odniesc sie do tych kryteriów, czy to działa tak jak miało itd.. dlatego są zostawione potem trzeba je usunąć, tutaj troszke zmieniła sie koncepcja (cos z tą data prawda? ) czy wgl będziemy robic to wyszukiwanie? 
+\subsubsection{Opis działania skryptu}
+Stworzony skrypt do umieszczania w odpowiednim miejscu plików z odczytami napisany jest w powłoce bash. Przykładowe wywołanie skryptu wgląda następująco:\\
+
+\texttt{\$ bash przeniesPlik sciezka/do/pliku/z/danymi Imie NazwaRuchu}\\ \\
+Skrypt przenosi podany plik (\texttt{sciezka/do/plik/z/danymi}) do głownego folderu bazy danych który zdefiniowany jest jako katalog o nazwie ''baza\_danych'' w katalogu domowym. Dzięki podanym argumentom umieszcza plik w odpowiednim miejscu. Numeracja pliku po kolei jest zapewniona przez prowadzenie spisu w osobnym pliku tekstowym należącym do bazy danych. Dla bezpieczeństwa sprawdzane jest też czy w wywołaniu skryptu została podana wystarczająca liczba argumentów.
+
 \subsubsection{Kryteria ewaluacji}
-Do sprawdzenie poprawności działania bazy danych zostanie wywołana funkcja obsługi bazy z przykładowymi argumentami i danymi z czujników. Zarówno wejściowym jak i wyjściowym efektem są pliki tekstowe. Zostaną utworzone przykładowe testowe pliki, dzięki którym będzie można porównać oraz sprawdzić poprawność przetworzonych danych.
-
-\begin{enumerate}
-	\item Wywołanie funkcji zapisu z przykładowymi danymi wejściowymi.
-	\item Sprawdzenie katalogów z zapisanymi informacjami.
-	\item Wywołanie funkcji znajdującej pomiary po osobie go wykonującej.
-	\item Sprawdzenie odczytanych pomiarów.
-\end{enumerate}
-
+Do sprawdzania poprawności działania bazy danych wywołano skrypt z przykładowymi argumentami. Otrzymano oczekiwane efekty, tj. utworzenie w odpowiednim miejscu w strukturze katalogów pliku o pożądanej nazwie (indeksie zwiększającym swoją wartość przy kolejnych przenoszeniach pliku do tego samego katalogu).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Wizualizacja danych}
 Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk.
-%rzeba odniesc sie do tych kryteriów, czy to działa tak jak miało itd.. dlatego są zostawione potem trzeba je usunąć
+
+\subsubsection{Ogólny diagram klas}
+Na rysunku \ref{rys:diagram_ogolny} zaprezentowano ogólny diagram klas w programie wizualizującym dane z czujników.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{diagram_ogolny.png}
+    \caption{Ogólny diagram klas - wizualizacja}
+    \label{rys:diagram_ogolny}
+\end{figure}
+
+\subsubsection{Diagram klas zakładek}
+Na obrazku \ref{rys:diagram_klas} zaprezentowano ogólny diagram klas zakładek zawierających wykresy i prezentacje odpowiednio z czujników nacisku oraz zgięcia.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=11cm]{diagram_klas.png}
+    \caption{Diagram klas zakładek - wizualizacja}
+    \label{rys:diagram_klas}
+\end{figure}
+
+\subsubsection{Interfejs użytkownika}
+Na obecnym etapie użytkownik ma możliwość połączenia się z portem nadającym dane przez przyciśnięcie przycisku ''Ustal nowe połączenie''. W trakcie odbierania danych istnieje możliwość zatrzymania wykresów i wizualizacji dłoni w danym momencie poprzez przyciśnięcie przycisku ''Stop''. W lewym górnym rogu użytkownik ma dostęp do ustwień w których obecnie może zmienić zakres czasu prezentowanego na wykresach. Domyślnie wartość ta wynosi 30 s.\\
+Rysunek \ref{rys:zakladka1} przedstawia pierwszą zakładkę aplikacji wizualizującej dane - czujniki nacisku. Po lewej stronie umieszczone są wykresy. Pierwszy największy wykres, można zmieniać przyciskając odpowiednio wykres który chcemy najbardziej śledzić. Wybrany wykres zaznaczony jest przez kolorową obwódkę. Po prawej stronie znajduje się widget zawierający ręke 2D prezentującą przez kolory odczytywane w danym momencie wartości napięcia.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=18cm]{zakladka1.png}
+    \caption{Diagram klas zakładek - wizualizacja}
+    \label{rys:zakladka1}
+\end{figure}
+Rysunek \ref{rys:zakladka2} przedstawia drugą zakładkę aplikacji wizualizującej dane - czujniki zgięcia. Po lewej stronie tak samo jak poprzednio znajdują się wykresy odczytywanego napięcia. Po prawej stronie znajduje się widget zawierający ręke 3D której palce zginają się odpowiednio do otrzymywanych wartości z czujników.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=18cm]{zakladka2.png}
+    \caption{Diagram klas zakładek - wizualizacja}
+    \label{rys:zakladka2}
+\end{figure}
+
 \subsubsection{Kryteria ewaluacji}
-Działanie programu sprawdzone będzie pod kątem odbierania sygnału z rękawiczki oraz poprawnego wyświetlania danych na modelu 3D. \\
-Gdy wysłany zostanie sygnał maksymalnego nacisku z czujnika na palcu wskazującym program go odczyta oraz wyświetli kolor czerwony na wizualizacji. Gdy zgięty zostanie dany palec u ręki, palec na modelu w programie również zostanie zgięty. Gdy kąty zgięcia oraz kolory nacisku będą się zgadzać, znaczyć to będzie, że aplikacja działa poprawnie. Dane te mogą być sztucznie symulowane i wysyłane do programu, by istniała możliwość testowania bez istnienia poprawnie działających komponentów systemu.
+Do testowania poprawności działania aplikacji napisano dodatkowy program mający udawać serwer nadający dane. Program ten napisany jest w C. Dane które generuje są randomowe, a port, częstotliwość i ilość wysyłanych wiadomości podaje się jako jego argumenty.\\
+Aplikacja odbiera pomyślnie zasymulowane dane z dodatkowego programu oraz wizualizuje zinterpretowane pomiary na wykresach i modelach dłoni. Przeprowadzono też integrację tej aplikacja z aplikacją to akwizycji dancyh, która przebiegła pomyślnie.
 
-\begin{enumerate}
-	\item Przesłanie  symulowanych danych z czujników do progamu.
-	\item Sprawdzenie, czy wizualizacja pokrywa się z przewidywanym ruchem.
-\end{enumerate}
-
+\subsubsection{Brakujące elementy}
+Aplikacja nie jest jeszcze w pełni gotowa i wymaga dopracowania. Wizualizowane dane nie są jeszcze zsynchronizowane z rzeczywistymi wartościami danych z czujników. Brakuje też dodatkowych ustawień pozwalających na zmianę interfejsu w sposób wygodny dla użytkownika.
 
 \end{document}

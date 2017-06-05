@@ -51,7 +51,13 @@ public:
     */
    Read_Thread(QObject *parent, Okno *_window): QThread(parent), window(_window), start_flag(true)
    {}
+   /*!
+     * \brief Start - funkcja zaczynjąca wątek i ustawiająca mu start_flag=true
+     */
     void Start(){start_flag=true; start();}
+    /*!
+     * \brief Stop - funkcja ustawiająca start_flag=false
+     */
     void Stop(){start_flag=false;}
     void run();
     bool CheckData(QString *wiadomosc);
@@ -70,13 +76,33 @@ class Okno : public QWidget
 
 
 public:
+    /*!
+     * \brief start_flag - flaga oznaczająca początek czytanai wątku
+     */
     bool start_flag;
+    /*!
+     * \brief desk_portu
+     */
     int desk_portu;
+    /*!
+     * \brief measure_flag
+     */
     bool measure_flag;
+    /*!
+     * \brief save_flag
+     */
     bool save_flag;
+    /*!
+     * \brief read_thread
+     */
     Read_Thread read_thread;
-    //Write_Thread write_thread;
+    /*!
+     * \brief data - dane do przesyłu poprzez socket
+     */
     QVector<string> data;
+    /*!
+     * \brief mySocket - socket, przez który wysyłane są dane
+     */
     Socket *mySocket;
 
 private:

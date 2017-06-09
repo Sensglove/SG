@@ -13,24 +13,25 @@ using namespace std;
  */
 bool Read_Thread::CheckData(QString *wiadomosc){
         bool ok;
-        if(wiadomosc->mid(0,1)!="X"||wiadomosc->length()!=LENGTH) {
+        if(wiadomosc->mid(0,1)!="X") {
             cout<<"zła dlugosc"<<wiadomosc->length()<<endl;
             //cout<<wiadomosc->toStdString();
             return false;
         }
         else{
         int control_sum=0;
-        for(int i = 0; i < 23; ++i) {
+        for(int i = 0; i < 24; ++i) {
                 QString subString = wiadomosc->mid(i*4+1, 4);
                 int odczyt = subString.toInt(&ok, 16);
 
             control_sum+=odczyt;
                 }
-        QString subString = wiadomosc->mid(92, 4);
+        QString subString = wiadomosc->mid(96, 4);
         int sum=subString.toInt(&ok,16);
         if (sum==control_sum%(2^16)) return true;
         else {
-            return true;
+            cout<<"zła suma"<<endl;
+            return false;
 
         }
         }
@@ -51,29 +52,20 @@ void Read_Thread::run()
     start_flag=true;
     string bufor;
 
-    int sample_nr=0;
 
     while(start_flag){
   if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 150)){
-    window->mySocket->write(bufor);
+  //  cout<<"BUFOR "<<bufor<<endl;
+    if(window->mySocket->connected()) window->mySocket->write(bufor);
 
      QString *buf= new QString(bufor.c_str());
-  if(CheckData(buf)){
-          window->mySocket->write(bufor);
+  //if(CheckData(buf)){
+        //  window->mySocket->write(bufor);
 
           // cout<<bufor.length()<<endl;
 
 if(window->measure_flag==true){
 window->data.push_back(bufor);
-++sample_nr;
-
-//cout<<sample_nr<<endl;
-/*},
-
- */
-if(sample_nr==SAMPLE_AMOUNT) {sample_nr=0; window->measure_flag==false; window->save_flag=true;}
-
-}
 }
 
 }
@@ -121,23 +113,24 @@ string skrypt="sh przeniesPlik ";
         skrypt=skrypt+file_name+" "+name_name+" "+move_name;
 
 fstream file;
-// cout<<data.size();
+cout<<"ROZMIAR"<<data.size()<<endl;
 file.open(file_name.c_str(), std::ios::out);
 if(file.good()){
 
 
-   for(int i=0;i<SAMPLE_AMOUNT;i++){
+   for(int i=0;i<data.size();++i){
 
-        cout<<data[i]<<endl;
+
         bool ok;
-        for(int i = 0; i < 23; ++i) {
-                string subString = data[i].substr(i*4+1, 4);
+        for(int j= 0; j < 23; ++j) {
+                string subString = data[i].substr(j*4+1, 4);
                 //int odczyt = subString; //.toInt(&ok, 16);
                 //file<<subString<<" ";
                 QString *str=new QString(subString.c_str());
-                int a=str->toInt(&ok,16);
-                if(ok) file<<a<<" ";
-                else return false;
+                double a=str->toInt(&ok,16)*3/(4096);
+                file<<a<<" ";
+         if(j==15) cout<<a<<endl;
+
             //if (!ok) return false;
         }
       file<<endl;
@@ -149,7 +142,7 @@ if(file.good()){
 
 }
 else return false;
-save_flag=false;
+
 }
 else return false;
 }
@@ -319,6 +312,7 @@ void Okno::on_start_m_clicked()
 void Okno::setMeasureIcons()
 {
     measure_flag=false;
+    save_flag=true;
     accept->setDisabled(false);
     reject->setDisabled(false);
     type_of_movement->setDisabled(false);
@@ -356,6 +350,7 @@ void Okno::on_accept_clicked()
     accept->setDisabled(true);
     reject->setDisabled(true);
     name->setDisabled(true);
+    save_flag=false;
 }
 
 /*!
@@ -365,6 +360,7 @@ void Okno::on_accept_clicked()
 void Okno::on_reject_clicked()
 {
     type_of_movement->setVisible(false);
+    save_flag=false;
     accept->setVisible(false);
     reject->setVisible(false);
     start_m->setDisabled(false);

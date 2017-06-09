@@ -25,7 +25,7 @@
 #include"transparam.hh"
 #include"socket.hh"
 
-#define LENGTH 102
+#define LENGTH 125
 #define SAMPLE_AMOUNT 2000
 
 using namespace std;

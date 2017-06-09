@@ -23,6 +23,7 @@ public:
 
     void write(string tmp);
     void close();
+    bool connected(){ return connect_flag;}
 
 signals:
 
@@ -32,6 +33,7 @@ public slots:
 private:
     QTcpServer *server;
     QTcpSocket *socket;
+    bool connect_flag;
 };
 
 #endif // SOCKET_HH

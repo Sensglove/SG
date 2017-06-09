@@ -9,20 +9,9 @@ if(!server->listen(QHostAddress::Any,2666)){
 }else{
     qDebug()<<"Server started!";
 }
-}
-/*
-Socket::Socket(QObject *parent,string data) : QObject(parent)
-{
-   // data1=data;
-server=new QTcpServer(this);
-connect(server,SIGNAL(newConnection()),this, SLOT(newConnection()));
-if(!server->listen(QHostAddress::Any,2666)){
-    qDebug()<<"Server could not start!";
-}else{
-    qDebug()<<"Server started!";
+connect_flag=false;
 }
 
-}*/
 
 void Socket::write(string tmp)
 {
@@ -48,7 +37,8 @@ void Socket::close()
 void Socket::newConnection(){
 
     socket=server->nextPendingConnection();
-    cout<<"POŁączony"<<endl;
+    cout<<"Client connected"<<endl;
+    connect_flag=true;
 
 
 }

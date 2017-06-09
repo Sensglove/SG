@@ -28,7 +28,7 @@ bool Read_Thread::CheckData(QString *wiadomosc){
                 }
         QString subString = wiadomosc->mid(96, 4);
         int sum=subString.toInt(&ok,16);
-        if (sum==control_sum%(2^16)) return true;
+        if (sum==control_sum%(1<<16)) return true;
         else {
             cout<<"zła suma"<<endl;
             return false;
@@ -55,13 +55,13 @@ void Read_Thread::run()
 
     while(start_flag){
   if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 150)){
-  //  cout<<"BUFOR "<<bufor<<endl;
-    if(window->mySocket->connected()) window->mySocket->write(bufor);
+  //cout<<"BUFOR "<<bufor<<endl;
+
 
      QString *buf= new QString(bufor.c_str());
-  //if(CheckData(buf)){
+  if(CheckData(buf)){
         //  window->mySocket->write(bufor);
-
+if(window->mySocket->connected()) window->mySocket->write(bufor);
           // cout<<bufor.length()<<endl;
 
 if(window->measure_flag==true){
@@ -69,6 +69,7 @@ window->data.push_back(bufor);
 }
 
 }
+  }
 /*{
    QMessageBox::StandardButton reply;
      reply=QMessageBox::question(this, "Error", "Data was incorrect. Would you like to try again?",
@@ -119,7 +120,6 @@ if(file.good()){
 
 
    for(int i=0;i<data.size();++i){
-
 
         bool ok;
         for(int j= 0; j < 23; ++j) {

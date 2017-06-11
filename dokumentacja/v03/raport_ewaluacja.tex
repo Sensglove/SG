@@ -1,4 +1,4 @@
-\documentclass{article}
+﻿\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{polski}
@@ -124,34 +124,196 @@ Pomyślnie przeprowadzono próbę integracji rękawiczki z prototypem płytki wz
 
 Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
 %odniesc sie trzeba jakos do tych kryteriów, co juz jest zrobione, moze zdjecie pcb, 
-\subsubsection{Schemat płytki pcb i wyprowadzenie pinów układu}
+\subsubsection{Schemat układu}
+\begin{figure}[!h]
+	\centering
+	\includegraphics[width=\textwidth]{schemat.png}
+	\caption{schemat układu}
+	\label{rys:schemat układu}
+\end{figure}
+
+\subsubsubsection{Projekt płytki pcb i wyprowadzenie pinów układu}
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[width=\textwidth]{pcb.png}
-    \caption{Schemat płytki pcb}
-    \label{rys:pcb}
+	\centering
+	\includegraphics[width=\textwidth]{pcb.png}
+	\caption{Schemat płytki pcb}
+	\label{rys:pcb}
 \end{figure}
 
 \begin{figure}[h!]
-    \centering
-    \includegraphics[scale=0.6]{pinout.png}
-    \caption{Wyprowadzenie pinów płytki pcb}
-    \label{rys:pinout}
+	\centering
+	\includegraphics[width=\textwidth/3]{J1.png}
+	\caption{J1 - pinout}
+	\label{rys:J1 - pinout}
+
+	\begin{table}
+	\centering
+	\label{J1 - pinout}
+	\begin{tabular}{ll}
+	1 - 16		&	zasilanie czujników - +5v		\\
+	17 - 27		&	złącza czujników nacisku 1 - 10		\\
+	28 - 33		&	złącza czujników ugięcia 1 - 6		\\
+	2, 34		&	NC					\\
+\end{tabular}
+\end{table}
 \end{figure}
 
-\subsubsection{Kryteria ewaluacji}
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth/6]{J2.png}
+	\caption{J2 - pinout}
+	\label{rys:J2 - pinout}
+
+	\begin{table}
+	\centering
+	\label{J2 - pinout}
+	\begin{tabular}{ll}
+	1 - 7		&	GND					\\
+	8 - 16		&	złącza czujników biosygnałów 1 - 8	\\
+\end{tabular}
+\end{table}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth/2]{J3.png}
+	\caption{J3 - pinout}
+	\label{rys:J3 - pinout}
+
+	\begin{table}
+	\centering
+	\label{J3 - pinout}
+	\begin{tabular}{ll}
+	1 - 10		&	sygnał czujników nacisku 1 - 10		\\
+	11 - 16		&	sygnał czujników ugięcia 1 - 6		\\
+	17 - 24		&	sygnał czujników biosygnałów 1 - 8	\\
+	25		&	+5V					\\
+	26		&	GND					\\
+\end{tabular}
+\end{table}
+\end{figure}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\textwidth/10]{J4.png}
+	\caption{J4 - pinout}
+	\label{rys:J4 - pinout}
+
+	\begin{table}
+	\centering
+	\label{J4 - pinout}
+	\begin{tabular}{ll}
+	1 		&	-9V					\\
+	2		&	GND					\\
+	3		&	+9V					\\
+\end{tabular}
+\end{table}
+\end{figure}
+
+\subsubsection{Lista elementów}
+\begin{table}
+	\centering
+	\label{Bill of materials}
+\begin{tabular}{lll}
+U1-U6		&	TLC084CN			&	THT	\\
+R1-R10		&	10kOhm				&	THT	\\
+R11-R16		&	33kOhm				&	THT	\\
+R17-R24		&	3.3kOhm				&	SMD	\\
+R25-R32		&	3.3kOhm				&	THT	\\
+R33-R40		&	2.2kOhm				&	THT	\\
+D1-D24		&	3.3V Zenera			&	SMD	\\
+J1		&	IDC-34 żeńskie			&	THT	\\
+J2		&	IDC-16 żeńskie			&	THT	\\
+J3		&	listwa kołkowa 1x26 2.56mm	&	THT	\\
+J4		&	listwa kołkowa 1x3 2.56mm	&	THT	\\
+\end{tabular}
+\end{table}
+
+\subsubsection{Połączenie z płytką STM32F3Discovery}
+\begin{table}
+	\centering
+	\label{Bill of materials}
+\begin{tabular}{ll}
+J1		&	ST3M32Discovery	\\
+1		&	PB12		\\
+2		&	PB14		\\
+3		&	PB15		\\
+4		&	PD8		\\
+5		&	PD9		\\
+6		&	PD10		\\
+7		&	PD11		\\
+8		&	PD12		\\
+9		&	PD13		\\
+10		&	PD14		\\
+
+11		&	PB0		\\
+12		&	PB1		\\
+13		&	PE7		\\
+14		&	PE8		\\
+15		&	PE9		\\
+16		&	PE10		\\
+
+17		&	PA0		\\
+18		&	PA3		\\
+19		&	PA2		\\
+20		&	PF4		\\
+21		&	PA4		\\
+22		&	PA5		\\
+23		&	PA6		\\
+24		&	PA7		\\
+
+25		&	GND		\\
+26		&	5V		\\
+\end{tabular}
+\end{table}
+
+\subsection{Kod programu}
+\begin{verbatim}
+//struktura danych do zapisu odczytu sygnałów
+typedef union
+{
+	struct
+	{
+		uint16_t forceSensors[10];
+		uint16_t flexSensors[6];
+		uint16_t biosignals[8];
+		uint16_t checksum;
+	}measure;
+	uint16_t measures[25];
+} data_t;
+data_t data;
+
+...
+
+//konfiguracja DMA
+  HAL_ADC_Start_DMA(&hadc1, &data.measure.biosignals[0], 4);
+  HAL_ADC_Start_DMA(&hadc2, &data.measure.biosignals[4], 4);
+  HAL_ADC_Start_DMA(&hadc3, &data.measure.flexSensors[0], 6);
+  HAL_ADC_Start_DMA(&hadc4, &data.measure.forceSensors[0], 10);
+
+...
+
+  data.measure.checksum = 0;
+  for(int i = 0; i < 24; i++)
+  {
+    data.measure.checksum+=data.measures[i];
+  }
+  printf("X%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x\r\n",
+	  data.measures[0], data.measures[1], data.measures[2], data.measures[3], data.measures[4],
+	  data.measures[5], data.measures[6], data.measures[7], data.measures[8], data.measures[9],
+	  data.measures[10], data.measures[11], data.measures[12], data.measures[13], data.measures[14],
+	  data.measures[15], data.measures[16], data.measures[17], data.measures[18], data.measures[19],
+	  data.measures[20], data.measures[21], data.measures[22], data.measures[23], data.measures[24]);
+\end{verbatim}
+
+\subsubsubsection{Kryteria ewaluacji}
 Poprawność odczytu sygnałów przez układ wzmacniaczy sygnałów sprawdzono poprzez podłączenie potencjometrów w miejsce czujników i pomiar napięć na wyjściu. Sprawdzono również współpracę z rękawiczką. 
-Następnym etapem będzie podłączenie układu do płytki Discovery i przesył uzyskanych wyników do komputera. 
-Poprawność samej transmisji sprawdzona zostanie poprzez wysyłanie zaprogramowanych wcześniej przykładowych wiadomości i odczytywanie ich w komputerze poprzez program do monitowania portów COM.
-
-\begin{enumerate}
-	\item Wgranie na płytkę Discovery programu przesyłającego symulowanych danych z płytki do komputera użytkownika.
-	\item Sprawdzenie miernikiem lutów i ścieżek na układzie ze wzmacniaczami.
-	\item Podłączenie potencjometrów symulujacych czujniki do płytki Dicovery w celu sprawdzenia poprawności działania przetworników ADC.
-	\item Podłącznie wzmacniaczy do płytki Dicovery i powtórzenie testu z użyciem potencjometrów.
-\end{enumerate}
-
+Poprawność odczytu sygnałów przez płytkę Discovery sprawdzono poprzez odczyt wartości zmiennych w pamięci mikrokontrolera przy użyciu programu STMStudio.
+Poprawność samej transmisji sprawdzona została poprzez wysyłanie pomiarów przez kabel USB i porównywanie z wartościam w pamięci mikrokontrolera.\\
+\\
+Na obecnym etapie pracy zauważono błędne sygnały na 6, 9 i 14 złączu J3.\\
+Należy również przeprowadzić weryfikację poprawności odczytu biosygnałów.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Program do akwizycji danych}

@@ -36,6 +36,10 @@ public:
      * \brief close - funkcja zamykająca połączenie
      */
     void close();
+    /*!
+     * \brief Zwraca status połączenia
+     * \return
+     */
     bool connected(){ return connect_flag;}
 
 signals:

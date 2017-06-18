@@ -54,45 +54,29 @@ void Read_Thread::run()
 
 
     while(start_flag){
-  if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 150)){
-  //cout<<"BUFOR "<<bufor<<endl;
-
-
-     QString *buf= new QString(bufor.c_str());
-  if(CheckData(buf)){
+        if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 150)){
+            //cout<<"BUFOR "<<bufor<<endl;
+            QString *buf= new QString(bufor.c_str());
+            bool correct=CheckData(buf);
+                if(correct&&window->measure_flag==true){
         //  window->mySocket->write(bufor);
-if(window->mySocket->connected()) window->mySocket->write(bufor);
-          // cout<<bufor.length()<<endl;
+                    window->data.push_back(bufor);
+                    if(window->mySocket->connected()) window->mySocket->write(bufor);
+                    }
+                else if(correct){
+                        if(window->mySocket->connected()) window->mySocket->write(bufor);
+                    }
+                else if(window->measure_flag==true){
+                      window->error_flag=true;
+                     }
 
-if(window->measure_flag==true){
-window->data.push_back(bufor);
+                 }
+
+            }
 }
-
-}
-  }
-/*{
-   QMessageBox::StandardButton reply;
-     reply=QMessageBox::question(this, "Error", "Data was incorrect. Would you like to try again?",
-                                           QMessageBox::Yes|QMessageBox::No,  QMessageBox::Yes);
-     if(reply==QMessageBox::No)
-     {
-         window->close();
-          // exit(1);
-     }
-    }
-
-    */}}
 
 //zapis do socketu
 
-/*
-  !!!!!!tutaj jest wątek wczytywania danych z portu!!!!!!!!!!
-
-  !!!!!!!napisać wezdeskportu i obsługe danych!!!!!!!!!!!!!!!
-  !!!!!!!dodać sprawdzanie sumy kontrolnej!!!!!!!!!!!!!!!!!!!
-  !!!!!!!dodać zapisywanie danych do jakiegos pliku tmp!!!!!!
-  !!!!!!!dodać zwracanie bufora!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        }*/
 
 /*!
  * \brief Okno::SaveToFile
@@ -103,10 +87,10 @@ window->data.push_back(bufor);
  */
 bool Okno::SaveToFile(){
 
-    cout<<"SAVE";
+//    cout<<"SAVE";
 if(save_flag){
 
-    cout<<"SAVEFLAG";
+ //   cout<<"SAVEFLAG";
 string file_name="tmp.txt";
 string move_name=type_of_movement->currentText().toStdString();
 string name_name=name->text().toStdString();
@@ -180,22 +164,23 @@ Okno::Okno(QWidget *parent) : QWidget(parent), start_flag(false), desk_portu(0),
     reject = new QPushButton("IGNORE");
     reject->setObjectName("reject");
     type_of_movement=new QComboBox(this);
-type_of_movement->addItem("ruch1");
-type_of_movement->addItem("ruch2");
-type_of_movement->addItem("ruch3");
-type_of_movement->addItem("ruch4");
-type_of_movement->addItem("ruch5");
-type_of_movement->addItem("ruch6");
-type_of_movement->addItem("ruch7");
-type_of_movement->addItem("ruch8");
-type_of_movement->addItem("ruch9");
+type_of_movement->addItem("dlugopis");
+type_of_movement->addItem("srobka");
+type_of_movement->addItem("potencjometr");
+type_of_movement->addItem("szklanka");
+type_of_movement->addItem("kubek");
+type_of_movement->addItem("czajnik");
+type_of_movement->addItem("karta");
+type_of_movement->addItem("telefon");
+type_of_movement->addItem("myszka");
 type_of_movement->setDisabled(true);
 QVBoxLayout *vlayout=new QVBoxLayout(this);
 
 name=new QLineEdit(this);
-name_label=new QLabel("Name:");
+name_label=new QLabel("User's name:");
 QVBoxLayout *names_layout=new QVBoxLayout();
 names_layout->addWidget(name_label);
+name_label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 names_layout->addWidget(name);
 //name_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 name->setDisabled(true);
@@ -216,6 +201,7 @@ usb_layout->addWidget(usb_choice);
 move_name=new QLabel("Choose type:");
 QVBoxLayout *move_type = new QVBoxLayout();
 move_type->addWidget(move_name);
+move_name->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 move_type->addWidget(type_of_movement);
 
 
@@ -244,7 +230,6 @@ this->setLayout(vlayout);
     QMetaObject::connectSlotsByName(this);
 
 }
-
 
 
 /*!
@@ -332,7 +317,7 @@ void Okno::on_accept_clicked()
 
 //mySocket->newConnection();
    if(save_flag) {
-       if(!SaveToFile()){
+       if(error_flag){
            QMessageBox::StandardButton reply;
              reply=QMessageBox::question(this, "Error", "Data was incorrect. Would you like to try again?",
                                                    QMessageBox::Yes|QMessageBox::No,  QMessageBox::Yes);
@@ -340,6 +325,17 @@ void Okno::on_accept_clicked()
              {
                  this->close();
              }
+       }
+       else{
+       if(!SaveToFile()){
+           QMessageBox::StandardButton reply;
+             reply=QMessageBox::question(this, "Error", "Cannot save to file. Would you like to try again?",
+                                                   QMessageBox::Yes|QMessageBox::No,  QMessageBox::Yes);
+             if(reply==QMessageBox::No)
+             {
+                 this->close();
+             }
+       }
        }
 
     } ////!!!!
@@ -351,6 +347,7 @@ void Okno::on_accept_clicked()
     reject->setDisabled(true);
     name->setDisabled(true);
     save_flag=false;
+    error_flag=false;
 }
 
 /*!
@@ -359,10 +356,11 @@ void Okno::on_accept_clicked()
  */
 void Okno::on_reject_clicked()
 {
-    type_of_movement->setVisible(false);
+    type_of_movement->setDisabled(true);
     save_flag=false;
-    accept->setVisible(false);
-    reject->setVisible(false);
+    name->setDisabled(true);
+    accept->setDisabled(true);
+    reject->setDisabled(true);
     start_m->setDisabled(false);
     progress_bar->setValue(0);
     data.clear();

@@ -93,6 +93,10 @@ public:
      */
     bool save_flag;
     /*!
+     * \brief error_flag
+     */
+    bool error_flag=false;
+    /*!
      * \brief read_thread
      */
     Read_Thread read_thread;
@@ -120,8 +124,6 @@ private:
     QLabel *name_label;
     QLineEdit *name;
     QLabel *move_name;
-
-   // Socket *mySocket;
 
 public:
 

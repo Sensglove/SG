@@ -1,0 +1,215 @@
+\hypertarget{class_okno}{}\section{Dokumentacja klasy Okno}
+\label{class_okno}\index{Okno@{Okno}}
+
+
+The \hyperlink{class_okno}{Okno} class okno główne programu.  
+
+
+
+
+{\ttfamily \#include $<$okno.\+hh$>$}
+
+Diagram dziedziczenia dla Okno\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_okno}
+\end{center}
+\end{figure}
+\subsection*{Sloty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_okno_ad6a171a82ec052ba0e8c721ffac0e870}{on\+\_\+start\+\_\+clicked} ()\hypertarget{class_okno_ad6a171a82ec052ba0e8c721ffac0e870}{}\label{class_okno_ad6a171a82ec052ba0e8c721ffac0e870}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_ad6a171a82ec052ba0e8c721ffac0e870}{Okno\+::on\+\_\+start\+\_\+clicked} Rozpoczęcie wątku odczytującego dane, sprawdzenie poprawności otwarcia portu U\+SB wybranego, mozliwosc ponownego wyboru. \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_ad3e545f9470f154d09ab9cf91bee0b2a}{on\+\_\+start\+\_\+m\+\_\+clicked} ()\hypertarget{class_okno_ad3e545f9470f154d09ab9cf91bee0b2a}{}\label{class_okno_ad3e545f9470f154d09ab9cf91bee0b2a}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_ad3e545f9470f154d09ab9cf91bee0b2a}{Okno\+::on\+\_\+start\+\_\+m\+\_\+clicked} uruchomienie pomiaru, ustawienie odpowiednich przycisków, uruchomienie timerów. \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_ae30bfa2ba063af6dac4680291bccb6cd}{Set\+Progress\+Bar} ()\hypertarget{class_okno_ae30bfa2ba063af6dac4680291bccb6cd}{}\label{class_okno_ae30bfa2ba063af6dac4680291bccb6cd}
+
+\begin{DoxyCompactList}\small\item\em Set\+Progress\+Bar zwiekszanie wartosci progress\+\_\+bar poloczone z sygnalem z timera bartim. \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_aaf9c12bca53a881c5492cd7779cdecad}{set\+Measure\+Icons} ()\hypertarget{class_okno_aaf9c12bca53a881c5492cd7779cdecad}{}\label{class_okno_aaf9c12bca53a881c5492cd7779cdecad}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_aaf9c12bca53a881c5492cd7779cdecad}{Okno\+::set\+Measure\+Icons} public slot połaczony z sygnalem z timera, ktory odmierza 2s na pomiar. \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_a6fea95038d5967dd336b87935b97170c}{on\+\_\+accept\+\_\+clicked} ()\hypertarget{class_okno_a6fea95038d5967dd336b87935b97170c}{}\label{class_okno_a6fea95038d5967dd336b87935b97170c}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_a6fea95038d5967dd336b87935b97170c}{Okno\+::on\+\_\+accept\+\_\+clicked} uruchamia zapisywanie do pliku danych z tablicy data\mbox{[}\mbox{]}. \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_a15073474701e4bec563b6a2cdad11ac4}{on\+\_\+reject\+\_\+clicked} ()\hypertarget{class_okno_a15073474701e4bec563b6a2cdad11ac4}{}\label{class_okno_a15073474701e4bec563b6a2cdad11ac4}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_a15073474701e4bec563b6a2cdad11ac4}{Okno\+::on\+\_\+reject\+\_\+clicked} ignoruje dane zapisane do tablicy, powoduje pojawienie się odpowiednich przycisków. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_okno_ab0e6342aaa2ff2cd07598a901528efa6}{Okno} (Q\+Widget $\ast$parent)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_ab0e6342aaa2ff2cd07598a901528efa6}{Okno\+::\+Okno}. \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_a20d42ba81a2b4b83bed90cb1dc687362}{set\+Desk\+Port} (int Desk\+Portu)
+\begin{DoxyCompactList}\small\item\em set\+Desk\+Port \end{DoxyCompactList}\item 
+int \hyperlink{class_okno_a3d917a01365c453f29c8f8ff78cd67b7}{take\+Desk\+Port} () const 
+\begin{DoxyCompactList}\small\item\em take\+Desk\+Port \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_acb4f4dd5dfc929b4e019c1c169c9df0c}{end\+Read\+Thread} ()\hypertarget{class_okno_acb4f4dd5dfc929b4e019c1c169c9df0c}{}\label{class_okno_acb4f4dd5dfc929b4e019c1c169c9df0c}
+
+\begin{DoxyCompactList}\small\item\em end\+Read\+Thread konczenie watku czytajacego z U\+SB \end{DoxyCompactList}\item 
+void \hyperlink{class_okno_a8f6f59862bff738dbf5f650274fb1058}{wait\+Read\+Thread} ()\hypertarget{class_okno_a8f6f59862bff738dbf5f650274fb1058}{}\label{class_okno_a8f6f59862bff738dbf5f650274fb1058}
+
+\begin{DoxyCompactList}\small\item\em wait\+Read\+Thread czekanie na zakonczenie watku \end{DoxyCompactList}\item 
+bool \hyperlink{class_okno_a24f3d0d347964d7da0cde1929ab23c41}{Save\+To\+File} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_a24f3d0d347964d7da0cde1929ab23c41}{Okno\+::\+Save\+To\+File} zapisywanie do pliku z tablicy data\mbox{[}\mbox{]} rozdzielenie danych na poszczegolne czujniki. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atrybuty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_okno_a0cd2b4f8ec74806cc7d3256eff69385a}{start\+\_\+flag}\hypertarget{class_okno_a0cd2b4f8ec74806cc7d3256eff69385a}{}\label{class_okno_a0cd2b4f8ec74806cc7d3256eff69385a}
+
+\begin{DoxyCompactList}\small\item\em start\+\_\+flag -\/ flaga oznaczająca początek czytanai wątku \end{DoxyCompactList}\item 
+int \hyperlink{class_okno_ac9c31fbce4cb68413088827860277510}{desk\+\_\+portu}\hypertarget{class_okno_ac9c31fbce4cb68413088827860277510}{}\label{class_okno_ac9c31fbce4cb68413088827860277510}
+
+\begin{DoxyCompactList}\small\item\em desk\+\_\+portu \end{DoxyCompactList}\item 
+bool \hyperlink{class_okno_a5a94843afcfc67735c25e5a29f9cdc3c}{measure\+\_\+flag}\hypertarget{class_okno_a5a94843afcfc67735c25e5a29f9cdc3c}{}\label{class_okno_a5a94843afcfc67735c25e5a29f9cdc3c}
+
+\begin{DoxyCompactList}\small\item\em measure\+\_\+flag \end{DoxyCompactList}\item 
+bool \hyperlink{class_okno_afddfe7d21fc34910d75f92d8904acb23}{save\+\_\+flag}\hypertarget{class_okno_afddfe7d21fc34910d75f92d8904acb23}{}\label{class_okno_afddfe7d21fc34910d75f92d8904acb23}
+
+\begin{DoxyCompactList}\small\item\em save\+\_\+flag \end{DoxyCompactList}\item 
+\hyperlink{class_read___thread}{Read\+\_\+\+Thread} \hyperlink{class_okno_a6f836849c2547fcb51936a9c88c8e75a}{read\+\_\+thread}\hypertarget{class_okno_a6f836849c2547fcb51936a9c88c8e75a}{}\label{class_okno_a6f836849c2547fcb51936a9c88c8e75a}
+
+\begin{DoxyCompactList}\small\item\em read\+\_\+thread \end{DoxyCompactList}\item 
+Q\+Vector$<$ string $>$ \hyperlink{class_okno_af210b4fcf0872b832f3cc49bace1c48d}{data}\hypertarget{class_okno_af210b4fcf0872b832f3cc49bace1c48d}{}\label{class_okno_af210b4fcf0872b832f3cc49bace1c48d}
+
+\begin{DoxyCompactList}\small\item\em data -\/ dane do przesyłu poprzez socket \end{DoxyCompactList}\item 
+\hyperlink{class_socket}{Socket} $\ast$ \hyperlink{class_okno_a58a686222d1cc92f47d454c2481ce8d8}{my\+Socket}\hypertarget{class_okno_a58a686222d1cc92f47d454c2481ce8d8}{}\label{class_okno_a58a686222d1cc92f47d454c2481ce8d8}
+
+\begin{DoxyCompactList}\small\item\em my\+Socket -\/ socket, przez który wysyłane są dane \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody chronione}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_okno_aecd3efa2e5687dad240bf830c73984ba}{close\+Event} (Q\+Close\+Event $\ast$clevent)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_okno_aecd3efa2e5687dad240bf830c73984ba}{Okno\+::close\+Event}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+Q\+Timer $\ast$ {\bfseries timer}\hypertarget{class_okno_a0ca5cf439ed8ad3ab7ef7b854c267f1b}{}\label{class_okno_a0ca5cf439ed8ad3ab7ef7b854c267f1b}
+
+\item 
+Q\+Timer $\ast$ {\bfseries bartim}\hypertarget{class_okno_a0c69b007d741152d74b5d3d498289a48}{}\label{class_okno_a0c69b007d741152d74b5d3d498289a48}
+
+\item 
+Q\+Progress\+Bar $\ast$ {\bfseries progress\+\_\+bar}\hypertarget{class_okno_aebc2e861da784f50f7965b17cfd8a85e}{}\label{class_okno_aebc2e861da784f50f7965b17cfd8a85e}
+
+\item 
+Q\+Label $\ast$ {\bfseries usb\+\_\+label}\hypertarget{class_okno_a69cde4a1b1adcb98dd0f74b4a27a13e8}{}\label{class_okno_a69cde4a1b1adcb98dd0f74b4a27a13e8}
+
+\item 
+Q\+Combo\+Box $\ast$ {\bfseries usb\+\_\+choice}\hypertarget{class_okno_ae069d59c53771223e2c82d6d6ace45d3}{}\label{class_okno_ae069d59c53771223e2c82d6d6ace45d3}
+
+\item 
+Q\+Push\+Button $\ast$ {\bfseries start}\hypertarget{class_okno_ae7cda77331e084b73b3065c4cc5e46d2}{}\label{class_okno_ae7cda77331e084b73b3065c4cc5e46d2}
+
+\item 
+Q\+Push\+Button $\ast$ {\bfseries start\+\_\+m}\hypertarget{class_okno_a211a0bea332494946d0417ebb6c73ae3}{}\label{class_okno_a211a0bea332494946d0417ebb6c73ae3}
+
+\item 
+Q\+Push\+Button $\ast$ {\bfseries accept}\hypertarget{class_okno_a4fe774bd293a9dd438b803279b1cdd3a}{}\label{class_okno_a4fe774bd293a9dd438b803279b1cdd3a}
+
+\item 
+Q\+Push\+Button $\ast$ {\bfseries reject}\hypertarget{class_okno_a70bd37b785ed16ce6db16f5b434ab75a}{}\label{class_okno_a70bd37b785ed16ce6db16f5b434ab75a}
+
+\item 
+Q\+Grid\+Layout $\ast$ {\bfseries layout}\hypertarget{class_okno_a00ebd56e108eee1419ef68f9f68bfce3}{}\label{class_okno_a00ebd56e108eee1419ef68f9f68bfce3}
+
+\item 
+Q\+Combo\+Box $\ast$ {\bfseries type\+\_\+of\+\_\+movement}\hypertarget{class_okno_aba409a1e85e08d5f5f0dea2ae784dd18}{}\label{class_okno_aba409a1e85e08d5f5f0dea2ae784dd18}
+
+\item 
+Q\+Label $\ast$ {\bfseries name\+\_\+label}\hypertarget{class_okno_add48fe820613017f93c66278e8b648de}{}\label{class_okno_add48fe820613017f93c66278e8b648de}
+
+\item 
+Q\+Line\+Edit $\ast$ {\bfseries name}\hypertarget{class_okno_ad86ed0c15931f5567519da354b9fb1e4}{}\label{class_okno_ad86ed0c15931f5567519da354b9fb1e4}
+
+\item 
+Q\+Label $\ast$ {\bfseries move\+\_\+name}\hypertarget{class_okno_a0f42040af518729eb012f77f2f4b2f6e}{}\label{class_okno_a0f42040af518729eb012f77f2f4b2f6e}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+The \hyperlink{class_okno}{Okno} class okno główne programu. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\index{Okno@{Okno}!Okno@{Okno}}
+\index{Okno@{Okno}!Okno@{Okno}}
+\subsubsection[{\texorpdfstring{Okno(\+Q\+Widget $\ast$parent)}{Okno(QWidget *parent)}}]{\setlength{\rightskip}{0pt plus 5cm}Okno\+::\+Okno (
+\begin{DoxyParamCaption}
+\item[{Q\+Widget $\ast$}]{parent}
+\end{DoxyParamCaption}
+)}\hypertarget{class_okno_ab0e6342aaa2ff2cd07598a901528efa6}{}\label{class_okno_ab0e6342aaa2ff2cd07598a901528efa6}
+
+
+\hyperlink{class_okno_ab0e6342aaa2ff2cd07598a901528efa6}{Okno\+::\+Okno}. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & konstruktor okna głównego programu, inicjalizacja wszystkich parametrow \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\index{Okno@{Okno}!close\+Event@{close\+Event}}
+\index{close\+Event@{close\+Event}!Okno@{Okno}}
+\subsubsection[{\texorpdfstring{close\+Event(\+Q\+Close\+Event $\ast$clevent)}{closeEvent(QCloseEvent *clevent)}}]{\setlength{\rightskip}{0pt plus 5cm}void Okno\+::close\+Event (
+\begin{DoxyParamCaption}
+\item[{Q\+Close\+Event $\ast$}]{clevent}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_okno_aecd3efa2e5687dad240bf830c73984ba}{}\label{class_okno_aecd3efa2e5687dad240bf830c73984ba}
+
+
+\hyperlink{class_okno_aecd3efa2e5687dad240bf830c73984ba}{Okno\+::close\+Event}. 
+
+zamknięcie watku read\+\_\+thread \index{Okno@{Okno}!Save\+To\+File@{Save\+To\+File}}
+\index{Save\+To\+File@{Save\+To\+File}!Okno@{Okno}}
+\subsubsection[{\texorpdfstring{Save\+To\+File()}{SaveToFile()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Okno\+::\+Save\+To\+File (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_okno_a24f3d0d347964d7da0cde1929ab23c41}{}\label{class_okno_a24f3d0d347964d7da0cde1929ab23c41}
+
+
+\hyperlink{class_okno_a24f3d0d347964d7da0cde1929ab23c41}{Okno\+::\+Save\+To\+File} zapisywanie do pliku z tablicy data\mbox{[}\mbox{]} rozdzielenie danych na poszczegolne czujniki. 
+
+\begin{DoxyReturn}{Zwraca}
+bool -\/ czy zapis do pliku się powiodl czy nie 
+\end{DoxyReturn}
+\index{Okno@{Okno}!set\+Desk\+Port@{set\+Desk\+Port}}
+\index{set\+Desk\+Port@{set\+Desk\+Port}!Okno@{Okno}}
+\subsubsection[{\texorpdfstring{set\+Desk\+Port(int Desk\+Portu)}{setDeskPort(int DeskPortu)}}]{\setlength{\rightskip}{0pt plus 5cm}void Okno\+::set\+Desk\+Port (
+\begin{DoxyParamCaption}
+\item[{int}]{Desk\+Portu}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_okno_a20d42ba81a2b4b83bed90cb1dc687362}{}\label{class_okno_a20d42ba81a2b4b83bed90cb1dc687362}
+
+
+set\+Desk\+Port 
+
+
+\begin{DoxyParams}{Parametry}
+{\em Desk\+Portu} & \\
+\hline
+\end{DoxyParams}
+\index{Okno@{Okno}!take\+Desk\+Port@{take\+Desk\+Port}}
+\index{take\+Desk\+Port@{take\+Desk\+Port}!Okno@{Okno}}
+\subsubsection[{\texorpdfstring{take\+Desk\+Port() const }{takeDeskPort() const }}]{\setlength{\rightskip}{0pt plus 5cm}int Okno\+::take\+Desk\+Port (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_okno_a3d917a01365c453f29c8f8ff78cd67b7}{}\label{class_okno_a3d917a01365c453f29c8f8ff78cd67b7}
+
+
+take\+Desk\+Port 
+
+\begin{DoxyReturn}{Zwraca}
+zwraca desk\+\_\+portu 
+\end{DoxyReturn}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+/home/ad/\+S\+E\+N\+S\+G\+L\+O\+V\+E/\+S\+G/data\+\_\+acquisition/prj/inc/okno.\+hh\item 
+/home/ad/\+S\+E\+N\+S\+G\+L\+O\+V\+E/\+S\+G/data\+\_\+acquisition/prj/src/okno.\+cpp\end{DoxyCompactItemize}

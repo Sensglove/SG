@@ -1,0 +1,105 @@
+\hypertarget{class_read___thread}{}\section{Dokumentacja klasy Read\+\_\+\+Thread}
+\label{class_read___thread}\index{Read\+\_\+\+Thread@{Read\+\_\+\+Thread}}
+
+
+The \hyperlink{class_read___thread}{Read\+\_\+\+Thread} class watek czytajacy z portu U\+SB.  
+
+
+
+
+{\ttfamily \#include $<$okno.\+hh$>$}
+
+Diagram dziedziczenia dla Read\+\_\+\+Thread\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_read___thread}
+\end{center}
+\end{figure}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_read___thread_a75267b0bd2c0061ff8998a51470de609}{Read\+\_\+\+Thread} (Q\+Object $\ast$parent, \hyperlink{class_okno}{Okno} $\ast$\+\_\+window)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_read___thread}{Read\+\_\+\+Thread}. \end{DoxyCompactList}\item 
+void \hyperlink{class_read___thread_aac135df28f316466b880187097a268fd}{Start} ()\hypertarget{class_read___thread_aac135df28f316466b880187097a268fd}{}\label{class_read___thread_aac135df28f316466b880187097a268fd}
+
+\begin{DoxyCompactList}\small\item\em Start -\/ funkcja zaczynjąca wątek i ustawiająca mu start\+\_\+flag=true. \end{DoxyCompactList}\item 
+void \hyperlink{class_read___thread_ab7f432f2160c3e884af7a80387764977}{Stop} ()\hypertarget{class_read___thread_ab7f432f2160c3e884af7a80387764977}{}\label{class_read___thread_ab7f432f2160c3e884af7a80387764977}
+
+\begin{DoxyCompactList}\small\item\em Stop -\/ funkcja ustawiająca start\+\_\+flag=false. \end{DoxyCompactList}\item 
+void \hyperlink{class_read___thread_a261a3cc9c3dc6abe61946123c3de76dc}{run} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_read___thread_a261a3cc9c3dc6abe61946123c3de76dc}{Read\+\_\+\+Thread\+::run}. \end{DoxyCompactList}\item 
+bool \hyperlink{class_read___thread_a4b81499a6d426573733446d4af8e7b07}{Check\+Data} (Q\+String $\ast$wiadomosc)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_read___thread_a4b81499a6d426573733446d4af8e7b07}{Read\+\_\+\+Thread\+::\+Check\+Data} Sprawdzanie sumy kontrolnej, suma wartości z wszystkich czujnikow modulo 2$^\wedge$16. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_okno}{Okno} $\ast$ {\bfseries window}\hypertarget{class_read___thread_a0c9db3caef6b98a0528dc2995801d4bd}{}\label{class_read___thread_a0c9db3caef6b98a0528dc2995801d4bd}
+
+\item 
+bool {\bfseries start\+\_\+flag}\hypertarget{class_read___thread_ac79ca6e83cd0246d67b2fd0a5e0c2c2c}{}\label{class_read___thread_ac79ca6e83cd0246d67b2fd0a5e0c2c2c}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+The \hyperlink{class_read___thread}{Read\+\_\+\+Thread} class watek czytajacy z portu U\+SB. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\index{Read\+\_\+\+Thread@{Read\+\_\+\+Thread}!Read\+\_\+\+Thread@{Read\+\_\+\+Thread}}
+\index{Read\+\_\+\+Thread@{Read\+\_\+\+Thread}!Read\+\_\+\+Thread@{Read\+\_\+\+Thread}}
+\subsubsection[{\texorpdfstring{Read\+\_\+\+Thread(\+Q\+Object $\ast$parent, Okno $\ast$\+\_\+window)}{Read_Thread(QObject *parent, Okno *_window)}}]{\setlength{\rightskip}{0pt plus 5cm}Read\+\_\+\+Thread\+::\+Read\+\_\+\+Thread (
+\begin{DoxyParamCaption}
+\item[{Q\+Object $\ast$}]{parent, }
+\item[{{\bf Okno} $\ast$}]{\+\_\+window}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_read___thread_a75267b0bd2c0061ff8998a51470de609}{}\label{class_read___thread_a75267b0bd2c0061ff8998a51470de609}
+
+
+\hyperlink{class_read___thread}{Read\+\_\+\+Thread}. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & \\
+\hline
+{\em \+\_\+window} & konstruktor watku \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\index{Read\+\_\+\+Thread@{Read\+\_\+\+Thread}!Check\+Data@{Check\+Data}}
+\index{Check\+Data@{Check\+Data}!Read\+\_\+\+Thread@{Read\+\_\+\+Thread}}
+\subsubsection[{\texorpdfstring{Check\+Data(\+Q\+String $\ast$wiadomosc)}{CheckData(QString *wiadomosc)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Read\+\_\+\+Thread\+::\+Check\+Data (
+\begin{DoxyParamCaption}
+\item[{Q\+String $\ast$}]{wiadomosc}
+\end{DoxyParamCaption}
+)}\hypertarget{class_read___thread_a4b81499a6d426573733446d4af8e7b07}{}\label{class_read___thread_a4b81499a6d426573733446d4af8e7b07}
+
+
+\hyperlink{class_read___thread_a4b81499a6d426573733446d4af8e7b07}{Read\+\_\+\+Thread\+::\+Check\+Data} Sprawdzanie sumy kontrolnej, suma wartości z wszystkich czujnikow modulo 2$^\wedge$16. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em wiadomosc} & -\/\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Zwraca}
+true -\/ dane poprawne, false -\/ dane niepoprawne 
+\end{DoxyReturn}
+\index{Read\+\_\+\+Thread@{Read\+\_\+\+Thread}!run@{run}}
+\index{run@{run}!Read\+\_\+\+Thread@{Read\+\_\+\+Thread}}
+\subsubsection[{\texorpdfstring{run()}{run()}}]{\setlength{\rightskip}{0pt plus 5cm}void Read\+\_\+\+Thread\+::run (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_read___thread_a261a3cc9c3dc6abe61946123c3de76dc}{}\label{class_read___thread_a261a3cc9c3dc6abe61946123c3de76dc}
+
+
+\hyperlink{class_read___thread_a261a3cc9c3dc6abe61946123c3de76dc}{Read\+\_\+\+Thread\+::run}. 
+
+Watek czytajacy z portu U\+SB W razie ustawienie odpowiednich flag zapisuje też dane do tablicy data\mbox{[}\mbox{]} 
+
+Dokumentacja dla tej klasy została wygenerowana z plików\+:\begin{DoxyCompactItemize}
+\item 
+/home/ad/\+S\+E\+N\+S\+G\+L\+O\+V\+E/\+S\+G/data\+\_\+acquisition/prj/inc/okno.\+hh\item 
+/home/ad/\+S\+E\+N\+S\+G\+L\+O\+V\+E/\+S\+G/data\+\_\+acquisition/prj/src/okno.\+cpp\end{DoxyCompactItemize}

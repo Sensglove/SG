@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['read_5fthread',['Read_Thread',['../class_read___thread.html',1,'Read_Thread'],['../class_read___thread.html#a75267b0bd2c0061ff8998a51470de609',1,'Read_Thread::Read_Thread()'],['../class_okno.html#a6f836849c2547fcb51936a9c88c8e75a',1,'Okno::read_thread()']]],
-  ['run',['run',['../class_read___thread.html#a261a3cc9c3dc6abe61946123c3de76dc',1,'Read_Thread']]]
+  ['measure_5fflag',['measure_flag',['../class_okno.html#a5a94843afcfc67735c25e5a29f9cdc3c',1,'Okno']]],
+  ['move_5fname',['move_name',['../class_okno.html#a0f42040af518729eb012f77f2f4b2f6e',1,'Okno']]],
+  ['mysocket',['mySocket',['../class_okno.html#a58a686222d1cc92f47d454c2481ce8d8',1,'Okno']]]
 ];

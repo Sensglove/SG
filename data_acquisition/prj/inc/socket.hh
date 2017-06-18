@@ -15,20 +15,20 @@ using namespace std;
 
 /*!
  * \brief The Socket class
+ * Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego poprzez łącze TCP.
  */
 class Socket : public QObject
 {
     Q_OBJECT
 public:
     /*!
-     * \brief Socket
+     * \brief Socket Konstruktor obiektu klasy Socket.
      * \param parent
-     *
-     * konstruktor obiektu klasy Socket
      */
     Socket(QObject *parent = 0);
     /*!
-     * \brief write - funkcja przekazująca socketowi treść do wysłania
+     * \brief write
+     * Funkcja przekazująca gniazdom treść do wysłania.
      * \param tmp
      */
     void write(string tmp);
@@ -37,8 +37,8 @@ public:
      */
     void close();
     /*!
-     * \brief Zwraca status połączenia
-     * \return
+     * \brief connected Funkcja zwracająca informację, czy gniazda są ze sobą połączone.
+     * \return true - jest połączony, false - nie jest
      */
     bool connected(){ return connect_flag;}
 
@@ -46,13 +46,22 @@ signals:
 
 public slots:
     /*!
-   * \brief newConnection - slot inicjujący połączenie
+   * \brief newConnection Slot inicjujący połączenie.
    */
   void newConnection();
 
 private:
+  /*!
+     * \brief server Serwer nasłuchujący na podanym kanale.
+     */
     QTcpServer *server;
+    /*!
+     * \brief socket Gniazdo nadające wiadomości na server.
+     */
     QTcpSocket *socket;
+    /*!
+     * \brief connect_flag Flaga połączenia. true - połączony, false - niepołączony
+     */
     bool connect_flag;
 };
 

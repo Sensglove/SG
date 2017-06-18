@@ -6,9 +6,9 @@ using namespace std;
 
 /*!
  * \brief Read_Thread::CheckData
- * Sprawdzanie sumy kontrolnej, suma wartości z wszystkich czujnikow modulo 2^16
- * \param wiadomosc -
- *
+ * Sprawdzanie sumy kontrolnej, suma wartości z wszystkich czujników modulo 2^16.
+ * \param wiadomosc
+ * Bufor danych wejściowych, w którym srpawdzana jest suma kontrolna. *
  * \return true - dane poprawne, false - dane niepoprawne
  */
 bool Read_Thread::CheckData(QString *wiadomosc){
@@ -43,8 +43,8 @@ bool Read_Thread::CheckData(QString *wiadomosc){
 /*!
  * \brief Read_Thread::run
  *
- * Watek czytajacy z portu USB
- * W razie ustawienie odpowiednich flag zapisuje też dane do tablicy data[]
+ * Wątek czytający z portu USB.
+ * W razie ustawienie odpowiednich flag zapisuje też dane do tablicy data[].
  */
 
 void Read_Thread::run()
@@ -75,13 +75,12 @@ void Read_Thread::run()
             }
 }
 
-//zapis do socketu
 
 
 /*!
  * \brief Okno::SaveToFile
- * zapisywanie do pliku z tablicy data[]
- * rozdzielenie danych na poszczegolne czujniki
+ * Zapisywanie do pliku z tablicy data[].
+ * Rozdzielenie danych na poszczególne czujniki.
  *
  * \return bool - czy zapis do pliku się powiodl czy nie
  */
@@ -133,8 +132,8 @@ else return false;
 /*!
  * \brief Okno::Okno
  * \param parent
- * konstruktor okna głównego programu,
- * inicjalizacja wszystkich parametrow
+ * Konstruktor okna głównego programu,
+ * inicjalizacja wszystkich parametrów.
  */
 
 Okno::Okno(QWidget *parent) : QWidget(parent), start_flag(false), desk_portu(0), read_thread(this,this)//, write_thread(this,this)
@@ -234,7 +233,7 @@ this->setLayout(vlayout);
 
 /*!
  * \brief Okno::on_start_clicked
- * Rozpoczęcie wątku odczytującego dane, sprawdzenie poprawności otwarcia portu USB wybranego, mozliwosc ponownego wyboru.
+ * Rozpoczęcie wątku odczytującego dane, sprawdzenie poprawności otwarcia wybranego portu USB, możliwość ponownego wyboru portu USB.
  *
  */
 
@@ -274,7 +273,7 @@ else{
 
 /*!
  * \brief Okno::on_start_m_clicked
- * uruchomienie pomiaru, ustawienie odpowiednich przycisków, uruchomienie timerów
+ * Uruchomienie pomiaru, ustawienie odpowiednich przycisków, uruchomienie timerów.
  *
  */
 
@@ -292,7 +291,7 @@ void Okno::on_start_m_clicked()
 
 /*!
  * \brief Okno::setMeasureIcons
- * public slot połaczony z sygnalem z timera, ktory odmierza 2s na pomiar
+ * Public slot połaczony z sygnałem z timera, który odmierza 2s na pomiar.
  */
 void Okno::setMeasureIcons()
 {
@@ -309,7 +308,7 @@ void Okno::setMeasureIcons()
 
 /*!
  * \brief Okno::on_accept_clicked
- * uruchamia zapisywanie do pliku danych z tablicy data[]
+ * Uruchamia zapisywanie do pliku danych z tablicy data[].
  */
 
 void Okno::on_accept_clicked()
@@ -352,7 +351,7 @@ void Okno::on_accept_clicked()
 
 /*!
  * \brief Okno::on_reject_clicked
- * ignoruje dane zapisane do tablicy, powoduje pojawienie się odpowiednich przycisków
+ * Ignoruje dane zapisane do tablicy, powoduje pojawienie się odpowiednich przycisków.
  */
 void Okno::on_reject_clicked()
 {
@@ -370,9 +369,8 @@ void Okno::on_reject_clicked()
 /*!
  * \brief Okno::closeEvent
  *
- * zamknięcie watku read_thread
+ * Zamknięcie wątku read_thread.
  */
-
 void Okno::closeEvent(QCloseEvent *clevent){
 
     endReadThread();

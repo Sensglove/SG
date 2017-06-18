@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['checkdata',['CheckData',['../class_read___thread.html#a4b81499a6d426573733446d4af8e7b07',1,'Read_Thread']]],
-  ['close',['close',['../class_socket.html#a75ee749264ccbcfc4dfbf5442e55dcb8',1,'Socket']]],
-  ['closeevent',['closeEvent',['../class_okno.html#aecd3efa2e5687dad240bf830c73984ba',1,'Okno']]]
+  ['accept',['accept',['../class_okno.html#a4fe774bd293a9dd438b803279b1cdd3a',1,'Okno']]]
 ];

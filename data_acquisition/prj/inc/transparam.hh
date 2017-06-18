@@ -47,7 +47,7 @@ enum Type4BaudRate {
 
 
 /*!
- * \brief Pozwala na ustawienie rozmiaru transmitowanego znaku
+ * \brief
  *
  *  Pozwala na ustawienie rozmiaru transmitowanego znaku.
  */

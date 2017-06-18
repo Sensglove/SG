@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
 <title>SenseGlove: Dokumentacja klasy Socket</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">SenseGlove
    &#160;<span id="projectnumber">0.2.3</span>
    </div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Wygenerowano przez Doxygen 1.8.11 -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 </script>
@@ -72,7 +71,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Zmienne</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -93,7 +92,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 </div><!--header-->
 <div class="contents">
 
-<p>The <a class="el" href="class_socket.html" title="The Socket class. ">Socket</a> class.  
+<p>The <a class="el" href="class_socket.html" title="The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...">Socket</a> class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego poprzez łącze TCP.  
  <a href="class_socket.html#details">Więcej...</a></p>
 
 <p><code>#include &lt;<a class="el" href="socket_8hh_source.html">socket.hh</a>&gt;</code></p>
@@ -110,39 +109,42 @@ Diagram dziedziczenia dla Socket</div>
 Sloty publiczne</h2></td></tr>
 <tr class="memitem:ae7f0dec57cf59312e51ad2ba29a66cb3"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae7f0dec57cf59312e51ad2ba29a66cb3"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#ae7f0dec57cf59312e51ad2ba29a66cb3">newConnection</a> ()</td></tr>
-<tr class="memdesc:ae7f0dec57cf59312e51ad2ba29a66cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">newConnection - slot inicjujący połączenie <br /></td></tr>
+<tr class="memdesc:ae7f0dec57cf59312e51ad2ba29a66cb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">newConnection Slot inicjujący połączenie. <br/></td></tr>
 <tr class="separator:ae7f0dec57cf59312e51ad2ba29a66cb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Metody publiczne</h2></td></tr>
 <tr class="memitem:ad56a75db4ac49694f2f511d7a8d98de6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#ad56a75db4ac49694f2f511d7a8d98de6">Socket</a> (QObject *parent=0)</td></tr>
-<tr class="memdesc:ad56a75db4ac49694f2f511d7a8d98de6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_socket.html" title="The Socket class. ">Socket</a>.  <a href="#ad56a75db4ac49694f2f511d7a8d98de6">Więcej...</a><br /></td></tr>
+<tr class="memdesc:ad56a75db4ac49694f2f511d7a8d98de6"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="class_socket.html" title="The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...">Socket</a> Konstruktor obiektu klasy <a class="el" href="class_socket.html" title="The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...">Socket</a>.  <a href="#ad56a75db4ac49694f2f511d7a8d98de6">Więcej...</a><br/></td></tr>
 <tr class="separator:ad56a75db4ac49694f2f511d7a8d98de6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac96341e53a5c97ed71dd4cb02e6f744d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#ac96341e53a5c97ed71dd4cb02e6f744d">write</a> (string tmp)</td></tr>
-<tr class="memdesc:ac96341e53a5c97ed71dd4cb02e6f744d"><td class="mdescLeft">&#160;</td><td class="mdescRight">write - funkcja przekazująca socketowi treść do wysłania  <a href="#ac96341e53a5c97ed71dd4cb02e6f744d">Więcej...</a><br /></td></tr>
+<tr class="memdesc:ac96341e53a5c97ed71dd4cb02e6f744d"><td class="mdescLeft">&#160;</td><td class="mdescRight">write Funkcja przekazująca gniazdom treść do wysłania.  <a href="#ac96341e53a5c97ed71dd4cb02e6f744d">Więcej...</a><br/></td></tr>
 <tr class="separator:ac96341e53a5c97ed71dd4cb02e6f744d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75ee749264ccbcfc4dfbf5442e55dcb8"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a75ee749264ccbcfc4dfbf5442e55dcb8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#a75ee749264ccbcfc4dfbf5442e55dcb8">close</a> ()</td></tr>
-<tr class="memdesc:a75ee749264ccbcfc4dfbf5442e55dcb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">close - funkcja zamykająca połączenie <br /></td></tr>
+<tr class="memdesc:a75ee749264ccbcfc4dfbf5442e55dcb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">close - funkcja zamykająca połączenie <br/></td></tr>
 <tr class="separator:a75ee749264ccbcfc4dfbf5442e55dcb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98a0ab5316c4670de5349b44cc2d32b5"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a98a0ab5316c4670de5349b44cc2d32b5"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>connected</b> ()</td></tr>
+<tr class="memitem:a98a0ab5316c4670de5349b44cc2d32b5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#a98a0ab5316c4670de5349b44cc2d32b5">connected</a> ()</td></tr>
+<tr class="memdesc:a98a0ab5316c4670de5349b44cc2d32b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">connected Funkcja zwracająca informację, czy gniazda są ze sobą połączone.  <a href="#a98a0ab5316c4670de5349b44cc2d32b5">Więcej...</a><br/></td></tr>
 <tr class="separator:a98a0ab5316c4670de5349b44cc2d32b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Atrybuty prywatne</h2></td></tr>
 <tr class="memitem:a298c271555c928af0828ce847551091c"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a298c271555c928af0828ce847551091c"></a>
-QTcpServer *&#160;</td><td class="memItemRight" valign="bottom"><b>server</b></td></tr>
+QTcpServer *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#a298c271555c928af0828ce847551091c">server</a></td></tr>
+<tr class="memdesc:a298c271555c928af0828ce847551091c"><td class="mdescLeft">&#160;</td><td class="mdescRight">server Serwer nasłuchujący na podanym kanale. <br/></td></tr>
 <tr class="separator:a298c271555c928af0828ce847551091c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fa6b86a9e07d4f5e641969a4dd82d13"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a3fa6b86a9e07d4f5e641969a4dd82d13"></a>
-QTcpSocket *&#160;</td><td class="memItemRight" valign="bottom"><b>socket</b></td></tr>
+QTcpSocket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#a3fa6b86a9e07d4f5e641969a4dd82d13">socket</a></td></tr>
+<tr class="memdesc:a3fa6b86a9e07d4f5e641969a4dd82d13"><td class="mdescLeft">&#160;</td><td class="mdescRight">socket Gniazdo nadające wiadomości na server. <br/></td></tr>
 <tr class="separator:a3fa6b86a9e07d4f5e641969a4dd82d13"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a93a816c7a3bb5af9a212e0a063a3ef05"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a93a816c7a3bb5af9a212e0a063a3ef05"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>connect_flag</b></td></tr>
+bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_socket.html#a93a816c7a3bb5af9a212e0a063a3ef05">connect_flag</a></td></tr>
+<tr class="memdesc:a93a816c7a3bb5af9a212e0a063a3ef05"><td class="mdescLeft">&#160;</td><td class="mdescRight">connect_flag Flaga połączenia. true - połączony, false - niepołączony <br/></td></tr>
 <tr class="separator:a93a816c7a3bb5af9a212e0a063a3ef05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Opis szczegółowy</h2>
-<div class="textblock"><p>The <a class="el" href="class_socket.html" title="The Socket class. ">Socket</a> class. </p>
+<div class="textblock"><p>The <a class="el" href="class_socket.html" title="The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...">Socket</a> class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego poprzez łącze TCP. </p>
 </div><h2 class="groupheader">Dokumentacja konstruktora i destruktora</h2>
 <a class="anchor" id="ad56a75db4ac49694f2f511d7a8d98de6"></a>
 <div class="memitem">
@@ -158,10 +160,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>connect_flag</b></td>
       </table>
 </div><div class="memdoc">
 
-<p><a class="el" href="class_socket.html" title="The Socket class. ">Socket</a>. </p>
+<p><a class="el" href="class_socket.html" title="The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...">Socket</a> Konstruktor obiektu klasy <a class="el" href="class_socket.html" title="The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...">Socket</a>. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
-    <tr><td class="paramname">parent</td><td>konstruktor obiektu klasy <a class="el" href="class_socket.html" title="The Socket class. ">Socket</a> </td></tr>
+    <tr><td class="paramname">parent</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -169,6 +171,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>connect_flag</b></td>
 </div>
 </div>
 <h2 class="groupheader">Dokumentacja funkcji składowych</h2>
+<a class="anchor" id="a98a0ab5316c4670de5349b44cc2d32b5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Socket::connected </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>connected Funkcja zwracająca informację, czy gniazda są ze sobą połączone. </p>
+<dl class="section return"><dt>Zwraca</dt><dd>true - jest połączony, false - nie jest </dd></dl>
+
+</div>
+</div>
 <a class="anchor" id="ac96341e53a5c97ed71dd4cb02e6f744d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -183,7 +211,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>connect_flag</b></td>
       </table>
 </div><div class="memdoc">
 
-<p>write - funkcja przekazująca socketowi treść do wysłania </p>
+<p>write Funkcja przekazująca gniazdom treść do wysłania. </p>
 <dl class="params"><dt>Parametry</dt><dd>
   <table class="params">
     <tr><td class="paramname">tmp</td><td></td></tr>
@@ -194,15 +222,15 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>connect_flag</b></td>
 </div>
 </div>
 <hr/>Dokumentacja dla tej klasy została wygenerowana z plików:<ul>
-<li>/home/ad/SENSGLOVE/SG/data_acquisition/prj/inc/<a class="el" href="socket_8hh_source.html">socket.hh</a></li>
-<li>/home/ad/SENSGLOVE/SG/data_acquisition/prj/src/socket.cpp</li>
+<li>/home/tofik/SG/data_acquisition/prj/inc/<a class="el" href="socket_8hh_source.html">socket.hh</a></li>
+<li>/home/tofik/SG/data_acquisition/prj/src/socket.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Wygenerowano N, 18 cze 2017 19:35:59 dla SenseGlove programem &#160;<a href="http://www.doxygen.org/index.html">
+Wygenerowano N, 18 cze 2017 21:02:49 dla SenseGlove programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+</a> 1.8.6
 </small></address>
 </body>
 </html>

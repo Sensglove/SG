@@ -3,16 +3,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<meta name="generator" content="Doxygen 1.8.11"/>
-<title>SenseGlove: Plik źródłowy /home/ad/SENSGLOVE/SG/data_acquisition/prj/inc/socket.hh</title>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SenseGlove: Plik źródłowy /home/tofik/SG/data_acquisition/prj/inc/socket.hh</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
-<script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
 <script type="text/javascript">
-  $(document).ready(function() { init_search(); });
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
@@ -22,7 +21,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectalign" style="padding-left: 0.5em;">
+  <td style="padding-left: 0.5em;">
    <div id="projectname">SenseGlove
    &#160;<span id="projectnumber">0.2.3</span>
    </div>
@@ -32,7 +31,7 @@
 </table>
 </div>
 <!-- end header part -->
-<!-- Wygenerowano przez Doxygen 1.8.11 -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
 <script type="text/javascript">
 var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 </script>
@@ -69,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-</div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Zmienne</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -88,14 +87,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
 <div class="title">socket.hh</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SOCKET_HH</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SOCKET_HH</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QTcpServer&gt;</span></div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QTcpSocket&gt;</span></div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span><a class="code" href="namespacestd.html">std</a>;</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div><div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="class_socket.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_socket.html">Socket</a> : <span class="keyword">public</span> QObject</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;{</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Q_OBJECT</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="keyword">public</span>:</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_socket.html">Socket</a>(QObject *parent = 0);</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> write(<span class="keywordtype">string</span> tmp);</div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> close();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keywordtype">bool</span> connected(){ <span class="keywordflow">return</span> connect_flag;}</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;signals:</div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="keyword">public</span> slots:</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  <span class="keywordtype">void</span> newConnection();</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="keyword">private</span>:</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    QTcpServer *server;</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    QTcpSocket *socket;</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">bool</span> connect_flag;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;};</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div><div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;<span class="preprocessor">#endif // SOCKET_HH</span></div><div class="ttc" id="namespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div></div>
-<div class="ttc" id="class_socket_html"><div class="ttname"><a href="class_socket.html">Socket</a></div><div class="ttdoc">The Socket class. </div><div class="ttdef"><b>Definition:</b> socket.hh:19</div></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SOCKET_HH</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SOCKET_HH</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;QObject&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;QDebug&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;QString&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;QTcpServer&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;QTcpSocket&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;QVector&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_socket.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_socket.html">Socket</a> : <span class="keyword">public</span> QObject</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_socket.html">Socket</a>(QObject *parent = 0);</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> write(<span class="keywordtype">string</span> tmp);</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> close();</div>
+<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="class_socket.html#a98a0ab5316c4670de5349b44cc2d32b5">   43</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_socket.html#a98a0ab5316c4670de5349b44cc2d32b5">connected</a>(){ <span class="keywordflow">return</span> connect_flag;}</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;signals:</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <span class="keywordtype">void</span> newConnection();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="class_socket.html#a298c271555c928af0828ce847551091c">   57</a></span>&#160;    QTcpServer *<a class="code" href="class_socket.html#a298c271555c928af0828ce847551091c">server</a>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="class_socket.html#a3fa6b86a9e07d4f5e641969a4dd82d13">   61</a></span>&#160;    QTcpSocket *<a class="code" href="class_socket.html#a3fa6b86a9e07d4f5e641969a4dd82d13">socket</a>;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_socket.html#a93a816c7a3bb5af9a212e0a063a3ef05">   65</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_socket.html#a93a816c7a3bb5af9a212e0a063a3ef05">connect_flag</a>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;};</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#endif // SOCKET_HH</span></div>
+<div class="ttc" id="class_socket_html_a93a816c7a3bb5af9a212e0a063a3ef05"><div class="ttname"><a href="class_socket.html#a93a816c7a3bb5af9a212e0a063a3ef05">Socket::connect_flag</a></div><div class="ttdeci">bool connect_flag</div><div class="ttdoc">connect_flag Flaga połączenia. true - połączony, false - niepołączony </div><div class="ttdef"><b>Definition:</b> socket.hh:65</div></div>
+<div class="ttc" id="class_socket_html"><div class="ttname"><a href="class_socket.html">Socket</a></div><div class="ttdoc">The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...</div><div class="ttdef"><b>Definition:</b> socket.hh:20</div></div>
+<div class="ttc" id="class_socket_html_a98a0ab5316c4670de5349b44cc2d32b5"><div class="ttname"><a href="class_socket.html#a98a0ab5316c4670de5349b44cc2d32b5">Socket::connected</a></div><div class="ttdeci">bool connected()</div><div class="ttdoc">connected Funkcja zwracająca informację, czy gniazda są ze sobą połączone. </div><div class="ttdef"><b>Definition:</b> socket.hh:43</div></div>
+<div class="ttc" id="class_socket_html_a3fa6b86a9e07d4f5e641969a4dd82d13"><div class="ttname"><a href="class_socket.html#a3fa6b86a9e07d4f5e641969a4dd82d13">Socket::socket</a></div><div class="ttdeci">QTcpSocket * socket</div><div class="ttdoc">socket Gniazdo nadające wiadomości na server. </div><div class="ttdef"><b>Definition:</b> socket.hh:61</div></div>
+<div class="ttc" id="class_socket_html_a298c271555c928af0828ce847551091c"><div class="ttname"><a href="class_socket.html#a298c271555c928af0828ce847551091c">Socket::server</a></div><div class="ttdeci">QTcpServer * server</div><div class="ttdoc">server Serwer nasłuchujący na podanym kanale. </div><div class="ttdef"><b>Definition:</b> socket.hh:57</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Wygenerowano N, 18 cze 2017 19:35:59 dla SenseGlove programem &#160;<a href="http://www.doxygen.org/index.html">
+Wygenerowano N, 18 cze 2017 21:02:49 dla SenseGlove programem &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
-</a> 1.8.11
+</a> 1.8.6
 </small></address>
 </body>
 </html>

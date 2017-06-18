@@ -35,7 +35,7 @@ Zamieszczone zdjęcia zostały wykonane w trakcie testowania oprogramowania do a
 
 <img src="images/4.jpg" alt="Nie udało sie wyswietlic" align="center"/></center>
 <center>
-<h1 style="font-size:15px"> Czujniki nacisku </h1>
+<h1 style="font-size:15px"> Czujniki zgiecia </h1>
 <img src="images/5.jpg" alt="Nie udało sie wyswietlic" align="center"/></center>
 <center><img src="images/6.jpg" alt="Nie udało sie wyswietlic" align="center"/></center>
 <center><img src="images/7.jpg" alt="Nie udało sie wyswietlic" align="center"/></center>

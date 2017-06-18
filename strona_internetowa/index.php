@@ -38,7 +38,7 @@
  <p style="text-align: justify"> Na rozciągliwej rękawiczce sportowej zamocowane zostało 10 rezystancyjnych czujników nacisku w miejscach, które najczęściej są w kontakcie z chwytanym przedmiotem) oraz 5 czyjników zgięcia (po jednym na każdy palec). Czujniki umiejscowione są w takki sposób, aby jak najmniej krępować ruchy.
  </p>
  <center><h1 > Interfejs sprzętowy </h1></center>
- <p style="text-align: justify"> Sygnały wychodzące z czujników są pierwotnie wzmacniane przez zaprojektowany przez nas układ wzmacniaczy operacynych i podawane kanały ADC mikrokontrolera STM32F4, przez który są odczytywane i wysyłane przez USB do komputera.
+ <p style="text-align: justify"> Sygnały wychodzące z czujników są pierwotnie wzmacniane przez zaprojektowany przez nas układ wzmacniaczy operacyjnych i podawane na wejścia mikrokontrolera STM32F4 skonfigurowane jako kanały przetwornika analogowo-cyfrowego. Są odczytywane, zamieniane na wiadomość, która jest wysyłana przez USB do komputera.
  </p>
  <center><h1 > Oprogramowanie </h1></center>
  <p style="text-align: justify"> Na oprogramowanie składają się dwa elementy.

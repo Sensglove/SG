@@ -19,9 +19,7 @@ using namespace std;
 
 
 
-/*!
- *
- */
+
 bool Czas_JestPozniejNiz(const struct timespec& CzasX)
 {
   struct timespec  Czas_Aktualny;
@@ -59,9 +57,6 @@ int RS232_Odbierz( int            DeskPortu,
 
 
 
-/*!
- *
- */
 bool RS232_Odbierz( int            DeskPortu, 
                     string        &Bufor, 
                     unsigned int   IloscZnakow,

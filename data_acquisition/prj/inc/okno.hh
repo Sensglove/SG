@@ -36,27 +36,34 @@ class Okno;
 
 /*!
  * \brief The Read_Thread class
- * watek czytajacy z portu USB
+ * Wątek czytajacy z portu USB.
  */
 class Read_Thread: public QThread
 {
+    /*!
+     * \brief window
+     * Okno główne programu.
+     */
     Okno *window;
+    /*!
+     * \brief start_flag
+     * Flaga sprawdzająca, czy mierzony jest pomair. true - jest, false - nie jest
+     */
     bool start_flag;
 public:
     /*!
-    * \brief Read_Thread
+    * \brief Read_Thread Konstruktor wątku fokonującego przesyłu danych.
     * \param parent
     * \param _window
-    * konstruktor watku
     */
    Read_Thread(QObject *parent, Okno *_window): QThread(parent), window(_window), start_flag(true)
    {}
    /*!
-     * \brief Start - funkcja zaczynjąca wątek i ustawiająca mu start_flag=true
+     * \brief Start Funkcja zaczynjąca wątek i ustawiająca mu flagę start_flag na wartość true.
      */
     void Start(){start_flag=true; start();}
     /*!
-     * \brief Stop - funkcja ustawiająca start_flag=false
+     * \brief Stop Funkcja ustawiająca start_flag na wartość false.
      */
     void Stop(){start_flag=false;}
     void run();
@@ -68,7 +75,7 @@ public:
 
 /*!
  * \brief The Okno class
- * okno główne programu
+ * Okno główne programu.
  */
 class Okno : public QWidget
 {
@@ -106,22 +113,76 @@ public:
     Socket *mySocket;
 
 private:
+    /*!
+     * \brief timer
+     * Timer służący do odmierzania 2 s pomiaru.
+     */
     QTimer *timer;
+    /*!
+     * \brief bartim
+     * Timer odmierzający czas dla paska ładowania.
+     */
     QTimer *bartim;
+    /*!
+     * \brief progress_bar
+     * Pasek ładowania pokazujący postęp pomiaru danych.
+     */
     QProgressBar *progress_bar;
+    /*!
+     * \brief usb_label
+     * Napis z informacją o możliwości wyboru portu USB.
+     */
     QLabel *usb_label;
+    /*!
+     * \brief usb_choice
+     * Lista wyboru portu USB.
+     */
     QComboBox *usb_choice;
+    /*!
+     * \brief start
+     * Przycisk startu przesyłania danych do programu wizualizacji.
+     */
     QPushButton *start;
+    /*!
+     * \brief start_m
+     * Przycisk startu pomiaru.
+     */
     QPushButton *start_m;
+    /*!
+     * \brief accept
+     * Przycisk akceptacji pomiaru.
+     */
     QPushButton *accept;
+    /*!
+     * \brief reject
+     * Przycisk odrzucenia pomiaru.
+     */
     QPushButton *reject;
+    /*!
+     * \brief layout
+     * Warstwa potrzebna do ustawienia wzgledem siebie elementów.
+     */
     QGridLayout *layout;
+    /*!
+     * \brief type_of_movement
+     * Lista wyboru typu ruchu.
+     */
     QComboBox *type_of_movement;
+    /*!
+     * \brief name_label
+     * Napis informujący o możliwości podania imienia osoby wykonującej pomiar.
+     */
     QLabel *name_label;
+    /*!
+     * \brief name
+     * Pole do podania imienia osoby wykonujacej pomiar.
+     */
     QLineEdit *name;
+    /*!
+     * \brief move_name
+     * Napis informujacy o rodzaju wykonanego ruchu.
+     */
     QLabel *move_name;
-
-   // Socket *mySocket;
 
 public:
 

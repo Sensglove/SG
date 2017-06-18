@@ -1,18 +1,14 @@
 \documentclass[twoside]{book}
 
 % Packages required by doxygen
-\usepackage{fixltx2e}
 \usepackage{calc}
 \usepackage{doxygen}
-\usepackage[export]{adjustbox} % also loads graphicx
 \usepackage{graphicx}
 \usepackage[utf8]{inputenc}
 \usepackage{makeidx}
 \usepackage{multicol}
 \usepackage{multirow}
-\PassOptionsToPackage{warn}{textcomp}
 \usepackage{textcomp}
-\usepackage[nointegrals]{wasysym}
 \usepackage[table]{xcolor}
 
 % NLS support packages
@@ -21,6 +17,7 @@
 
 % Font selection
 \usepackage[T1]{fontenc}
+\usepackage{mathptmx}
 \usepackage[scaled=.90]{helvet}
 \usepackage{courier}
 \usepackage{amssymb}
@@ -34,7 +31,6 @@
   \fontseries{bc}\selectfont%
   \color{darkgray}%
 }
-\newcommand{\+}{\discretionary{\mbox{\scriptsize$\hookleftarrow$}}{}{}}
 
 % Page & text layout
 \usepackage{geometry}
@@ -50,7 +46,7 @@
 \hbadness=750
 \setlength{\emergencystretch}{15pt}
 \setlength{\parindent}{0cm}
-\setlength{\parskip}{3ex plus 2ex minus 2ex}
+\setlength{\parskip}{0.2cm}
 \makeatletter
 \renewcommand{\paragraph}{%
   \@startsection{paragraph}{4}{0ex}{-1.0ex}{1.0ex}{%
@@ -75,8 +71,8 @@
 \fancyhead[RO]{\fancyplain{}{\bfseries\thepage}}
 \fancyfoot[LE]{\fancyplain{}{}}
 \fancyfoot[CE]{\fancyplain{}{}}
-\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Wygenerowano przez Doxygen }}
-\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Wygenerowano przez Doxygen }}
+\fancyfoot[RE]{\fancyplain{}{\bfseries\scriptsize Wygenerowano N, 18 cze 2017 21\-:02\-:49 dla Sense\-Glove programem Doxygen }}
+\fancyfoot[LO]{\fancyplain{}{\bfseries\scriptsize Wygenerowano N, 18 cze 2017 21\-:02\-:49 dla Sense\-Glove programem Doxygen }}
 \fancyfoot[CO]{\fancyplain{}{}}
 \fancyfoot[RO]{\fancyplain{}{}}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -113,25 +109,22 @@
   \newpage{\pagestyle{empty}\cleardoublepage}%
 }
 
-\usepackage{caption}
-\captionsetup{labelsep=space,justification=centering,font={bf},singlelinecheck=off,skip=4pt,position=top}
 
 %===== C O N T E N T S =====
 
 \begin{document}
 
 % Titlepage & ToC
-\hypersetup{pageanchor=false,
-             bookmarksnumbered=true,
-             pdfencoding=unicode
-            }
+\hypersetup{pageanchor=false}
 \pagenumbering{roman}
 \begin{titlepage}
 \vspace*{7cm}
 \begin{center}%
-{\Large Sense\+Glove \\[1ex]\large 0.\+2.\+3 }\\
+{\Large Sense\-Glove \\[1ex]\large 0.\-2.\-3 }\\
 \vspace*{1cm}
-{\large Wygenerowano przez Doxygen 1.8.11}\\
+{\large Wygenerowano przez Doxygen 1.8.6}\\
+\vspace*{0.5cm}
+{\small N, 18 cze 2017 21:02:49}\\
 \end{center}
 \end{titlepage}
 \clearemptydoublepage
@@ -152,10 +145,8 @@
 %--- End generated contents ---
 
 % Index
-\backmatter
 \newpage
 \phantomsection
-\clearemptydoublepage
 \addcontentsline{toc}{chapter}{Indeks}
 \printindex
 

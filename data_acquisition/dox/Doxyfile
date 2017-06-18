@@ -1,3 +1,29 @@
+
+Skip to content
+This repository
+
+    Pull requests
+    Issues
+    Marketplace
+    Gist
+
+    @GosiaWJ
+
+4
+1
+
+    1
+
+Sensglove/SG
+Code
+Issues 0
+Pull requests 0
+Projects 0
+Wiki
+SG/data_acquisition/dox/Doxyfile
+e9be0d5 an hour ago
+@adaweiss adaweiss z niepełnym doxygenem
+2479 lines (1928 sloc) 105 KB
 # Doxyfile 1.8.11
 
 # This file describes the settings to be used by the documentation system
@@ -2476,3 +2502,9 @@ GENERATE_LEGEND        = YES
 # This tag requires that the tag HAVE_DOT is set to YES.
 
 DOT_CLEANUP            = YES
+
+    Contact GitHub API Training Shop Blog About 
+
+    © 2017 GitHub, Inc. Terms Privacy Security Status Help 
+
+

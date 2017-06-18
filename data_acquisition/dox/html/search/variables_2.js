@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['read_5fthread',['read_thread',['../class_okno.html#a6f836849c2547fcb51936a9c88c8e75a',1,'Okno']]]
+  ['connect_5fflag',['connect_flag',['../class_socket.html#a93a816c7a3bb5af9a212e0a063a3ef05',1,'Socket']]]
 ];

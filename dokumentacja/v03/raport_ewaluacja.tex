@@ -1,4 +1,4 @@
-﻿\documentclass{article}
+\documentclass{article}
 \usepackage[utf8]{inputenc}
 \usepackage[polish]{babel}
 \usepackage{polski}
@@ -52,7 +52,7 @@ Katarzyna Wądrzyk\\
 Ada Weiss\\
 Małgorzata Witka-Jeżewska\\
  }
-\title{SensGlove\\Raport z przebiegu projektu}
+\title{SensGlove}
 
 \begin{document}
 
@@ -95,7 +95,7 @@ Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk.
 Na rękawiczce wykonanej z poliestru przymocowano 10 czujników nasicku oraz 5 czujników ugięcia. Umiejscowienie czujników zotsało przedstawione na rysunku \ref{rys:czujniki_numeracja}.\\
 \begin{figure}[H]
     \centering
-    \includegraphics[width=14cm]{czujniki_numeracja.png}
+    \includegraphics[width=14cm]{rekawiczka_umiejscowienie.jpg}
     \caption{Umiejscowienie i numeracja czujników na rękawiczce}
     \label{rys:czujniki_numeracja}
 \end{figure}
@@ -103,13 +103,14 @@ Proces wykonania rękawiczki polegał na przylutowaniu przewodów do czujników,
 Przyszycie przewodów pozwala na zachowanie porządku i sprzyja ruchom osoby używającej rękawiczkę a przytwierdzenie klejem zapewnia trwałość. W celu zapobiegania uszkodzenia czujników (przede wszystkim haczeniu) uszyte zostały ''kapturki'' na palce. Dzięki nim sensory nacisku jak i także ugięcia są zabezpieczone przed uszkodzeniami.\\
 Na końcach przewodów odprowadzających sygnały z czujników zamontowane zostały żeńskie końce, które umożliwiają proste podłączenie ich do płytki wzmacniającej. Przymocowane czujniki numerowane są w kolejności przedstawioej na rysunku \ref{rys:czujniki_numeracja}.
 
-\subsubsection{Wprwadzone zmiany}
+\subsubsection{Wprowadzone zmiany}
 Planowowane było kupienie rękawiczki w rozmiarze S, ze względu na skład grupy, jednakże ostatecznie wybrano rozmiar M. Rękawiczka nadal dobrze dopasowuje się na dłoniach małych ale dodatkowo może z niej korzystać większe grono osób. Dzięki czemu do tworzenia bazy danych nie będzie potrzeby specjalnie wybierania i szukania osób o danym rozmiarze dłoni.\\
-Zaletą większego rozmiaru jest też większa powierzchnia do mocowania czujników. Dużo łatwiej jest rozmieścić wszystkie sensory, po ich przymocowaniu nie ograniczają one ruchów w tak dużym stopniu jakby miało to miejsce przy rękawiczce o rozmiarze S.
+Zaletą większego rozmiaru jest też większa powierzchnia do mocowania czujników. Dużo łatwiej jest rozmieścić wszystkie sensory, po ich przymocowaniu nie ograniczają one ruchów w tak dużym stopniu jakby miało to miejsce przy rękawiczce o rozmiarze S.\\
+Ze względu uszkodzenia się czujników, rękawiczka posiada 9 czujników nacisku. Jak widać na zdjęciu \ref{rys:czujniki_numeracja} czujnik 7 został pominięty, a czujnik 8 lekko przesunięty w lewą stronę by to zrekompensować. Jednakże dalej isnieje możliwość przymocowania brakującego czujnika 7.
 
 \subsubsection{Kryteria ewaluacji}
-Na obecnym etapie projektu rękawiczka jest już po wstępnej ewaluacji i wprowadzane zostają poprawki. Jeden czujnik z wewnętrznej części dłoni został uszkodzony. Kilka czujników nacisku zostało odczepionych, ponieważ zostały przyklejone za nisko na placu, co powodowało złe odczyty przy chwytaniu przedmiotów. \\
-W tej chwili rękawiczka spełnia następujące kryteria:\\
+Jeden czujnik z wewnętrznej części dłoni został uszkodzony. Kilka czujników nacisku zostało odczepionych, ponieważ zostały przyklejone za nisko na placu, co powodowało złe odczyty przy chwytaniu przedmiotów. \\
+Rękawiczka spełnia następujące kryteria:\\
 \begin{enumerate}
   \item Rękawiczka założona na rękę pozwala na możliwie swobodne poruszanie palcami.
   \item Rezystancja czujników nacisku wraz ze wzrostem siły maleje, a wraz ze stopniem zgięcia rezystancja czujników zgięcia rośnie.
@@ -127,27 +128,28 @@ Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
 \subsubsection{Schemat układu}
 \begin{figure}[!h]
 	\centering
-	\includegraphics[width=\textwidth]{schemat.png}
+	\includegraphics[width=15cm]{schemat.png}
 	\caption{schemat układu}
-	\label{rys:schemat układu}
+	\label{rys:schemat_ukladu}
 \end{figure}
 
-\subsubsubsection{Projekt płytki pcb i wyprowadzenie pinów układu}
+Projekt płytki pcb i wyprowadzenie pinów układu przedstawiono na rysunku  \ref{rys:pcb}.
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth]{pcb.png}
+	\includegraphics[width=12cm]{pcb.png}
 	\caption{Schemat płytki pcb}
 	\label{rys:pcb}
 \end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth/3]{J1.png}
+	\includegraphics[width=9cm]{J1.png}
 	\caption{J1 - pinout}
 	\label{rys:J1 - pinout}
+\end{figure}
 
-	\begin{table}
+\begin{table}[H]
 	\centering
 	\label{J1 - pinout}
 	\begin{tabular}{ll}
@@ -157,15 +159,15 @@ Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
 	2, 34		&	NC					\\
 \end{tabular}
 \end{table}
-\end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth/6]{J2.png}
+	\includegraphics[width=9cm]{J2.png}
 	\caption{J2 - pinout}
 	\label{rys:J2 - pinout}
+\end{figure}
 
-	\begin{table}
+\begin{table}[H]
 	\centering
 	\label{J2 - pinout}
 	\begin{tabular}{ll}
@@ -173,15 +175,15 @@ Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
 	8 - 16		&	złącza czujników biosygnałów 1 - 8	\\
 \end{tabular}
 \end{table}
-\end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth/2]{J3.png}
+	\includegraphics[width=9cm]{J3.png}
 	\caption{J3 - pinout}
 	\label{rys:J3 - pinout}
+\end{figure}
 
-	\begin{table}
+\begin{table}[H]
 	\centering
 	\label{J3 - pinout}
 	\begin{tabular}{ll}
@@ -192,15 +194,15 @@ Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
 	26		&	GND					\\
 \end{tabular}
 \end{table}
-\end{figure}
 
-\begin{figure}[h!]
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=\textwidth/10]{J4.png}
+	\includegraphics[width=9cm]{J4.png}
 	\caption{J4 - pinout}
 	\label{rys:J4 - pinout}
+\end{figure}
 
-	\begin{table}
+\begin{table}[H]
 	\centering
 	\label{J4 - pinout}
 	\begin{tabular}{ll}
@@ -209,10 +211,9 @@ Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
 	3		&	+9V					\\
 \end{tabular}
 \end{table}
-\end{figure}
 
 \subsubsection{Lista elementów}
-\begin{table}
+\begin{table}[H]
 	\centering
 	\label{Bill of materials}
 \begin{tabular}{lll}
@@ -231,7 +232,7 @@ J4		&	listwa kołkowa 1x3 2.56mm	&	THT	\\
 \end{table}
 
 \subsubsection{Połączenie z płytką STM32F3Discovery}
-\begin{table}
+\begin{table}[H]
 	\centering
 	\label{Bill of materials}
 \begin{tabular}{ll}
@@ -299,7 +300,8 @@ data_t data;
   {
     data.measure.checksum+=data.measures[i];
   }
-  printf("X%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x\r\n",
+  printf("X%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.
+  4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x%4.4x\r\n",
 	  data.measures[0], data.measures[1], data.measures[2], data.measures[3], data.measures[4],
 	  data.measures[5], data.measures[6], data.measures[7], data.measures[8], data.measures[9],
 	  data.measures[10], data.measures[11], data.measures[12], data.measures[13], data.measures[14],
@@ -307,7 +309,7 @@ data_t data;
 	  data.measures[20], data.measures[21], data.measures[22], data.measures[23], data.measures[24]);
 \end{verbatim}
 
-\subsubsubsection{Kryteria ewaluacji}
+\subsubsection{Kryteria ewaluacji}
 Poprawność odczytu sygnałów przez układ wzmacniaczy sygnałów sprawdzono poprzez podłączenie potencjometrów w miejsce czujników i pomiar napięć na wyjściu. Sprawdzono również współpracę z rękawiczką. 
 Poprawność odczytu sygnałów przez płytkę Discovery sprawdzono poprzez odczyt wartości zmiennych w pamięci mikrokontrolera przy użyciu programu STMStudio.
 Poprawność samej transmisji sprawdzona została poprzez wysyłanie pomiarów przez kabel USB i porównywanie z wartościam w pamięci mikrokontrolera.\\
@@ -427,7 +429,7 @@ Na obrazku \ref{rys:diagram_klas} zaprezentowano ogólny diagram klas zakładek 
 \end{figure}
 
 \subsubsection{Interfejs użytkownika}
-Na obecnym etapie użytkownik ma możliwość połączenia się z portem nadającym dane przez przyciśnięcie przycisku ''Ustal nowe połączenie''. W trakcie odbierania danych istnieje możliwość zatrzymania wykresów i wizualizacji dłoni w danym momencie poprzez przyciśnięcie przycisku ''Stop''. W lewym górnym rogu użytkownik ma dostęp do ustwień w których obecnie może zmienić zakres czasu prezentowanego na wykresach. Domyślnie wartość ta wynosi 30 s.\\
+Użytkownik ma możliwość połączenia się z portem nadającym dane przez przyciśnięcie przycisku ''Ustal nowe połączenie''. W trakcie odbierania danych istnieje możliwość zatrzymania wykresów i wizualizacji dłoni w danym momencie poprzez przyciśnięcie przycisku ''Stop''. W lewym górnym rogu użytkownik ma dostęp do ustwień w których obecnie może zmienić zakres czasu prezentowanego na wykresach. Domyślnie wartość ta wynosi 30 s.\\
 Rysunek \ref{rys:zakladka1} przedstawia pierwszą zakładkę aplikacji wizualizującej dane - czujniki nacisku. Po lewej stronie umieszczone są wykresy. Pierwszy największy wykres, można zmieniać przyciskając odpowiednio wykres który chcemy najbardziej śledzić. Wybrany wykres zaznaczony jest przez kolorową obwódkę. Po prawej stronie znajduje się widget zawierający ręke 2D prezentującą przez kolory odczytywane w danym momencie wartości napięcia.
 \begin{figure}[H]
     \centering
@@ -447,7 +449,7 @@ Rysunek \ref{rys:zakladka2} przedstawia drugą zakładkę aplikacji wizualizują
 Do testowania poprawności działania aplikacji napisano dodatkowy program mający udawać serwer nadający dane. Program ten napisany jest w C. Dane które generuje są randomowe, a port, częstotliwość i ilość wysyłanych wiadomości podaje się jako jego argumenty.\\
 Aplikacja odbiera pomyślnie zasymulowane dane z dodatkowego programu oraz wizualizuje zinterpretowane pomiary na wykresach i modelach dłoni. Przeprowadzono też integrację tej aplikacja z aplikacją to akwizycji dancyh, która przebiegła pomyślnie.
 
-\subsubsection{Brakujące elementy}
-Aplikacja nie jest jeszcze w pełni gotowa i wymaga dopracowania. Wizualizowane dane nie są jeszcze zsynchronizowane z rzeczywistymi wartościami danych z czujników. Brakuje też dodatkowych ustawień pozwalających na zmianę interfejsu w sposób wygodny dla użytkownika.
+\subsection{Ewaluacja końcowa projektu}
+Po połączeniu wszytkich komponentów projektu przeprowadzono testy. Polegały one na wykonywaniu ruchów w rękawiczce sensorycznej i obserwowanie efektów w programie wizualizującym oraz sprawdzenie poprawnego zapisu pliku do bazy danych. Testy pokazały, że sygnały przeysłane są odbierane poprawnie, co pokazują zdjęcia i film umieszczony na stronie internetowej sensglove.happyrobotics.com w odpowiednich zakładkach.
 
 \end{document}

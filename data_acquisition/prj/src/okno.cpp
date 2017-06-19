@@ -181,7 +181,6 @@ QVBoxLayout *names_layout=new QVBoxLayout();
 names_layout->addWidget(name_label);
 name_label->setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
 names_layout->addWidget(name);
-//name_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 name->setDisabled(true);
 
 
@@ -194,8 +193,6 @@ reject->setDisabled(true);
 QHBoxLayout *usb_layout= new QHBoxLayout();
 usb_layout->addWidget(usb_label);
 usb_layout->addWidget(usb_choice);
-
-//move_name->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Minimum);
 
 move_name=new QLabel("Choose type:");
 QVBoxLayout *move_type = new QVBoxLayout();
@@ -246,7 +243,6 @@ int    DeskPortu;
 string USB;
 USB="/dev/ttyACM"+usb_choice->currentText().mid(3,1).toStdString();
 if ((DeskPortu = open(USB.c_str(),O_RDWR | O_NONBLOCK)) < 0) {
-  //cerr << ":( Blad otwarcia portu " <<usb_choice->currentText().toStdString() << endl;
   QMessageBox::StandardButton reply;
     reply=QMessageBox::question(this, "Error", "Cannot open USB. Would you like to retry?",
                                           QMessageBox::Yes|QMessageBox::No,  QMessageBox::Yes);

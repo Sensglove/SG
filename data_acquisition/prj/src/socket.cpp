@@ -15,17 +15,15 @@ connect_flag=false;
 
 void Socket::write(string tmp)
 {
-   // if(server->hasPendingConnections()){
     tmp=tmp+"\n";
-   // if(server->isListening())
     const char * data=tmp.c_str();
+    char ping[1];
 
     socket->write(data);
     socket->flush();
     socket->waitForBytesWritten(300);
-
-//}
-    //else cout<<"nikt nie odbiera."<<endl;
+    socket->read(ping,1);
+    if(ping[0]=='0') connect_flag=false;
 }
 
 void Socket::close()

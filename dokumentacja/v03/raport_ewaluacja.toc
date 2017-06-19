@@ -25,3 +25,4 @@
 \contentsline {subsubsection}{\numberline {2.7.2}Diagram klas zak\IeC {\l }adek}{12}
 \contentsline {subsubsection}{\numberline {2.7.3}Interfejs u\IeC {\.z}ytkownika}{13}
 \contentsline {subsubsection}{\numberline {2.7.4}Kryteria ewaluacji}{14}
+\contentsline {subsection}{\numberline {2.8}Ewaluacja ko\IeC {\'n}cowa projektu}{14}

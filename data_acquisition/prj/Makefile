@@ -1,6 +1,6 @@
 NAZWA_APLIKACJI=SensGlove-data_acquisition
 URUCHOMIENIE_APLIKACJI=./${NAZWA_APLIKACJI}
-ZRODLA_PROJEKTU=src/*.cpp inc/*.hh
+ZRODLA_PROJEKTU=`/bin/pwd`/src/*.cpp `/bin/pwd`/inc/*.hh
 PODSTAWIENIA=OBJECTS_DIR=${KATALOG_OBJ} QMAKE_CXXFLAGS+=-std=c++11 QT+=widgets QT+=network
 
 
@@ -12,7 +12,7 @@ __start__: __sprawdz_Qt__ ${NAZWA_APLIKACJI}
 	rm -f core*; ${URUCHOMIENIE_APLIKACJI}
 
 __sprawdz_Qt__: __sprawdz_qmake__
-	@if qmake -v | grep 'ver.*4\.[0-9]*\.[0-9]*' > /dev/null;\
+	@if qmake -v | grep 'ver.*5\.[0-9]*\.[0-9]*' > /dev/null;\
          then exit 0;\
          else echo; echo " Brak biblioteki Qt w wersji 4.x.x";\
               echo;  exit 1;\

@@ -1,4 +1,4 @@
-#include "okno.hh"
+#include "inc/okno.hh"
 #include <QApplication>
 
 

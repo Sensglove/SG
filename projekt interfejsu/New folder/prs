@@ -1,0 +1,8 @@
+Qty,partname,description,lib
+0,"CONN_01X03","Connector, single row, 01x03, pin header","conn"
+0,"CONN_01X26","Connector, single row, 01x26, pin header","conn"
+0,"CONN_02X08","Connector, double row, 02x08, pin header","conn"
+0,"CONN_02X16","Connector, double row, 02x16, pin header","conn"
+0,"D_Zener_Small","Zener Diode, small symbol","device"
+0,"LM2902N","Quad Op amp.","linear"
+0,"R","Resistor","device"

@@ -50,7 +50,7 @@
 /* USER CODE END Includes */
 
 /* Private define ------------------------------------------------------------*/
-#define htim6_PSC 153
+#define htim6_PSC 71
 #define htim6_ARR 999
 
 #define LD7_Pin GPIO_PIN_11

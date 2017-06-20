@@ -124,9 +124,18 @@ Pomyślnie przeprowadzono próbę integracji rękawiczki z prototypem płytki wz
 \subsection{Interfejs sprzętowy}
 
 Osoby przydzielone do zadania: Beata Berajter i Dawid Brząkała. \\
-%odniesc sie trzeba jakos do tych kryteriów, co juz jest zrobione, moze zdjecie pcb, 
+\subsection{Opis}
+Interfejs sprzętowy składa się z płytki pcb wyposarzonej w wzmacniacze operacyjne, złącz czujników, złącza wyjść oraz zasilania. 
+Drugim elementem interfejsu jest płytka STM32F3 Discovery, która mierzy sygnały otrzymane z płytki ze wzmacniaczami i wysyła je do komputera za pośrednictwem kabla USB.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=12cm]{interfejs+discovery.jpg}
+	\caption{interfejs sprzętowy}
+	\label{rys:interfejs_sprzetowy}
+\end{figure}
+
 \subsubsection{Schemat układu}
-\begin{figure}[!h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=15cm]{schemat.png}
 	\caption{schemat układu}
@@ -295,6 +304,9 @@ data_t data;
 
 ...
 
+//główna pętla programu
+if(htim6_flag)
+{
   data.measure.checksum = 0;
   for(int i = 0; i < 24; i++)
   {
@@ -307,6 +319,7 @@ data_t data;
 	  data.measures[10], data.measures[11], data.measures[12], data.measures[13], data.measures[14],
 	  data.measures[15], data.measures[16], data.measures[17], data.measures[18], data.measures[19],
 	  data.measures[20], data.measures[21], data.measures[22], data.measures[23], data.measures[24]);
+}
 \end{verbatim}
 
 \subsubsection{Kryteria ewaluacji}

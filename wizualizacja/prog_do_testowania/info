@@ -1,0 +1,4 @@
+wywolanie programu
+./server port ilosc_wiadomosci czesotliwosc
+
+np. ./server 2666 1000 100

@@ -1,4 +1,4 @@
-#include "socket.hh"
+#include "inc/socket.hh"
 
 Socket::Socket(QObject *parent) : QObject(parent)
 {
@@ -22,8 +22,8 @@ void Socket::write(string tmp)
     socket->write(data);
     socket->flush();
     socket->waitForBytesWritten(300);
-    socket->read(ping,1);
-    if(ping[0]=='0') connect_flag=false;
+    //socket->read(ping,1);
+    //if(ping[0]=='0') connect_flag=false;
 }
 
 void Socket::close()
@@ -40,4 +40,3 @@ void Socket::newConnection(){
 
 
 }
-

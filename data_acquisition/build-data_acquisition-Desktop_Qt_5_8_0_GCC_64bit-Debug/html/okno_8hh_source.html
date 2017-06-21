@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.6"/>
+<title>SenseGlove: Plik źródłowy /home/tofik/SG/data_acquisition/prj/inc/okno.hh</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() { searchBox.OnSelectItem(0); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td style="padding-left: 0.5em;">
+   <div id="projectname">SenseGlove
+   &#160;<span id="projectnumber">0.2.3</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Wygenerowano przez Doxygen 1.8.6 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'Szukaj');
+</script>
+  <div id="navrow1" class="tabs">
+    <ul class="tablist">
+      <li><a href="index.html"><span>Strona&#160;główna</span></a></li>
+      <li><a href="annotated.html"><span>Klasy</span></a></li>
+      <li class="current"><a href="files.html"><span>Pliki</span></a></li>
+      <li>
+        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <img id="MSearchSelect" src="search/mag_sel.png"
+               onmouseover="return searchBox.OnSearchSelectShow()"
+               onmouseout="return searchBox.OnSearchSelectHide()"
+               alt=""/>
+          <input type="text" id="MSearchField" value="Szukaj" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><img id="MSearchCloseImg" border="0" src="search/close.png" alt=""/></a>
+          </span>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div id="navrow2" class="tabs2">
+    <ul class="tablist">
+      <li><a href="files.html"><span>Lista&#160;plików</span></a></li>
+    </ul>
+  </div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Klasy</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Funkcje</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Zmienne</a></div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_4aa64b0872d36146e049722e293482e3.html">prj</a></li><li class="navelem"><a class="el" href="dir_72345776cd6700fb0dedb8f1faaa0c00.html">inc</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">okno.hh</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef OKNO_HH</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define OKNO_HH</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#include &lt;sys/types.h&gt;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;sys/stat.h&gt;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;fcntl.h&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include&lt;ustat.h&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&lt;QWidget&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include&lt;QProgressBar&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include&lt;QGridLayout&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include&lt;QComboBox&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include&lt;QPushButton&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include&lt;QLabel&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include&lt;QTimer&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include&lt;QThread&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include&lt;QString&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include&lt;string&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include&lt;fstream&gt;</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include&lt;iostream&gt;</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#include&lt;QVector&gt;</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#include&lt;QHBoxLayout&gt;</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include&lt;QVBoxLayout&gt;</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include&lt;QLineEdit&gt;</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include&lt;QValidator&gt;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include&quot;odbieranie.hh&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include&quot;transparam.hh&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include&quot;socket.hh&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define LENGTH 125</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define SAMPLE_AMOUNT 2000</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor"></span></div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">using namespace </span>std;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">class </span><a class="code" href="class_okno.html">Okno</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_read___thread.html">   41</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_read___thread.html">Read_Thread</a>: <span class="keyword">public</span> QThread</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;{</div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="class_read___thread.html#a0c9db3caef6b98a0528dc2995801d4bd">   47</a></span>&#160;    <a class="code" href="class_okno.html">Okno</a> *<a class="code" href="class_read___thread.html#a0c9db3caef6b98a0528dc2995801d4bd">window</a>;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="class_read___thread.html#ac79ca6e83cd0246d67b2fd0a5e0c2c2c">   52</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_read___thread.html#ac79ca6e83cd0246d67b2fd0a5e0c2c2c">start_flag</a>;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="class_read___thread.html#a75267b0bd2c0061ff8998a51470de609">   59</a></span>&#160;   <a class="code" href="class_read___thread.html#a75267b0bd2c0061ff8998a51470de609">Read_Thread</a>(QObject *parent, <a class="code" href="class_okno.html">Okno</a> *_window): QThread(parent), window(_window), start_flag(true)</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;   {}</div>
+<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_read___thread.html#aac135df28f316466b880187097a268fd">   64</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_read___thread.html#aac135df28f316466b880187097a268fd">Start</a>(){start_flag=<span class="keyword">true</span>; start();}</div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_read___thread.html#ab7f432f2160c3e884af7a80387764977">   68</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_read___thread.html#ab7f432f2160c3e884af7a80387764977">Stop</a>(){start_flag=<span class="keyword">false</span>;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keywordtype">void</span> run();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">bool</span> CheckData(QString *wiadomosc);</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;};</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="class_okno.html">   80</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_okno.html">Okno</a> : <span class="keyword">public</span> QWidget</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;{</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    Q_OBJECT</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00089"></a><span class="lineno"><a class="line" href="class_okno.html#a0cd2b4f8ec74806cc7d3256eff69385a">   89</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_okno.html#a0cd2b4f8ec74806cc7d3256eff69385a">start_flag</a>;</div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="class_okno.html#ac9c31fbce4cb68413088827860277510">   93</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_okno.html#ac9c31fbce4cb68413088827860277510">desk_portu</a>;</div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="class_okno.html#a5a94843afcfc67735c25e5a29f9cdc3c">   97</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_okno.html#a5a94843afcfc67735c25e5a29f9cdc3c">measure_flag</a>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_okno.html#afddfe7d21fc34910d75f92d8904acb23">  101</a></span>&#160;    <span class="keywordtype">bool</span> <a class="code" href="class_okno.html#afddfe7d21fc34910d75f92d8904acb23">save_flag</a>;</div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_okno.html#a3cfa8a75106400dd97108bdca0e69cd5">  105</a></span>&#160;    <span class="keywordtype">bool</span> error_flag=<span class="keyword">false</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="class_okno.html#a6f836849c2547fcb51936a9c88c8e75a">  109</a></span>&#160;    <a class="code" href="class_read___thread.html">Read_Thread</a> <a class="code" href="class_okno.html#a6f836849c2547fcb51936a9c88c8e75a">read_thread</a>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_okno.html#af210b4fcf0872b832f3cc49bace1c48d">  113</a></span>&#160;    QVector&lt;string&gt; <a class="code" href="class_okno.html#af210b4fcf0872b832f3cc49bace1c48d">data</a>;</div>
+<div class="line"><a name="l00117"></a><span class="lineno"><a class="line" href="class_okno.html#a58a686222d1cc92f47d454c2481ce8d8">  117</a></span>&#160;    <a class="code" href="class_socket.html">Socket</a> *<a class="code" href="class_okno.html#a58a686222d1cc92f47d454c2481ce8d8">mySocket</a>;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00124"></a><span class="lineno"><a class="line" href="class_okno.html#a0ca5cf439ed8ad3ab7ef7b854c267f1b">  124</a></span>&#160;    QTimer *<a class="code" href="class_okno.html#a0ca5cf439ed8ad3ab7ef7b854c267f1b">timer</a>;</div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="class_okno.html#a0c69b007d741152d74b5d3d498289a48">  129</a></span>&#160;    QTimer *<a class="code" href="class_okno.html#a0c69b007d741152d74b5d3d498289a48">bartim</a>;</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="class_okno.html#aebc2e861da784f50f7965b17cfd8a85e">  134</a></span>&#160;    QProgressBar *<a class="code" href="class_okno.html#aebc2e861da784f50f7965b17cfd8a85e">progress_bar</a>;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_okno.html#a69cde4a1b1adcb98dd0f74b4a27a13e8">  139</a></span>&#160;    QLabel *<a class="code" href="class_okno.html#a69cde4a1b1adcb98dd0f74b4a27a13e8">usb_label</a>;</div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="class_okno.html#ae069d59c53771223e2c82d6d6ace45d3">  144</a></span>&#160;    QComboBox *<a class="code" href="class_okno.html#ae069d59c53771223e2c82d6d6ace45d3">usb_choice</a>;</div>
+<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_okno.html#ae7cda77331e084b73b3065c4cc5e46d2">  149</a></span>&#160;    QPushButton *<a class="code" href="class_okno.html#ae7cda77331e084b73b3065c4cc5e46d2">start</a>;</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="class_okno.html#a211a0bea332494946d0417ebb6c73ae3">  154</a></span>&#160;    QPushButton *<a class="code" href="class_okno.html#a211a0bea332494946d0417ebb6c73ae3">start_m</a>;</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="class_okno.html#a4fe774bd293a9dd438b803279b1cdd3a">  159</a></span>&#160;    QPushButton *<a class="code" href="class_okno.html#a4fe774bd293a9dd438b803279b1cdd3a">accept</a>;</div>
+<div class="line"><a name="l00164"></a><span class="lineno"><a class="line" href="class_okno.html#a70bd37b785ed16ce6db16f5b434ab75a">  164</a></span>&#160;    QPushButton *<a class="code" href="class_okno.html#a70bd37b785ed16ce6db16f5b434ab75a">reject</a>;</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="class_okno.html#a00ebd56e108eee1419ef68f9f68bfce3">  169</a></span>&#160;    QGridLayout *<a class="code" href="class_okno.html#a00ebd56e108eee1419ef68f9f68bfce3">layout</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno"><a class="line" href="class_okno.html#aba409a1e85e08d5f5f0dea2ae784dd18">  174</a></span>&#160;    QComboBox *<a class="code" href="class_okno.html#aba409a1e85e08d5f5f0dea2ae784dd18">type_of_movement</a>;</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="class_okno.html#add48fe820613017f93c66278e8b648de">  179</a></span>&#160;    QLabel *<a class="code" href="class_okno.html#add48fe820613017f93c66278e8b648de">name_label</a>;</div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="class_okno.html#ad86ed0c15931f5567519da354b9fb1e4">  184</a></span>&#160;    QLineEdit *<a class="code" href="class_okno.html#ad86ed0c15931f5567519da354b9fb1e4">name</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="class_okno.html#a0f42040af518729eb012f77f2f4b2f6e">  189</a></span>&#160;    QLabel *<a class="code" href="class_okno.html#a0f42040af518729eb012f77f2f4b2f6e">move_name</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    <a class="code" href="class_okno.html">Okno</a>(QWidget *parent );</div>
+<div class="line"><a name="l00198"></a><span class="lineno"><a class="line" href="class_okno.html#a20d42ba81a2b4b83bed90cb1dc687362">  198</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_okno.html#a20d42ba81a2b4b83bed90cb1dc687362">setDeskPort</a>(<span class="keywordtype">int</span> DeskPortu){desk_portu=DeskPortu;}</div>
+<div class="line"><a name="l00203"></a><span class="lineno"><a class="line" href="class_okno.html#a3d917a01365c453f29c8f8ff78cd67b7">  203</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="class_okno.html#a3d917a01365c453f29c8f8ff78cd67b7">takeDeskPort</a>()<span class="keyword"> const </span>{<span class="keywordflow">return</span> desk_portu;}</div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="class_okno.html#acb4f4dd5dfc929b4e019c1c169c9df0c">  208</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_okno.html#acb4f4dd5dfc929b4e019c1c169c9df0c">endReadThread</a>(){read_thread.Stop();}</div>
+<div class="line"><a name="l00213"></a><span class="lineno"><a class="line" href="class_okno.html#a8f6f59862bff738dbf5f650274fb1058">  213</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_okno.html#a8f6f59862bff738dbf5f650274fb1058">waitReadThread</a>(){read_thread.wait();}</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    <span class="keywordtype">bool</span> SaveToFile();</div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;    ~<a class="code" href="class_okno.html">Okno</a>(){</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;        <span class="keyword">delete</span> usb_label;</div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;    }</div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;</div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160;signals:</div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;</div>
+<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;<span class="keyword">public</span> slots:</div>
+<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordtype">void</span> on_start_clicked();</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;    <span class="keywordtype">void</span> on_start_m_clicked();</div>
+<div class="line"><a name="l00229"></a><span class="lineno"><a class="line" href="class_okno.html#ae30bfa2ba063af6dac4680291bccb6cd">  229</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_okno.html#ae30bfa2ba063af6dac4680291bccb6cd">SetProgressBar</a>() {progress_bar-&gt;setValue(progress_bar-&gt;value()+1);}</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    <span class="keywordtype">void</span> setMeasureIcons();</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;    <span class="keywordtype">void</span> on_accept_clicked();</div>
+<div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160;    <span class="keywordtype">void</span> on_reject_clicked();</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;<span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;    <span class="keywordtype">void</span> closeEvent(QCloseEvent *clevent);</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;};</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;</div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;</div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;</div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;<span class="preprocessor">#endif // OKNO_HH</span></div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;<span class="preprocessor"></span></div>
+<div class="ttc" id="class_okno_html_acb4f4dd5dfc929b4e019c1c169c9df0c"><div class="ttname"><a href="class_okno.html#acb4f4dd5dfc929b4e019c1c169c9df0c">Okno::endReadThread</a></div><div class="ttdeci">void endReadThread()</div><div class="ttdoc">endReadThread konczenie watku czytajacego z USB </div><div class="ttdef"><b>Definition:</b> okno.hh:208</div></div>
+<div class="ttc" id="class_okno_html_a0f42040af518729eb012f77f2f4b2f6e"><div class="ttname"><a href="class_okno.html#a0f42040af518729eb012f77f2f4b2f6e">Okno::move_name</a></div><div class="ttdeci">QLabel * move_name</div><div class="ttdoc">move_name Napis informujacy o rodzaju wykonanego ruchu. </div><div class="ttdef"><b>Definition:</b> okno.hh:189</div></div>
+<div class="ttc" id="class_okno_html_ae069d59c53771223e2c82d6d6ace45d3"><div class="ttname"><a href="class_okno.html#ae069d59c53771223e2c82d6d6ace45d3">Okno::usb_choice</a></div><div class="ttdeci">QComboBox * usb_choice</div><div class="ttdoc">usb_choice Lista wyboru portu USB. </div><div class="ttdef"><b>Definition:</b> okno.hh:144</div></div>
+<div class="ttc" id="class_okno_html_a6f836849c2547fcb51936a9c88c8e75a"><div class="ttname"><a href="class_okno.html#a6f836849c2547fcb51936a9c88c8e75a">Okno::read_thread</a></div><div class="ttdeci">Read_Thread read_thread</div><div class="ttdoc">read_thread </div><div class="ttdef"><b>Definition:</b> okno.hh:109</div></div>
+<div class="ttc" id="class_okno_html_a70bd37b785ed16ce6db16f5b434ab75a"><div class="ttname"><a href="class_okno.html#a70bd37b785ed16ce6db16f5b434ab75a">Okno::reject</a></div><div class="ttdeci">QPushButton * reject</div><div class="ttdoc">reject Przycisk odrzucenia pomiaru. </div><div class="ttdef"><b>Definition:</b> okno.hh:164</div></div>
+<div class="ttc" id="class_okno_html_af210b4fcf0872b832f3cc49bace1c48d"><div class="ttname"><a href="class_okno.html#af210b4fcf0872b832f3cc49bace1c48d">Okno::data</a></div><div class="ttdeci">QVector&lt; string &gt; data</div><div class="ttdoc">data - dane do przesyłu poprzez socket </div><div class="ttdef"><b>Definition:</b> okno.hh:113</div></div>
+<div class="ttc" id="class_okno_html_a0c69b007d741152d74b5d3d498289a48"><div class="ttname"><a href="class_okno.html#a0c69b007d741152d74b5d3d498289a48">Okno::bartim</a></div><div class="ttdeci">QTimer * bartim</div><div class="ttdoc">bartim Timer odmierzający czas dla paska ładowania. </div><div class="ttdef"><b>Definition:</b> okno.hh:129</div></div>
+<div class="ttc" id="class_okno_html_afddfe7d21fc34910d75f92d8904acb23"><div class="ttname"><a href="class_okno.html#afddfe7d21fc34910d75f92d8904acb23">Okno::save_flag</a></div><div class="ttdeci">bool save_flag</div><div class="ttdoc">save_flag </div><div class="ttdef"><b>Definition:</b> okno.hh:101</div></div>
+<div class="ttc" id="class_okno_html_ad86ed0c15931f5567519da354b9fb1e4"><div class="ttname"><a href="class_okno.html#ad86ed0c15931f5567519da354b9fb1e4">Okno::name</a></div><div class="ttdeci">QLineEdit * name</div><div class="ttdoc">name Pole do podania imienia osoby wykonujacej pomiar. </div><div class="ttdef"><b>Definition:</b> okno.hh:184</div></div>
+<div class="ttc" id="class_okno_html_a69cde4a1b1adcb98dd0f74b4a27a13e8"><div class="ttname"><a href="class_okno.html#a69cde4a1b1adcb98dd0f74b4a27a13e8">Okno::usb_label</a></div><div class="ttdeci">QLabel * usb_label</div><div class="ttdoc">usb_label Napis z informacją o możliwości wyboru portu USB. </div><div class="ttdef"><b>Definition:</b> okno.hh:139</div></div>
+<div class="ttc" id="class_read___thread_html_ac79ca6e83cd0246d67b2fd0a5e0c2c2c"><div class="ttname"><a href="class_read___thread.html#ac79ca6e83cd0246d67b2fd0a5e0c2c2c">Read_Thread::start_flag</a></div><div class="ttdeci">bool start_flag</div><div class="ttdoc">start_flag Flaga sprawdzająca, czy mierzony jest pomair. true - jest, false - nie jest ...</div><div class="ttdef"><b>Definition:</b> okno.hh:52</div></div>
+<div class="ttc" id="class_okno_html_a5a94843afcfc67735c25e5a29f9cdc3c"><div class="ttname"><a href="class_okno.html#a5a94843afcfc67735c25e5a29f9cdc3c">Okno::measure_flag</a></div><div class="ttdeci">bool measure_flag</div><div class="ttdoc">measure_flag </div><div class="ttdef"><b>Definition:</b> okno.hh:97</div></div>
+<div class="ttc" id="class_okno_html_a0ca5cf439ed8ad3ab7ef7b854c267f1b"><div class="ttname"><a href="class_okno.html#a0ca5cf439ed8ad3ab7ef7b854c267f1b">Okno::timer</a></div><div class="ttdeci">QTimer * timer</div><div class="ttdoc">timer Timer służący do odmierzania 2 s pomiaru. </div><div class="ttdef"><b>Definition:</b> okno.hh:124</div></div>
+<div class="ttc" id="class_read___thread_html_aac135df28f316466b880187097a268fd"><div class="ttname"><a href="class_read___thread.html#aac135df28f316466b880187097a268fd">Read_Thread::Start</a></div><div class="ttdeci">void Start()</div><div class="ttdoc">Start Funkcja zaczynjąca wątek i ustawiająca mu flagę start_flag na wartość true. ...</div><div class="ttdef"><b>Definition:</b> okno.hh:64</div></div>
+<div class="ttc" id="class_okno_html_add48fe820613017f93c66278e8b648de"><div class="ttname"><a href="class_okno.html#add48fe820613017f93c66278e8b648de">Okno::name_label</a></div><div class="ttdeci">QLabel * name_label</div><div class="ttdoc">name_label Napis informujący o możliwości podania imienia osoby wykonującej pomiar. </div><div class="ttdef"><b>Definition:</b> okno.hh:179</div></div>
+<div class="ttc" id="class_read___thread_html_ab7f432f2160c3e884af7a80387764977"><div class="ttname"><a href="class_read___thread.html#ab7f432f2160c3e884af7a80387764977">Read_Thread::Stop</a></div><div class="ttdeci">void Stop()</div><div class="ttdoc">Stop Funkcja ustawiająca start_flag na wartość false. </div><div class="ttdef"><b>Definition:</b> okno.hh:68</div></div>
+<div class="ttc" id="class_read___thread_html_a0c9db3caef6b98a0528dc2995801d4bd"><div class="ttname"><a href="class_read___thread.html#a0c9db3caef6b98a0528dc2995801d4bd">Read_Thread::window</a></div><div class="ttdeci">Okno * window</div><div class="ttdoc">window Okno główne programu. </div><div class="ttdef"><b>Definition:</b> okno.hh:47</div></div>
+<div class="ttc" id="class_okno_html_aebc2e861da784f50f7965b17cfd8a85e"><div class="ttname"><a href="class_okno.html#aebc2e861da784f50f7965b17cfd8a85e">Okno::progress_bar</a></div><div class="ttdeci">QProgressBar * progress_bar</div><div class="ttdoc">progress_bar Pasek ładowania pokazujący postęp pomiaru danych. </div><div class="ttdef"><b>Definition:</b> okno.hh:134</div></div>
+<div class="ttc" id="class_okno_html_a3d917a01365c453f29c8f8ff78cd67b7"><div class="ttname"><a href="class_okno.html#a3d917a01365c453f29c8f8ff78cd67b7">Okno::takeDeskPort</a></div><div class="ttdeci">int takeDeskPort() const </div><div class="ttdoc">takeDeskPort </div><div class="ttdef"><b>Definition:</b> okno.hh:203</div></div>
+<div class="ttc" id="class_okno_html_aba409a1e85e08d5f5f0dea2ae784dd18"><div class="ttname"><a href="class_okno.html#aba409a1e85e08d5f5f0dea2ae784dd18">Okno::type_of_movement</a></div><div class="ttdeci">QComboBox * type_of_movement</div><div class="ttdoc">type_of_movement Lista wyboru typu ruchu. </div><div class="ttdef"><b>Definition:</b> okno.hh:174</div></div>
+<div class="ttc" id="class_socket_html"><div class="ttname"><a href="class_socket.html">Socket</a></div><div class="ttdoc">The Socket class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego ...</div><div class="ttdef"><b>Definition:</b> socket.hh:20</div></div>
+<div class="ttc" id="class_okno_html_a4fe774bd293a9dd438b803279b1cdd3a"><div class="ttname"><a href="class_okno.html#a4fe774bd293a9dd438b803279b1cdd3a">Okno::accept</a></div><div class="ttdeci">QPushButton * accept</div><div class="ttdoc">accept Przycisk akceptacji pomiaru. </div><div class="ttdef"><b>Definition:</b> okno.hh:159</div></div>
+<div class="ttc" id="class_okno_html_a8f6f59862bff738dbf5f650274fb1058"><div class="ttname"><a href="class_okno.html#a8f6f59862bff738dbf5f650274fb1058">Okno::waitReadThread</a></div><div class="ttdeci">void waitReadThread()</div><div class="ttdoc">waitReadThread czekanie na zakonczenie watku </div><div class="ttdef"><b>Definition:</b> okno.hh:213</div></div>
+<div class="ttc" id="class_read___thread_html"><div class="ttname"><a href="class_read___thread.html">Read_Thread</a></div><div class="ttdoc">The Read_Thread class Wątek czytajacy z portu USB. </div><div class="ttdef"><b>Definition:</b> okno.hh:41</div></div>
+<div class="ttc" id="class_okno_html_a0cd2b4f8ec74806cc7d3256eff69385a"><div class="ttname"><a href="class_okno.html#a0cd2b4f8ec74806cc7d3256eff69385a">Okno::start_flag</a></div><div class="ttdeci">bool start_flag</div><div class="ttdoc">start_flag - flaga oznaczająca początek czytanai wątku </div><div class="ttdef"><b>Definition:</b> okno.hh:89</div></div>
+<div class="ttc" id="class_okno_html_a20d42ba81a2b4b83bed90cb1dc687362"><div class="ttname"><a href="class_okno.html#a20d42ba81a2b4b83bed90cb1dc687362">Okno::setDeskPort</a></div><div class="ttdeci">void setDeskPort(int DeskPortu)</div><div class="ttdoc">setDeskPort </div><div class="ttdef"><b>Definition:</b> okno.hh:198</div></div>
+<div class="ttc" id="class_okno_html_a58a686222d1cc92f47d454c2481ce8d8"><div class="ttname"><a href="class_okno.html#a58a686222d1cc92f47d454c2481ce8d8">Okno::mySocket</a></div><div class="ttdeci">Socket * mySocket</div><div class="ttdoc">mySocket - socket, przez który wysyłane są dane </div><div class="ttdef"><b>Definition:</b> okno.hh:117</div></div>
+<div class="ttc" id="class_okno_html_ac9c31fbce4cb68413088827860277510"><div class="ttname"><a href="class_okno.html#ac9c31fbce4cb68413088827860277510">Okno::desk_portu</a></div><div class="ttdeci">int desk_portu</div><div class="ttdoc">desk_portu </div><div class="ttdef"><b>Definition:</b> okno.hh:93</div></div>
+<div class="ttc" id="class_read___thread_html_a75267b0bd2c0061ff8998a51470de609"><div class="ttname"><a href="class_read___thread.html#a75267b0bd2c0061ff8998a51470de609">Read_Thread::Read_Thread</a></div><div class="ttdeci">Read_Thread(QObject *parent, Okno *_window)</div><div class="ttdoc">Read_Thread Konstruktor wątku fokonującego przesyłu danych. </div><div class="ttdef"><b>Definition:</b> okno.hh:59</div></div>
+<div class="ttc" id="class_okno_html_a211a0bea332494946d0417ebb6c73ae3"><div class="ttname"><a href="class_okno.html#a211a0bea332494946d0417ebb6c73ae3">Okno::start_m</a></div><div class="ttdeci">QPushButton * start_m</div><div class="ttdoc">start_m Przycisk startu pomiaru. </div><div class="ttdef"><b>Definition:</b> okno.hh:154</div></div>
+<div class="ttc" id="class_okno_html_ae30bfa2ba063af6dac4680291bccb6cd"><div class="ttname"><a href="class_okno.html#ae30bfa2ba063af6dac4680291bccb6cd">Okno::SetProgressBar</a></div><div class="ttdeci">void SetProgressBar()</div><div class="ttdoc">SetProgressBar zwiekszanie wartosci progress_bar poloczone z sygnalem z timera bartim. </div><div class="ttdef"><b>Definition:</b> okno.hh:229</div></div>
+<div class="ttc" id="class_okno_html"><div class="ttname"><a href="class_okno.html">Okno</a></div><div class="ttdoc">The Okno class Okno główne programu. </div><div class="ttdef"><b>Definition:</b> okno.hh:80</div></div>
+<div class="ttc" id="class_okno_html_ae7cda77331e084b73b3065c4cc5e46d2"><div class="ttname"><a href="class_okno.html#ae7cda77331e084b73b3065c4cc5e46d2">Okno::start</a></div><div class="ttdeci">QPushButton * start</div><div class="ttdoc">start Przycisk startu przesyłania danych do programu wizualizacji. </div><div class="ttdef"><b>Definition:</b> okno.hh:149</div></div>
+<div class="ttc" id="class_okno_html_a00ebd56e108eee1419ef68f9f68bfce3"><div class="ttname"><a href="class_okno.html#a00ebd56e108eee1419ef68f9f68bfce3">Okno::layout</a></div><div class="ttdeci">QGridLayout * layout</div><div class="ttdoc">layout Warstwa potrzebna do ustawienia wzgledem siebie elementów. </div><div class="ttdef"><b>Definition:</b> okno.hh:169</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Wygenerowano Wt, 20 cze 2017 13:22:52 dla SenseGlove programem &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="doxygen.png" alt="doxygen"/>
+</a> 1.8.6
+</small></address>
+</body>
+</html>

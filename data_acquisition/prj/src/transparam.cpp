@@ -2,7 +2,7 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <termios.h>
-#include "transparam.hh"
+#include "inc/transparam.hh"
 #include <cstring>
 
 

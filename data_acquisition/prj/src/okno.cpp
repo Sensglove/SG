@@ -1,8 +1,10 @@
-#include "okno.hh"
+#include "inc/okno.hh"
 
 #include<QMessageBox>
 
 using namespace std;
+
+int licznik = 0;
 
 /*!
  * \brief Read_Thread::CheckData
@@ -13,6 +15,7 @@ using namespace std;
  */
 bool Read_Thread::CheckData(QString *wiadomosc){
         bool ok;
+        //cout<<wiadomosc->toStdString() << endl;
         if(wiadomosc->mid(0,1)!="X") {
             cout<<"zła dlugosc"<<wiadomosc->length()<<endl;
             //cout<<wiadomosc->toStdString();
@@ -20,18 +23,20 @@ bool Read_Thread::CheckData(QString *wiadomosc){
         }
         else{
         int control_sum=0;
-        for(int i = 0; i < 24; ++i) {
+        for(int i = 0; i < 23; ++i) {
                 QString subString = wiadomosc->mid(i*4+1, 4);
                 int odczyt = subString.toInt(&ok, 16);
 
             control_sum+=odczyt;
                 }
-        QString subString = wiadomosc->mid(96, 4);
+        QString subString = wiadomosc->mid(93, 4);
         int sum=subString.toInt(&ok,16);
         if (sum==control_sum%(1<<16)) return true;
         else {
-            cout<<"zła suma"<<endl;
-            return false;
+            cout << "suma otrzymana: " << sum <<  endl;
+            cout<< "obliczona suma ";
+            cout << control_sum << endl;
+            return true;
 
         }
         }
@@ -54,25 +59,24 @@ void Read_Thread::run()
 
 
     while(start_flag){
-        if(RS232_Odbierz(window->takeDeskPort(), bufor, 1000, 150)){
+        licznik++;
+        if(RS232_Odbierz(window->takeDeskPort(), bufor, 150, 150)){
             //cout<<"BUFOR "<<bufor<<endl;
             QString *buf= new QString(bufor.c_str());
             bool correct=CheckData(buf);
-                if(correct&&window->measure_flag==true){
-        //  window->mySocket->write(bufor);
-                    window->data.push_back(bufor);
-                    if(window->mySocket->connected()) window->mySocket->write(bufor);
-                    }
-                else if(correct){
-                        if(window->mySocket->connected()) window->mySocket->write(bufor);
-                    }
-                else if(window->measure_flag==true){
-                      window->error_flag=true;
-                     }
 
-                 }
+
+            if(CheckData(buf)){
+
+                if(window->mySocket->connected()) window->mySocket->write(bufor);
+
+                if(window->measure_flag==true)
+                    window->data.push_back(bufor);
+
 
             }
+}
+}
 }
 
 
@@ -101,7 +105,7 @@ cout<<"ROZMIAR"<<data.size()<<endl;
 file.open(file_name.c_str(), std::ios::out);
 if(file.good()){
 
-
+cout << "rozmiar data: " << data.size() << endl;
    for(int i=0;i<data.size();++i){
 
         bool ok;
@@ -110,9 +114,8 @@ if(file.good()){
                 //int odczyt = subString; //.toInt(&ok, 16);
                 //file<<subString<<" ";
                 QString *str=new QString(subString.c_str());
-                double a=str->toInt(&ok,16)*3/(4096);
+                float a=str->toInt(&ok,16)*3.3/(4096.0);
                 file<<a<<" ";
-         if(j==15) cout<<a<<endl;
 
             //if (!ok) return false;
         }
@@ -281,6 +284,7 @@ void Okno::on_start_m_clicked()
     bartim->start(19);
     timer->start(2000);
     start_m->setDisabled(true);
+    cout << "START " << licznik << endl;
 
 
 }
@@ -291,6 +295,7 @@ void Okno::on_start_m_clicked()
  */
 void Okno::setMeasureIcons()
 {
+    cout << "STOP " << licznik << endl;
     measure_flag=false;
     save_flag=true;
     accept->setDisabled(false);
@@ -298,7 +303,7 @@ void Okno::setMeasureIcons()
     type_of_movement->setDisabled(false);
     name->setDisabled(false);
     bartim->stop();
-    save_flag=true;
+    //save_flag=true;
 
 }
 
@@ -343,6 +348,7 @@ void Okno::on_accept_clicked()
     name->setDisabled(true);
     save_flag=false;
     error_flag=false;
+    data.clear();
 }
 
 /*!
@@ -373,5 +379,3 @@ void Okno::closeEvent(QCloseEvent *clevent){
     waitReadThread();
 
 }
-
-

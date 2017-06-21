@@ -295,6 +295,9 @@ data_t data;
 
 ...
 
+//główna pętla programu
+if(htim6_flag)
+{
   data.measure.checksum = 0;
   for(int i = 0; i < 24; i++)
   {
@@ -307,6 +310,7 @@ data_t data;
 	  data.measures[10], data.measures[11], data.measures[12], data.measures[13], data.measures[14],
 	  data.measures[15], data.measures[16], data.measures[17], data.measures[18], data.measures[19],
 	  data.measures[20], data.measures[21], data.measures[22], data.measures[23], data.measures[24]);
+}
 \end{verbatim}
 
 \subsubsection{Kryteria ewaluacji}

@@ -1,0 +1,109 @@
+\hypertarget{class_socket}{\section{Dokumentacja klasy Socket}
+\label{class_socket}\index{Socket@{Socket}}
+}
+
+
+The \hyperlink{class_socket}{Socket} class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego poprzez łącze T\-C\-P.  
+
+
+
+
+{\ttfamily \#include $<$socket.\-hh$>$}
+
+Diagram dziedziczenia dla Socket\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_socket}
+\end{center}
+\end{figure}
+\subsection*{Sloty publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_socket_ae7f0dec57cf59312e51ad2ba29a66cb3}{void \hyperlink{class_socket_ae7f0dec57cf59312e51ad2ba29a66cb3}{new\-Connection} ()}\label{class_socket_ae7f0dec57cf59312e51ad2ba29a66cb3}
+
+\begin{DoxyCompactList}\small\item\em new\-Connection Slot inicjujący połączenie. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Metody publiczne}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_socket_ad56a75db4ac49694f2f511d7a8d98de6}{Socket} (Q\-Object $\ast$parent=0)
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_socket}{Socket} Konstruktor obiektu klasy \hyperlink{class_socket}{Socket}. \end{DoxyCompactList}\item 
+void \hyperlink{class_socket_ac96341e53a5c97ed71dd4cb02e6f744d}{write} (string tmp)
+\begin{DoxyCompactList}\small\item\em write Funkcja przekazująca gniazdom treść do wysłania. \end{DoxyCompactList}\item 
+\hypertarget{class_socket_a75ee749264ccbcfc4dfbf5442e55dcb8}{void \hyperlink{class_socket_a75ee749264ccbcfc4dfbf5442e55dcb8}{close} ()}\label{class_socket_a75ee749264ccbcfc4dfbf5442e55dcb8}
+
+\begin{DoxyCompactList}\small\item\em close -\/ funkcja zamykająca połączenie \end{DoxyCompactList}\item 
+bool \hyperlink{class_socket_a98a0ab5316c4670de5349b44cc2d32b5}{connected} ()
+\begin{DoxyCompactList}\small\item\em connected Funkcja zwracająca informację, czy gniazda są ze sobą połączone. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Atrybuty prywatne}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_socket_a298c271555c928af0828ce847551091c}{Q\-Tcp\-Server $\ast$ \hyperlink{class_socket_a298c271555c928af0828ce847551091c}{server}}\label{class_socket_a298c271555c928af0828ce847551091c}
+
+\begin{DoxyCompactList}\small\item\em server Serwer nasłuchujący na podanym kanale. \end{DoxyCompactList}\item 
+\hypertarget{class_socket_a3fa6b86a9e07d4f5e641969a4dd82d13}{Q\-Tcp\-Socket $\ast$ \hyperlink{class_socket_a3fa6b86a9e07d4f5e641969a4dd82d13}{socket}}\label{class_socket_a3fa6b86a9e07d4f5e641969a4dd82d13}
+
+\begin{DoxyCompactList}\small\item\em socket Gniazdo nadające wiadomości na server. \end{DoxyCompactList}\item 
+\hypertarget{class_socket_a93a816c7a3bb5af9a212e0a063a3ef05}{bool \hyperlink{class_socket_a93a816c7a3bb5af9a212e0a063a3ef05}{connect\-\_\-flag}}\label{class_socket_a93a816c7a3bb5af9a212e0a063a3ef05}
+
+\begin{DoxyCompactList}\small\item\em connect\-\_\-flag Flaga połączenia. true -\/ połączony, false -\/ niepołączony \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Opis szczegółowy}
+The \hyperlink{class_socket}{Socket} class Klasa zajmująca się przesyłem danych z programu odbierającego je do wizualizujacego poprzez łącze T\-C\-P. 
+
+\subsection{Dokumentacja konstruktora i destruktora}
+\hypertarget{class_socket_ad56a75db4ac49694f2f511d7a8d98de6}{\index{Socket@{Socket}!Socket@{Socket}}
+\index{Socket@{Socket}!Socket@{Socket}}
+\subsubsection[{Socket}]{\setlength{\rightskip}{0pt plus 5cm}Socket\-::\-Socket (
+\begin{DoxyParamCaption}
+\item[{Q\-Object $\ast$}]{parent = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}}\label{class_socket_ad56a75db4ac49694f2f511d7a8d98de6}
+
+
+\hyperlink{class_socket}{Socket} Konstruktor obiektu klasy \hyperlink{class_socket}{Socket}. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Dokumentacja funkcji składowych}
+\hypertarget{class_socket_a98a0ab5316c4670de5349b44cc2d32b5}{\index{Socket@{Socket}!connected@{connected}}
+\index{connected@{connected}!Socket@{Socket}}
+\subsubsection[{connected}]{\setlength{\rightskip}{0pt plus 5cm}bool Socket\-::connected (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{class_socket_a98a0ab5316c4670de5349b44cc2d32b5}
+
+
+connected Funkcja zwracająca informację, czy gniazda są ze sobą połączone. 
+
+\begin{DoxyReturn}{Zwraca}
+true -\/ jest połączony, false -\/ nie jest 
+\end{DoxyReturn}
+\hypertarget{class_socket_ac96341e53a5c97ed71dd4cb02e6f744d}{\index{Socket@{Socket}!write@{write}}
+\index{write@{write}!Socket@{Socket}}
+\subsubsection[{write}]{\setlength{\rightskip}{0pt plus 5cm}void Socket\-::write (
+\begin{DoxyParamCaption}
+\item[{string}]{tmp}
+\end{DoxyParamCaption}
+)}}\label{class_socket_ac96341e53a5c97ed71dd4cb02e6f744d}
+
+
+write Funkcja przekazująca gniazdom treść do wysłania. 
+
+
+\begin{DoxyParams}{Parametry}
+{\em tmp} & \\
+\hline
+\end{DoxyParams}
+
+
+Dokumentacja dla tej klasy została wygenerowana z plików\-:\begin{DoxyCompactItemize}
+\item 
+/home/tofik/\-S\-G/data\-\_\-acquisition/prj/inc/socket.\-hh\item 
+/home/tofik/\-S\-G/data\-\_\-acquisition/prj/src/socket.\-cpp\end{DoxyCompactItemize}

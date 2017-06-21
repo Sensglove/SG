@@ -9,7 +9,7 @@
 #include <cstdio>
 #include <cstring>
 #include <errno.h>
-#include "transparam.hh"
+#include "inc/transparam.hh"
 
 #define ROZMIAR_LINII   120
 

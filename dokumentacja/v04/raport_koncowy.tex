@@ -113,7 +113,14 @@ Stanowisko składa się z:
 \begin{enumerate}
   \item Należy nałożyć ostrożnie rękawiczkę na dłoń, uważając, by nie zginać nadmiernie czujników nacisku. Rękawiczka założona na rękę pozwala na możliwie swobodne poruszanie palcami.
 	\item Podczas wykonywania ruchów czujniki oraz przewody nie haczą się o nic dzięki przyszyciu ich do rękawiczku, spleceniu oraz dzięki dołączonym kapturkom oraz dodatkowej bezpalcowej osłonie. Koniecznie należy je nałożyć na palce i dłoń szwami od strony czujników ugięcia w celu ich poprawnego działania.
-	\item Sygnały z czujników prowadzone przez przewody są bezpośrednio podłączone do styków na wzmacniaczu dzięki ich żeńskim końcówkom.
+	\item Sygnały z czujników prowadzone przez przewody są bezpośrednio podłączone do styków na wzmacniaczu dzięki przygotowanemu złączu przedstawionym na zdjęciu \ref{rys:koncowka}.
+	\begin{figure}[H]
+    \centering
+    \includegraphics[width=9cm]{koncowka.jpg}
+    \caption{Końcówka czujników pozwalająca na łatwe podłączenie do płytki ze wzmacniaczami}
+    \label{rys:koncowka}
+  \end{figure}
+	
 	\item Na przedramieniu osoby badanej należy umieścić sensory biosygnałów w sposób pokazany w instrukcji ''Stanowsiko badawcze do akwizycji biosygnałów'' autorstwa A. Wołczowskiego i J.S. Witkowskiego.
 	\item Płytkę ze wzmacniaczami należy połączyć z płytką deweloperską Discovery, zasilaniem bateryjnym, wzmacniaczami biosygnałów oraz wtyczką z czujnikami nacisku oraz ugięcia w sposób pokazany na zdjęciu.
 	\item Należy włączyć oba programy - do akwizycji danych oraz do ich wizualizacji. Dane z płytki Discovery płynnie przesyłane są poprzez przewód USB do komputera z włączonym programem do akwizycji danych.
@@ -123,8 +130,15 @@ Stanowisko składa się z:
 	\item Sensory nacisku na wewnętrznej części dłoni sprawnie odczytują siłę nacisku. Świadczy o tym zmiana koloru odpowiednich pól na wizualizowanej dłoni.
 	\item Przy wybraniu odpowiednich zakładek widać na poszczególnych wykresach jak ruch wpływa na sygnały z czujników: ugięcia, nacisku i biosygnałów.
 	\item Przy wciśnięciu przycisku ''Measurement'' w programie do akwizycji danych pojawia się pasek ładowania odmierzający 2 s. Po tym czasie pojawia się możliwość zapisu lub zignorowania danych.
-	\item Po wybraniu ruchu i wpisaniu przykładowej nazwy użytkownika oraz przyciśnięciu przycisku ''Save''.
-	\item Wartości z pomiarów zostały zapisane do odpowiedniego folderu.	
+	\item Po wybraniu ruchu i wpisaniu przykładowej nazwy użytkownika oraz przyciśnięciu przycisku ''Save'' wartości z pomiarów zostają poprawnie zapisane do odpowiedniego folderu. Przykładowy wynik tej operacji jest pokazany na rysunku \ref{rys:baza_folder}.
+	
+	\begin{figure}[H]
+    \centering
+    \includegraphics[width=15cm]{baza_folder.png}
+    \caption{Poprawie utworzone foldery i pliki w bazie danych}
+    \label{rys:baza_folder}
+  \end{figure}
+	
 \end{enumerate}
 
 %opis czynnnosci pozwalajacych polaczyc komponenty i wykonac pomiary
@@ -165,7 +179,7 @@ Interfejs sprzętowy składa się z płytki pcb wyposarzonej w wzmacniacze opera
 Drugim elementem interfejsu jest płytka STM32F3 Discovery, która mierzy sygnały otrzymane z płytki ze wzmacniaczami i wysyła je do komputera za pośrednictwem kabla USB.
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=12cm]{interfejs+discovery.jpg}
+	\includegraphics[width=10cm]{interfejs+discovery.jpg}
 	\caption{Interfejs sprzętowy}
 	\label{rys:interfejs_sprzetowy}
 \end{figure}
@@ -174,7 +188,7 @@ Drugim elementem interfejsu jest płytka STM32F3 Discovery, która mierzy sygna�
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=15cm]{schemat.png}
+	\includegraphics[width=14cm]{schemat.png}
 	\caption{Schemat układu}
 	\label{rys:schemat_ukladu}
 \end{figure}
@@ -208,7 +222,7 @@ Projekt płytki pcb i wyprowadzenie pinów układu przedstawiono na rysunku  \re
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=9cm]{J2.png}
+	\includegraphics[width=6cm]{J2.png}
 	\caption{J2 - pinout}
 	\label{rys:J2 - pinout}
 \end{figure}
@@ -243,7 +257,7 @@ Projekt płytki pcb i wyprowadzenie pinów układu przedstawiono na rysunku  \re
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=9cm]{J4.png}
+	\includegraphics[width=6cm]{J4.png}
 	\caption{J4 - pinout}
 	\label{rys:J4 - pinout}
 \end{figure}
@@ -255,25 +269,6 @@ Projekt płytki pcb i wyprowadzenie pinów układu przedstawiono na rysunku  \re
 	1 		&	-9V					\\
 	2		&	GND					\\
 	3		&	+9V					\\
-\end{tabular}
-\end{table}
-
-\subsubsection{Lista elementów}
-\begin{table}[H]
-	\centering
-	\label{Bill of materials}
-\begin{tabular}{lll}
-U1-U6		&	TLC084CN			&	THT	\\
-R1-R10		&	10kOhm				&	THT	\\
-R11-R16		&	33kOhm				&	THT	\\
-R17-R24		&	3.3kOhm				&	SMD	\\
-R25-R32		&	3.3kOhm				&	THT	\\
-R33-R40		&	2.2kOhm				&	THT	\\
-D1-D24		&	3.3V Zenera			&	SMD	\\
-J1		&	IDC-34 żeńskie			&	THT	\\
-J2		&	IDC-16 żeńskie			&	THT	\\
-J3		&	listwa kołkowa 1x26 2.56mm	&	THT	\\
-J4		&	listwa kołkowa 1x3 2.56mm	&	THT	\\
 \end{tabular}
 \end{table}
 
@@ -315,13 +310,32 @@ J1		&	ST3M32Discovery	\\
 \end{tabular}
 \end{table}
 
+\subsubsection{Lista elementów}
+\begin{table}[H]
+	\centering
+	\label{Bill of materials}
+\begin{tabular}{lll}
+U1-U6		&	TLC084CN			&	THT	\\
+R1-R10		&	10kOhm				&	THT	\\
+R11-R16		&	33kOhm				&	THT	\\
+R17-R24		&	3.3kOhm				&	SMD	\\
+R25-R32		&	3.3kOhm				&	THT	\\
+R33-R40		&	2.2kOhm				&	THT	\\
+D1-D24		&	3.3V Zenera			&	SMD	\\
+J1		&	IDC-34 żeńskie			&	THT	\\
+J2		&	IDC-16 żeńskie			&	THT	\\
+J3		&	listwa kołkowa 1x26 2.56mm	&	THT	\\
+J4		&	listwa kołkowa 1x3 2.56mm	&	THT	\\
+\end{tabular}
+\end{table}
+
+
+
 \subsection{Kod programu}
 \begin{verbatim}
 //struktura danych do zapisu odczytu sygnałów
-typedef union
-{
-	struct
-	{
+typedef union {
+	struct {
 		uint16_t forceSensors[10];
 		uint16_t flexSensors[6];
 		uint16_t biosignals[8];
@@ -384,7 +398,7 @@ Dokładny opis klas i poszczególnych parametrów tworzony jest za pomocą progr
 Interfejs graficzny programu został napisany z wykorzystaniem klas biblioteki Qt5 i został zaprezentowany na rys. \ref{rys:okno}. 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.6]{okno.png}
+    \includegraphics[scale=0.5]{okno.png}
     \caption{Okno główne programu}
     \label{rys:okno}
 \end{figure}

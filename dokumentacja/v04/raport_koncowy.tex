@@ -477,28 +477,32 @@ Na obrazku \ref{rys:diagram_klas} zaprezentowano ogólny diagram klas zakładek 
 \end{figure}
 
 \subsubsection{Interfejs użytkownika}
-Użytkownik ma możliwość połączenia się z portem nadającym dane przez przyciśnięcie przycisku ''Ustal nowe połączenie''. W trakcie odbierania danych istnieje możliwość zatrzymania wykresów i wizualizacji dłoni w danym momencie poprzez przyciśnięcie przycisku ''Stop''. W lewym górnym rogu użytkownik ma dostęp do ustwień w których obecnie może zmienić zakres czasu prezentowanego na wykresach. Domyślnie wartość ta wynosi 30 s.\\
+Aplikacja automatycznie próbuje się połączyć z portem 2666 na localhostcie. Jeżeli użytkownik chce skorzystać z innego portu lub nazwy/ip serwera może wprowadzić zmiany w ustawieniach. Dostęp do ustwień jest z górnego paska po lewej stronie. Isnieje dodatkowo możliwość zmiany zakresu czasu prezentaowanego na wykesach. Domyślnie wartość ta wynosi 30 s.\\
+W trakcie odbierania danych istnieje możliwość zatrzymania wykresów i wizualizacji dłoni w danym momencie poprzez przyciśnięcie przycisku ''Stop''. \\
 Rysunek \ref{rys:zakladka1} przedstawia pierwszą zakładkę aplikacji wizualizującej dane - czujniki nacisku. Po lewej stronie umieszczone są wykresy. Pierwszy największy wykres, można zmieniać przyciskając odpowiednio wykres który chcemy najbardziej śledzić. Wybrany wykres zaznaczony jest przez kolorową obwódkę. Po prawej stronie znajduje się widget zawierający ręke 2D prezentującą przez kolory odczytywane w danym momencie wartości napięcia.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=18cm]{zakladka1.png}
-    \caption{Diagram klas zakładek - wizualizacja}
+    \includegraphics[width=16cm]{zakladka1.png}
+    \caption{Zakładka 1}
     \label{rys:zakladka1}
 \end{figure}
 Rysunek \ref{rys:zakladka2} przedstawia drugą zakładkę aplikacji wizualizującej dane - czujniki zgięcia. Po lewej stronie tak samo jak poprzednio znajdują się wykresy odczytywanego napięcia. Po prawej stronie znajduje się widget zawierający ręke 3D której palce zginają się odpowiednio do otrzymywanych wartości z czujników.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=18cm]{zakladka2.png}
-    \caption{Diagram klas zakładek - wizualizacja}
+    \includegraphics[width=16cm, height=10cm]{zakladka2.png}
+    \caption{Zakładka 2}
     \label{rys:zakladka2}
+\end{figure}
+Rysunek \ref{rys:zakladka3} przedstawia trzecią zakładkę prezentującą odczyty EMG biosygnałów z elektrod w formie wykresów.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=16cm, height=9.5cm]{zakladka3.png}
+    \caption{Zakładka 3}
+    \label{rys:zakladka3}
 \end{figure}
 
 
-
 Aplikacja odbiera pomyślnie dane z programu do akwizycji oraz wizualizuje zinterpretowane pomiary na wykresach i modelach dłoni. 
-
-
-
 
 
 \section{Testowanie całości systemu i rozpowszechnianie}

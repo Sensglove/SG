@@ -80,7 +80,19 @@ Małgorzata Witka-Jeżewska\\
 %
 % UWAGA! Tekst specyfkacji zostawiam po to, zebyscie nei musieli szukać! Należy go usunać albo chociaż zmienić na swoje potrzeby
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Podsumowanie prac dla poszczególnych komponentów}
+\section{Opis stanowiska}
+Stanowisko składa się z:
+\begin{enumerate}
+	\item rekawiczki z sensorami oraz okablowaniem
+	\item 5 nakładek na palce oraz jednej na dłoń
+	\item 8 sensorów biosygnałów
+	\item 3 frotek
+	\item przedwzmacniacza do biosygnałów
+	\item płytki ze wzmacniaczami
+	\item 2 baterii zasilających 9V
+	\item płytki developerskiej STM32Discovery
+	\item komputera z programami do akwizycji danych oraz do ich wizualizacji	
+\end{enumerate}
 
 \begin{figure}[H]
 	\centering
@@ -96,7 +108,27 @@ Małgorzata Witka-Jeżewska\\
 	\label{rys:stanowisko}
 \end{figure}
 
+\subsection{Przygotowanie stanowiska}
+
+\begin{enumerate}
+  \item Należy nałożyć ostrożnie rękawiczkę na dłoń, uważając, by nie zginać nadmiernie czujników nacisku. Rękawiczka założona na rękę pozwala na możliwie swobodne poruszanie palcami.
+	\item Podczas wykonywania ruchów czujniki oraz przewody nie haczą się o nic dzięki przyszyciu ich do rękawiczku, spleceniu oraz dzięki dołączonym kapturkom oraz dodatkowej bezpalcowej osłonie. Koniecznie należy je nałożyć na palce i dłoń szwami od strony czujników ugięcia w celu ich poprawnego działania.
+	\item Sygnały z czujników prowadzone przez przewody są bezpośrednio podłączone do styków na wzmacniaczu dzięki ich żeńskim końcówkom.
+	\item Na przedramieniu osoby badanej należy umieścić sensory biosygnałów w sposób pokazany w instrukcji ''Stanowsiko badawcze do akwizycji biosygnałów'' autorstwa A. Wołczowskiego i J.S. Witkowskiego.
+	\item Płytkę ze wzmacniaczami należy połączyć z płytką deweloperską Discovery, zasilaniem bateryjnym, wzmacniaczami biosygnałów oraz wtyczką z czujnikami nacisku oraz ugięcia w sposób pokazany na zdjęciu.
+	\item Należy włączyć oba programy - do akwizycji danych oraz do ich wizualizacji. Dane z płytki Discovery płynnie przesyłane są poprzez przewód USB do komputera z włączonym programem do akwizycji danych.
+	\item Poprzez obsługę programu do akwizycji danych pomiar rozpoczynany jest poprzez przyciśnięcie przycisku ''Start''.
+	\item We włączonym programie od wizualizacji w odpowiednich zakładkach w czasie rzeczywistym można obserować przebieg sygnałów z czujników: nacisku, ugięcia i biosygnałów a także wizualizacje dłoni z czujnikami nacisku i ugiecia.
+	\item Przy chwytaniu przedmiotów czujniki ugięcia działają sprawnie, o czym świadczy ugięcie palców na wirtualnej dłoni oraz wykresy z odczytami wartości rezystancji z czujników.
+	\item Sensory nacisku na wewnętrznej części dłoni sprawnie odczytują siłę nacisku. Świadczy o tym zmiana koloru odpowiednich pól na wizualizowanej dłoni.
+	\item Przy wybraniu odpowiednich zakładek widać na poszczególnych wykresach jak ruch wpływa na sygnały z czujników: ugięcia, nacisku i biosygnałów.
+	\item Przy wciśnięciu przycisku ''Measurement'' w programie do akwizycji danych pojawia się pasek ładowania odmierzający 2 s. Po tym czasie pojawia się możliwość zapisu lub zignorowania danych.
+	\item Po wybraniu ruchu i wpisaniu przykładowej nazwy użytkownika oraz przyciśnięciu przycisku ''Save''.
+	\item Wartości z pomiarów zostały zapisane do odpowiedniego folderu.	
+\end{enumerate}
+
 %opis czynnnosci pozwalajacych polaczyc komponenty i wykonac pomiary
+\section{Podsumowanie prac dla poszczególnych komponentów}
 
 \subsection{Rękawiczka sensoryczna}
 Osoby przydzielone do zadania: Dorota Gidel, Katarzyna Wądrzyk.
@@ -358,7 +390,7 @@ Interfejs graficzny programu został napisany z wykorzystaniem klas biblioteki Q
 \end{figure}
 
 Zasada działania została przedstawiona na rys. \ref{rys:programdia}. 
-Pierwszym krokiem jest wybór portu USB i wciśnięcie przycisku start, co uruchamia konfiguracje wybranego portu USB. W przypadku braku podłączonego urządzenia na danym porcie wyświetlany jest komunikat przedstawiony na rys. \ref{rys:oknousb}. Kliknięcie "Yes" umożliwia ponowny wybór, a "No" kończy pracę programu.\\
+Pierwszym krokiem jest wybór portu USB i wciśnięcie przycisku start, co uruchamia konfiguracje wybranego portu USB. W przypadku braku podłączonego urządzenia na danym porcie wyświetlany jest komunikat przedstawiony na rys. \ref{rys:oknousb}. Kliknięcie ''Yes'' umożliwia ponowny wybór, a ''No'' kończy pracę programu.\\
 \begin{figure}[H]
     \begin{center}
     \includegraphics[scale=0.6]{oknousb.png}
@@ -368,7 +400,7 @@ Pierwszym krokiem jest wybór portu USB i wciśnięcie przycisku start, co uruch
 \end{figure}
 Dane są odczytywane z poru USB w oddzielnym wątku Read\_thread, dziedziczącego po QThread. Zapewnia to odpowiednio szybką pracę programu. W tym samym wątku sprawdzana jest poprawność otrzymanej wiadomości (obliczanie sumy kontrolnej, sprawdzanie dlugości ciągu znaków) oraz wysyłanie danych do Socketu, który również został zaprogramowany z wykorzystaniem bibliotek Qt5 (klasa Socket).
 
-W przypadku aktywowania przycisku "Measurment" aktywowany jest timer (na 2s) i dane te są zapisywane w wektorze 2000x23, z którego to jest możliwość zapisu danych do pliku w przypadku akceptacji pomiaru po jego ukończeniu. Widok okna w trakcie pomiaru przedstawia \ref{rys:oknopomiar}.
+W przypadku aktywowania przycisku ''Measurment'' aktywowany jest timer (na 2s) i dane te są zapisywane w wektorze 2000x23, z którego to jest możliwość zapisu danych do pliku w przypadku akceptacji pomiaru po jego ukończeniu. Widok okna w trakcie pomiaru przedstawia \ref{rys:oknopomiar}.
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.6]{oknopomiar.png}
@@ -447,26 +479,7 @@ Rysunek \ref{rys:zakladka2} przedstawia drugą zakładkę aplikacji wizualizują
     \label{rys:zakladka2}
 \end{figure}
 
-\subsection{Integracja komponentów}
-Po przeprowadzeniu ewalucji poszczególnych komponentów zostały one połączone ze sobą w celu integracji.\\
 
-
-\begin{enumerate}
-  \item Rękawiczka założona na rękę pozwala na możliwie swobodne poruszanie palcami.
-	\item Podczas wykonywania ruchów czujniki oraz przewody nie haczą się o nic dzięki dołączonym kapturkom oraz dodatkowej bezpalcowej osłonie.
-	\item Sygnały z czujników prowadzone przez przewody są bezpośrednio podłączone do styków na wzmacniaczu dzięki ich żeńskim końcówkom.
-	\item Na przedramieniu osoby badanej umieszczono sensory biosygnałów w sposób pokazany w instrukcji ''Stanowsiko badawcze do akwizycji biosygnałów'' autorstwa A. Wołczowskiego i J.S. Witkowskiego.
-	\item Płytkę ze wzmacniaczami połaczond z płytką deweloperską Discovery, zasilaniem bateryjnym, wzmacniaczami biosygnałów oraz czujnikami nacisku oraz ugięcia.
-	\item Dane z płytki Discovery płynnie przesyłane są poprzez przewód USB do komputera z włączonym programem do akwizycji danych.
-	\item Poprzez obsługę programu do akwizycji danych rozpoczynany jest pomiar poprzez przyciśnięcie przycisku ''Start''.
-	\item We włączonym programie od wizualizacji w odpowiednich zakładkach na bieżąco można obserować przebieg sygnałów z czujników: nacisku, ugięcia i biosygnałów.
-	\item Przy chwytaniu przedmiotów czujniki ugięcia działają sprawnie, o czym świadczy ugięcie palców na wirtualnej dłoni oraz wykresy z odczytami wartości rezystancji z czujników.
-	\item Po nałożeniu kapturków sensory nacisku na wewnętrznej części dłoni sprawnie odczytują siłę nacisku. Świadczy o tym zmiana koloru odpowiednich pól na wizualizowanej dłoni.
-	\item Przy wybraniu odpowiednich zakładek widać na poszczególnych wykresach jak ruch wpływa na sygnały z czujników: ugięcia, nacisku i biosygnałów.
-	\item Przy wciśnięciu przycisku ''Measurement'' w programie do akwizycji danych pojawia się pasek ładowania odmierzający 2 s. Po tym czasie pojawia się możliwość zapisu lub zignorowania danych.
-	\item Po wybraniu ruchu i wpisaniu przykładowej nazwy użytkownika oraz przyciśnięciu przycisku ''Save''.
-	\item Wartości z pomiarów zostały zapisane do odpowiedniego folderu.	
-\end{enumerate}
 
 Aplikacja odbiera pomyślnie dane z programu do akwizycji oraz wizualizuje zinterpretowane pomiary na wykresach i modelach dłoni. 
 
@@ -478,5 +491,6 @@ Aplikacja odbiera pomyślnie dane z programu do akwizycji oraz wizualizuje zinte
 Po połączeniu wszytkich komponentów projektu przeprowadzono testy. Polegały one na wykonywaniu ruchów w rękawiczce sensorycznej i obserwowanie efektów w programie wizualizującym oraz sprawdzenie poprawnego zapisu pliku do bazy danych. Testy pokazały, że sygnały przeysłane są odbierane poprawnie, co pokazują zdjęcia i film umieszczony na stronie internetowej  \url{http://sensglove.happyrobotics.com} w odpowiednich zakładkach. Na stronie został również zamieszczony link do strony GitHub \url{https://github.com/Sensglove/SG}, na której zamieszczony jest kod oprogramowania i dokumentacja.
 
 \section{Podsumwoanie}
+Projek spełnia początkowe założenia. Rękawiczka jak i okablowanie do niej nie krępują ruchu, płytka wzmacnia i przesyła pomiary z 22 czujników z możliwością dołączenia dwóch kolejnych. Program do akwizycji w czasie rzeczywistym pobiera dane ze wszystkich sensorów z możliwością zapisu danych do konkretnych katalogów oraz przekazuje do programu wizualizującego, który w czasie zbliżonym do rzeczywistego przedstawia reakcje czujników na ruch.
 
 \end{document}
